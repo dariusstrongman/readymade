@@ -107,9 +107,9 @@
         }
 
         nav {
-            max-width: 1400px;
+            max-width: 1200px;
             margin: 0 auto;
-            padding: 0 3rem;
+            padding: 0 2rem;
             display: flex;
             justify-content: space-between;
             align-items: center;
@@ -304,9 +304,10 @@
         }
 
         .hero-content {
-            max-width: 1000px;
+            max-width: 900px;
             position: relative;
             z-index: 2;
+            padding: 0 1rem;
         }
 
         .hero-badge {
@@ -430,9 +431,15 @@
         /* Sections */
         section {
             padding: 8rem 2rem;
-            max-width: 1400px;
+            max-width: 1200px;
             margin: 0 auto;
             position: relative;
+        }
+
+        .section-wrapper {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
         }
 
         .section-header {
@@ -479,7 +486,7 @@
         .about-content {
             display: grid;
             grid-template-columns: 1fr 1fr;
-            gap: 6rem;
+            gap: 4rem;
             align-items: center;
         }
 
@@ -639,9 +646,10 @@
         /* Services Section */
         #services {
             background: var(--dark-secondary);
-            border-radius: 60px;
-            padding: 8rem 6rem;
-            margin: 0 2rem;
+            border-radius: 40px;
+            padding: 6rem 4rem;
+            max-width: 1200px;
+            margin: 0 auto;
             position: relative;
             overflow: hidden;
         }
@@ -658,10 +666,10 @@
 
         .service-card {
             background: var(--dark-bg);
-            padding: 4rem;
-            border-radius: 40px;
+            padding: 3rem;
+            border-radius: 30px;
             border: 1px solid rgba(255,255,255,0.05);
-            max-width: 900px;
+            max-width: 100%;
             margin: 0 auto;
             position: relative;
             overflow: hidden;
@@ -779,7 +787,7 @@
 
         /* Benefits Section */
         #why-us {
-            padding-top: 10rem;
+            padding-top: 6rem;
         }
 
         .benefits-grid {
@@ -857,7 +865,7 @@
 
         /* Process Section */
         #process {
-            padding-bottom: 10rem;
+            padding-bottom: 6rem;
         }
 
         .process-container {
@@ -942,7 +950,7 @@
 
         /* Gallery Section */
         #gallery {
-            padding: 8rem 2rem 10rem;
+            padding: 8rem 2rem;
         }
 
         .gallery-grid {
@@ -1047,15 +1055,15 @@
 
         /* Pricing Section */
         #pricing {
-            padding: 10rem 2rem;
+            padding: 8rem 2rem;
         }
 
         .pricing-card {
             background: var(--dark-secondary);
             border: 1px solid rgba(255,60,60,0.2);
-            border-radius: 40px;
-            padding: 4rem;
-            max-width: 550px;
+            border-radius: 30px;
+            padding: 3rem;
+            max-width: 500px;
             margin: 0 auto;
             position: relative;
             overflow: hidden;
@@ -1137,9 +1145,10 @@
         /* Contact Section */
         #contact {
             background: var(--dark-secondary);
-            border-radius: 60px;
-            padding: 8rem 6rem;
-            margin: 0 2rem 4rem;
+            border-radius: 40px;
+            padding: 6rem 4rem;
+            max-width: 1200px;
+            margin: 0 auto 4rem;
             position: relative;
             overflow: hidden;
         }
@@ -1158,7 +1167,7 @@
         .contact-container {
             display: grid;
             grid-template-columns: 1fr 1fr;
-            gap: 6rem;
+            gap: 4rem;
             align-items: center;
             position: relative;
         }
@@ -1268,6 +1277,8 @@
             padding: 4rem 2rem;
             text-align: center;
             position: relative;
+            max-width: 1200px;
+            margin: 0 auto;
         }
 
         footer::before {
@@ -1358,11 +1369,20 @@
             .gallery-grid {
                 grid-template-columns: repeat(2, 1fr);
             }
+
+            section {
+                padding: 6rem 2rem;
+            }
+
+            #services,
+            #contact {
+                margin: 0 1rem;
+            }
         }
 
         @media (max-width: 992px) {
             nav {
-                padding: 0 2rem;
+                padding: 0 1.5rem;
             }
 
             .nav-links {
@@ -1394,23 +1414,23 @@
 
             .about-content {
                 grid-template-columns: 1fr;
-                gap: 4rem;
+                gap: 3rem;
             }
 
             .about-visual {
-                height: 400px;
+                height: 350px;
             }
 
             .contact-container {
                 grid-template-columns: 1fr;
-                gap: 4rem;
+                gap: 3rem;
             }
 
             #services,
             #contact {
-                padding: 5rem 3rem;
+                padding: 4rem 2rem;
                 margin: 0 1rem;
-                border-radius: 40px;
+                border-radius: 30px;
             }
 
             .features-grid {
@@ -1423,6 +1443,10 @@
 
             .form-group.full-width {
                 grid-column: span 1;
+            }
+
+            section {
+                padding: 5rem 1.5rem;
             }
         }
 
@@ -1453,29 +1477,47 @@
             }
 
             .about-stats {
-                flex-direction: column;
-                gap: 2rem;
+                flex-direction: row;
+                justify-content: space-between;
+                gap: 1rem;
+            }
+
+            .stat-item {
+                text-align: center;
+            }
+
+            .stat-number {
+                font-size: 2rem;
             }
 
             #services,
             #contact {
-                padding: 4rem 2rem;
+                padding: 3rem 1.5rem;
+                margin: 0 0.5rem;
             }
 
             .service-card {
-                padding: 2.5rem 2rem;
+                padding: 2rem 1.5rem;
             }
 
             .contact-info h2 {
-                font-size: 2.5rem;
+                font-size: 2rem;
             }
 
             .pricing-card {
-                padding: 3rem 2rem;
+                padding: 2.5rem 1.5rem;
             }
 
             .pricing-card .price {
-                font-size: 4rem;
+                font-size: 3.5rem;
+            }
+
+            section {
+                padding: 4rem 1rem;
+            }
+
+            .section-header {
+                margin-bottom: 3rem;
             }
         }
 
@@ -1507,6 +1549,15 @@
             .service-card-footer .btn-secondary {
                 width: 100%;
                 justify-content: center;
+            }
+
+            .about-stats {
+                flex-direction: column;
+                gap: 1.5rem;
+            }
+
+            .pricing-card .price {
+                font-size: 3rem;
             }
         }
     </style>
