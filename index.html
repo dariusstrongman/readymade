@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ReadyMadeVideo | Cinematic Promo Videos - $350</title>
+    <title>ReadyMadeVideo | Videos That Sell. Not Just Play.</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
@@ -359,7 +359,7 @@
         }
 
         .hero h1 .highlight::after {
-            content: '$350';
+            content: 'Sell.';
             position: absolute;
             top: 0;
             left: 0;
@@ -785,82 +785,243 @@
             flex-wrap: wrap;
         }
 
-        /* Benefits Section */
-        #why-us {
-            padding-top: 6rem;
-        }
-
-        .benefits-grid {
+        /* Packages Grid */
+        .packages-grid {
             display: grid;
-            grid-template-columns: repeat(4, 1fr);
+            grid-template-columns: repeat(3, 1fr);
             gap: 2rem;
             margin-top: 4rem;
         }
 
-        .benefit-card {
-            background: var(--dark-secondary);
-            padding: 3rem 2rem;
-            border-radius: 30px;
-            text-align: center;
-            transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
-            border: 1px solid rgba(255,255,255,0.03);
-            position: relative;
-            overflow: hidden;
-        }
-
-        .benefit-card::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            height: 3px;
-            background: var(--gradient-primary);
-            transform: scaleX(0);
-            transition: transform 0.5s ease;
-        }
-
-        .benefit-card:hover {
-            transform: translateY(-15px);
-            border-color: rgba(255,60,60,0.2);
-            box-shadow: 0 30px 60px rgba(0,0,0,0.4), var(--glow-soft);
-        }
-
-        .benefit-card:hover::before {
-            transform: scaleX(1);
-        }
-
-        .benefit-icon {
-            width: 80px;
-            height: 80px;
-            background: var(--gradient-subtle);
+        .package-card {
+            background: var(--dark-card);
+            border: 1px solid rgba(255,255,255,0.05);
             border-radius: 24px;
+            padding: 2.5rem;
+            position: relative;
+            transition: all 0.4s ease;
             display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 2.5rem;
-            margin: 0 auto 1.5rem;
-            transition: all 0.5s ease;
+            flex-direction: column;
         }
 
-        .benefit-card:hover .benefit-icon {
+        .package-card:hover {
+            transform: translateY(-10px);
+            border-color: rgba(255,60,60,0.3);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.3);
+        }
+
+        .package-card.featured {
+            background: var(--dark-secondary);
+            border: 2px solid rgba(255,60,60,0.4);
+            transform: scale(1.02);
+        }
+
+        .package-card.featured:hover {
+            transform: scale(1.02) translateY(-10px);
+        }
+
+        .package-badge {
+            position: absolute;
+            top: -12px;
+            left: 50%;
+            transform: translateX(-50%);
             background: var(--gradient-primary);
-            transform: scale(1.1) rotate(5deg);
-            box-shadow: var(--glow-primary);
+            color: var(--dark-bg);
+            padding: 0.4rem 1.2rem;
+            border-radius: 100px;
+            font-weight: 700;
+            font-size: 0.75rem;
+            letter-spacing: 0.5px;
+            text-transform: uppercase;
         }
 
-        .benefit-card h3 {
+        .package-header {
+            text-align: center;
+            margin-bottom: 1.5rem;
+            padding-bottom: 1.5rem;
+            border-bottom: 1px solid rgba(255,255,255,0.05);
+        }
+
+        .package-header h3 {
             font-family: 'Space Grotesk', sans-serif;
-            font-size: 1.4rem;
-            margin-bottom: 1rem;
-            font-weight: 600;
+            font-size: 1.8rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
             letter-spacing: -0.5px;
         }
 
-        .benefit-card p {
+        .package-tagline {
+            color: var(--text-gray);
+            font-size: 0.9rem;
+            margin-bottom: 1rem;
+        }
+
+        .package-price {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 3rem;
+            font-weight: 700;
+            background: var(--gradient-primary);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .package-price span {
+            font-size: 1.2rem;
+            opacity: 0.8;
+        }
+
+        .package-description {
+            color: var(--text-gray);
+            font-size: 0.95rem;
+            line-height: 1.6;
+            margin-bottom: 1.5rem;
+        }
+
+        .package-features {
+            list-style: none;
+            margin-bottom: 1.5rem;
+            flex-grow: 1;
+        }
+
+        .package-features li {
+            padding: 0.6rem 0;
+            padding-left: 1.8rem;
+            position: relative;
+            color: var(--text-light);
+            font-size: 0.9rem;
+            border-bottom: 1px solid rgba(255,255,255,0.03);
+        }
+
+        .package-features li:last-child {
+            border-bottom: none;
+        }
+
+        .package-features li::before {
+            content: '✓';
+            position: absolute;
+            left: 0;
+            color: var(--primary);
+            font-weight: bold;
+        }
+
+        .package-best-for {
+            color: var(--text-gray);
+            font-size: 0.85rem;
+            line-height: 1.5;
+            margin-bottom: 1.5rem;
+            padding: 1rem;
+            background: rgba(255,60,60,0.05);
+            border-radius: 12px;
+        }
+
+        .package-best-for strong {
+            color: var(--primary);
+        }
+
+        .package-btn {
+            width: 100%;
+            justify-content: center;
+            text-align: center;
+        }
+
+        @media (max-width: 1024px) {
+            .packages-grid {
+                grid-template-columns: 1fr;
+                max-width: 500px;
+                margin-left: auto;
+                margin-right: auto;
+            }
+
+            .package-card.featured {
+                transform: none;
+                order: -1;
+            }
+
+            .package-card.featured:hover {
+                transform: translateY(-10px);
+            }
+        }
+
+        /* Why Us / Comparison Section */
+        #why-us {
+            padding-top: 6rem;
+        }
+
+        .comparison-table {
+            max-width: 800px;
+            margin: 4rem auto 3rem;
+            border-radius: 20px;
+            overflow: hidden;
+            border: 1px solid rgba(255,255,255,0.05);
+        }
+
+        .comparison-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+        }
+
+        .comparison-row.header-row {
+            background: var(--dark-tertiary);
+        }
+
+        .comparison-row.header-row .comparison-cell {
+            font-family: 'Space Grotesk', sans-serif;
+            font-weight: 700;
+            font-size: 1.1rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .comparison-cell {
+            padding: 1.2rem 1.5rem;
+            border-bottom: 1px solid rgba(255,255,255,0.05);
+            color: var(--text-gray);
+            font-size: 0.95rem;
+        }
+
+        .comparison-cell.highlight-cell {
+            background: rgba(255,60,60,0.08);
+            color: var(--text-light);
+            font-weight: 500;
+            border-left: 2px solid var(--primary);
+        }
+
+        .comparison-row:last-child .comparison-cell {
+            border-bottom: none;
+        }
+
+        .not-for-everyone {
+            max-width: 700px;
+            margin: 0 auto;
+            text-align: center;
+            padding: 2.5rem;
+            background: var(--dark-secondary);
+            border-radius: 20px;
+            border: 1px solid rgba(255,255,255,0.05);
+        }
+
+        .not-for-everyone h3 {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            color: var(--primary);
+        }
+
+        .not-for-everyone p {
             color: var(--text-gray);
             line-height: 1.7;
-            font-size: 0.95rem;
+        }
+
+        @media (max-width: 768px) {
+            .comparison-row {
+                grid-template-columns: 1fr;
+            }
+
+            .comparison-cell.highlight-cell {
+                border-left: none;
+                border-top: 2px solid var(--primary);
+            }
         }
 
         /* Process Section */
@@ -1058,88 +1219,111 @@
             padding: 8rem 2rem;
         }
 
-        .pricing-card {
-            background: var(--dark-secondary);
-            border: 1px solid rgba(255,60,60,0.2);
-            border-radius: 30px;
-            padding: 3rem;
-            max-width: 500px;
-            margin: 0 auto;
-            position: relative;
-            overflow: hidden;
+        .pricing-summary {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+            max-width: 900px;
+            margin: 4rem auto 3rem;
+        }
+
+        .pricing-tier {
+            background: var(--dark-card);
+            border: 1px solid rgba(255,255,255,0.05);
+            border-radius: 20px;
+            padding: 2rem;
             text-align: center;
+            position: relative;
+            transition: all 0.3s ease;
         }
 
-        .pricing-card::before {
-            content: '';
-            position: absolute;
-            top: -100px;
-            right: -100px;
-            width: 300px;
-            height: 300px;
-            background: radial-gradient(circle, rgba(255,60,60,0.15) 0%, transparent 70%);
+        .pricing-tier:hover {
+            border-color: rgba(255,60,60,0.3);
+            transform: translateY(-5px);
         }
 
-        .pricing-badge {
+        .pricing-tier.featured {
+            background: var(--dark-secondary);
+            border: 2px solid rgba(255,60,60,0.4);
+        }
+
+        .tier-badge {
             position: absolute;
-            top: 2rem;
-            right: 2rem;
+            top: -10px;
+            left: 50%;
+            transform: translateX(-50%);
             background: var(--gradient-primary);
             color: var(--dark-bg);
-            padding: 0.5rem 1.2rem;
+            padding: 0.3rem 1rem;
             border-radius: 100px;
             font-weight: 700;
-            font-size: 0.75rem;
-            letter-spacing: 1px;
+            font-size: 0.7rem;
+            letter-spacing: 0.5px;
             text-transform: uppercase;
         }
 
-        .pricing-card h3 {
+        .pricing-tier h3 {
             font-family: 'Space Grotesk', sans-serif;
-            font-size: 2rem;
+            font-size: 1.3rem;
+            font-weight: 600;
             margin-bottom: 0.5rem;
+        }
+
+        .tier-price {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 2.2rem;
             font-weight: 700;
-        }
-
-        .pricing-card .price {
-            font-size: 5rem;
-            margin: 1.5rem 0 2rem;
-        }
-
-        .pricing-features {
-            text-align: left;
-            margin-bottom: 2.5rem;
-        }
-
-        .pricing-feature {
-            display: flex;
-            align-items: center;
-            gap: 1rem;
-            padding: 1rem 0;
-            border-bottom: 1px solid rgba(255,255,255,0.05);
-        }
-
-        .pricing-feature:last-child {
-            border-bottom: none;
-        }
-
-        .pricing-check {
-            width: 24px;
-            height: 24px;
             background: var(--gradient-primary);
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 0.8rem;
-            flex-shrink: 0;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 0.5rem;
         }
 
-        .pricing-note {
-            color: var(--text-muted);
-            font-size: 0.9rem;
-            margin-top: 2rem;
-            font-style: italic;
+        .tier-price span {
+            font-size: 1rem;
+        }
+
+        .pricing-tier p {
+            color: var(--text-gray);
+            font-size: 0.85rem;
+            margin-bottom: 1rem;
+            line-height: 1.5;
+        }
+
+        .tier-link {
+            color: var(--primary);
+            text-decoration: none;
+            font-size: 0.85rem;
+            font-weight: 600;
+            transition: color 0.3s ease;
+        }
+
+        .tier-link:hover {
+            color: var(--secondary);
+        }
+
+        .pricing-cta {
+            text-align: center;
+            max-width: 500px;
+            margin: 0 auto;
+        }
+
+        .pricing-cta p {
+            color: var(--text-gray);
+            margin-bottom: 1.5rem;
+            font-size: 1.1rem;
+        }
+
+        @media (max-width: 768px) {
+            .pricing-summary {
+                grid-template-columns: 1fr;
+                max-width: 350px;
+            }
+
+            .pricing-tier.featured {
+                order: -1;
+            }
         }
 
         /* Contact Section */
@@ -1248,7 +1432,8 @@
         }
 
         .form-group input:focus,
-        .form-group textarea:focus {
+        .form-group textarea:focus,
+        .form-group select:focus {
             outline: none;
             border-color: var(--primary);
             box-shadow: 0 0 0 4px rgba(255,60,60,0.1);
@@ -1259,9 +1444,38 @@
             color: var(--text-muted);
         }
 
+        .form-group select {
+            width: 100%;
+            padding: 1.1rem 1.5rem;
+            background: var(--dark-secondary);
+            border: 1px solid rgba(255,255,255,0.05);
+            border-radius: 16px;
+            color: var(--text-light);
+            font-family: 'Inter', sans-serif;
+            font-size: 1rem;
+            transition: all 0.3s ease;
+            cursor: pointer;
+            appearance: none;
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12'%3E%3Cpath fill='%23888888' d='M6 8L1 3h10z'/%3E%3C/svg%3E");
+            background-repeat: no-repeat;
+            background-position: right 1.5rem center;
+        }
+
+        .form-group select option {
+            background: var(--dark-bg);
+            color: var(--text-light);
+        }
+
         .form-group textarea {
             resize: vertical;
-            min-height: 140px;
+            min-height: 120px;
+        }
+
+        .contact-note {
+            margin-top: 2rem;
+            color: var(--text-muted);
+            font-size: 0.9rem;
+            font-style: italic;
         }
 
         .submit-btn {
@@ -1570,11 +1784,11 @@
         <nav>
             <div class="logo">READYMADEVIDEO</div>
             <ul class="nav-links" id="navLinks">
-                <li><a href="#services">Services</a></li>
+                <li><a href="#services">Packages</a></li>
+                <li><a href="#why-us">Why Us</a></li>
                 <li><a href="#process">Process</a></li>
-                <li><a href="#gallery">Gallery</a></li>
-                <li><a href="#pricing">Pricing</a></li>
-                <li><a href="#contact" class="btn-primary">Book a Shoot</a></li>
+                <li><a href="#gallery">Work</a></li>
+                <li><a href="#contact" class="btn-primary">Book a Strategy Call</a></li>
             </ul>
             <div class="mobile-toggle" id="mobileToggle">
                 <span></span>
@@ -1588,13 +1802,13 @@
         <div class="hero-content">
             <div class="hero-badge">
                 <span></span>
-                Now Booking
+                B2B Video Partner
             </div>
-            <h1>Cinematic Promo Videos for Your Business — Only <span class="highlight">$350</span></h1>
-            <p>One shoot. One polished video. A cinematic commercial that makes your brand unforgettable.</p>
+            <h1>Videos That <span class="highlight">Sell.</span> Not Just Play.</h1>
+            <p>We create high-converting promo videos for companies that want measurable results—not just content to post.</p>
             <div class="hero-buttons">
-                <a href="#contact" class="btn-primary">Book Your Shoot →</a>
-                <a href="#gallery" class="btn-secondary">View Our Work</a>
+                <a href="#contact" class="btn-primary">Book a Strategy Call →</a>
+                <a href="#gallery" class="btn-secondary">See Our Work</a>
             </div>
         </div>
         <div class="scroll-indicator">Scroll</div>
@@ -1603,22 +1817,22 @@
     <section id="about">
         <div class="about-content animate-on-scroll">
             <div class="about-text">
-                <div class="section-tag">About Us</div>
-                <h3>We Create Cinematic Stories for Small Businesses</h3>
-                <p>At ReadyMadeVideo, we specialize in high-quality promotional videos for small businesses, artists, barbers, trainers, restaurants, gyms, stylists, and local brands.</p>
-                <p>Our streamlined two-person production team brings expertise in both filming and post-production. We capture your story on location with professional equipment, then transform raw footage into a polished, cinematic masterpiece using DaVinci Resolve.</p>
+                <div class="section-tag">Who We Work With</div>
+                <h3>Video That Drives Revenue for B2B Companies</h3>
+                <p>We partner with B2B service companies—agencies, SaaS, consultants, and professional services—who understand that video is a sales asset, not just content.</p>
+                <p>Every video we create starts with your business goal: more leads, more bookings, more sales. We script for conversion, produce for impact, and deliver assets built to perform across landing pages, ads, and social.</p>
                 <div class="about-stats">
                     <div class="stat-item">
-                        <div class="stat-number">48h</div>
-                        <div class="stat-label">Average Delivery</div>
+                        <div class="stat-number">ROI</div>
+                        <div class="stat-label">Focused</div>
                     </div>
                     <div class="stat-item">
-                        <div class="stat-number">100%</div>
-                        <div class="stat-label">Satisfaction Rate</div>
+                        <div class="stat-number">B2B</div>
+                        <div class="stat-label">Specialists</div>
                     </div>
                     <div class="stat-item">
-                        <div class="stat-number">4K</div>
-                        <div class="stat-label">Resolution</div>
+                        <div class="stat-number">Full</div>
+                        <div class="stat-label">Strategy</div>
                     </div>
                 </div>
             </div>
@@ -1627,9 +1841,9 @@
                     <div class="video-icon">▶</div>
                 </div>
                 <div class="floating-elements">
-                    <div class="floating-element">🎬 Professional Grade</div>
-                    <div class="floating-element">✨ Color Graded</div>
-                    <div class="floating-element">🎵 Licensed Music</div>
+                    <div class="floating-element">Landing Pages</div>
+                    <div class="floating-element">Paid Ads</div>
+                    <div class="floating-element">Sales Funnels</div>
                 </div>
             </div>
         </div>
@@ -1637,115 +1851,132 @@
 
     <section id="services">
         <div class="section-header animate-on-scroll">
-            <div class="section-tag">Our Service</div>
-            <h2 class="section-title">One Service. Premium Results.</h2>
-            <p class="section-subtitle">Everything you need to showcase your business professionally, all in one simple package.</p>
+            <div class="section-tag">Packages</div>
+            <h2 class="section-title">Conversion-Focused Video Packages</h2>
+            <p class="section-subtitle">Every package starts with strategy. Every video is built to generate action.</p>
         </div>
-        <div class="service-card animate-on-scroll">
-            <div class="service-card-header">
-                <div>
-                    <h3>Signature Promo Video</h3>
-                    <p style="color: var(--text-gray); margin-top: 0.5rem;">Complete production package</p>
+        <div class="packages-grid">
+            <!-- Package 1: The Closer -->
+            <div class="package-card animate-on-scroll">
+                <div class="package-header">
+                    <h3>The Closer</h3>
+                    <p class="package-tagline">Start Converting</p>
+                    <div class="package-price">$1,500</div>
                 </div>
-                <div class="price-tag">
-                    <div class="price">$350</div>
-                    <div class="price-note">One-time payment</div>
-                </div>
+                <p class="package-description">One conversion-focused promo video (30–60 sec) for a single platform or use case.</p>
+                <ul class="package-features">
+                    <li>Strategy call to define goal, audience & CTA</li>
+                    <li>Script written for conversion</li>
+                    <li>Professional editing with motion graphics</li>
+                    <li>One round of revisions</li>
+                    <li>Optimized export for chosen platform</li>
+                </ul>
+                <p class="package-best-for"><strong>Best for:</strong> Testing video on a landing page or running your first paid campaign.</p>
+                <a href="#contact" class="btn-secondary package-btn">Book Strategy Call</a>
             </div>
-            <div class="features-grid">
-                <div class="feature-item">
-                    <div class="feature-icon">🎥</div>
-                    <div class="feature-text">1-hour on-site video shoot</div>
+            <!-- Package 2: The Campaign Kit -->
+            <div class="package-card featured animate-on-scroll">
+                <div class="package-badge">Most Popular</div>
+                <div class="package-header">
+                    <h3>The Campaign Kit</h3>
+                    <p class="package-tagline">Launch & Scale</p>
+                    <div class="package-price">$3,500</div>
                 </div>
-                <div class="feature-item">
-                    <div class="feature-icon">🎬</div>
-                    <div class="feature-text">1 cinematic promo video (1–3 min)</div>
-                </div>
-                <div class="feature-item">
-                    <div class="feature-icon">✂️</div>
-                    <div class="feature-text">Professional editing in DaVinci Resolve</div>
-                </div>
-                <div class="feature-item">
-                    <div class="feature-icon">🎨</div>
-                    <div class="feature-text">Cinema-grade color grading</div>
-                </div>
-                <div class="feature-item">
-                    <div class="feature-icon">💬</div>
-                    <div class="feature-text">Captions included</div>
-                </div>
-                <div class="feature-item">
-                    <div class="feature-icon">🎵</div>
-                    <div class="feature-text">Licensed music + transitions</div>
-                </div>
-                <div class="feature-item">
-                    <div class="feature-icon">🔄</div>
-                    <div class="feature-text">1 revision included</div>
-                </div>
-                <div class="feature-item">
-                    <div class="feature-icon">⚡</div>
-                    <div class="feature-text">Delivery in 48–72 hours</div>
-                </div>
+                <p class="package-description">A complete video system built to drive leads across multiple touchpoints.</p>
+                <ul class="package-features">
+                    <li>Everything in The Closer</li>
+                    <li>3 video variations (hero + 2 platform cuts)</li>
+                    <li>Hook testing (2 alternate openings)</li>
+                    <li>Thumbnail/cover design</li>
+                    <li>Caption/subtitle burn-in</li>
+                    <li>Two rounds of revisions</li>
+                </ul>
+                <p class="package-best-for"><strong>Best for:</strong> Companies launching a campaign, product, or funnel.</p>
+                <a href="#contact" class="btn-primary package-btn">Book Strategy Call →</a>
             </div>
-            <div class="service-card-footer">
-                <a href="#contact" class="btn-primary">Get Started →</a>
-                <a href="#process" class="btn-secondary">See How It Works</a>
+            <!-- Package 3: The Conversion Engine -->
+            <div class="package-card animate-on-scroll">
+                <div class="package-header">
+                    <h3>The Conversion Engine</h3>
+                    <p class="package-tagline">Ongoing Partnership</p>
+                    <div class="package-price">$6,500<span>/month</span></div>
+                </div>
+                <p class="package-description">Ongoing video production partnership for companies serious about video as a growth channel.</p>
+                <ul class="package-features">
+                    <li>4 videos/month (promos, testimonials, ads, social)</li>
+                    <li>Dedicated monthly strategy session</li>
+                    <li>Performance review: what's working, what to test</li>
+                    <li>Priority turnaround</li>
+                    <li>Unlimited revisions</li>
+                    <li>Raw asset library access</li>
+                </ul>
+                <p class="package-best-for"><strong>Best for:</strong> Companies using video as a core sales and marketing engine.</p>
+                <a href="#contact" class="btn-secondary package-btn">Book Strategy Call</a>
             </div>
         </div>
     </section>
 
     <section id="why-us">
         <div class="section-header animate-on-scroll">
-            <div class="section-tag">Why Us</div>
-            <h2 class="section-title">Why Choose ReadyMadeVideo</h2>
-            <p class="section-subtitle">We make premium video production accessible and efficient for small businesses.</p>
+            <div class="section-tag">The Difference</div>
+            <h2 class="section-title">We're Not a Video Vendor. We're a Conversion Partner.</h2>
+            <p class="section-subtitle">We don't make videos for your feed. We make videos for your funnel.</p>
         </div>
-        <div class="benefits-grid">
-            <div class="benefit-card animate-on-scroll">
-                <div class="benefit-icon">⚡</div>
-                <h3>Fast Delivery</h3>
-                <p>Receive your final video in just 48–72 hours. No long wait times, just quick delivery.</p>
+        <div class="comparison-table animate-on-scroll">
+            <div class="comparison-row header-row">
+                <div class="comparison-cell">What Others Do</div>
+                <div class="comparison-cell highlight-cell">What We Do</div>
             </div>
-            <div class="benefit-card animate-on-scroll">
-                <div class="benefit-icon">🎥</div>
-                <h3>Cinematic Quality</h3>
-                <p>Professional-grade equipment and expert color grading make your brand look premium.</p>
+            <div class="comparison-row">
+                <div class="comparison-cell">Deliver "nice looking" videos</div>
+                <div class="comparison-cell highlight-cell">Deliver videos built to generate action</div>
             </div>
-            <div class="benefit-card animate-on-scroll">
-                <div class="benefit-icon">✨</div>
-                <h3>Simple Process</h3>
-                <p>Book, shoot, receive. No complicated contracts or confusing workflows.</p>
+            <div class="comparison-row">
+                <div class="comparison-cell">Start with templates</div>
+                <div class="comparison-cell highlight-cell">Start with your sales goal</div>
             </div>
-            <div class="benefit-card animate-on-scroll">
-                <div class="benefit-icon">💰</div>
-                <h3>Small-Business Pricing</h3>
-                <p>$350 flat rate. No hidden fees or surprise charges. Quality video without breaking the bank.</p>
+            <div class="comparison-row">
+                <div class="comparison-cell">Optimize for views</div>
+                <div class="comparison-cell highlight-cell">Optimize for leads, bookings & sales</div>
             </div>
+            <div class="comparison-row">
+                <div class="comparison-cell">Hand off a file and disappear</div>
+                <div class="comparison-cell highlight-cell">Stay involved until the video performs</div>
+            </div>
+            <div class="comparison-row">
+                <div class="comparison-cell">Compete on price and speed</div>
+                <div class="comparison-cell highlight-cell">Compete on results and strategy</div>
+            </div>
+        </div>
+        <div class="not-for-everyone animate-on-scroll">
+            <h3>Not For Everyone</h3>
+            <p>We don't do wedding videos. We don't do $300 edits. We don't compete with Fiverr. We build sales assets for companies that measure ROI.</p>
         </div>
     </section>
 
     <section id="process">
         <div class="section-header animate-on-scroll">
             <div class="section-tag">Process</div>
-            <h2 class="section-title">How It Works</h2>
-            <p class="section-subtitle">Three simple steps to get your professional promo video.</p>
+            <h2 class="section-title">From Strategy Call to Converting Video</h2>
+            <p class="section-subtitle">A streamlined process designed around your business goals.</p>
         </div>
         <div class="process-container">
             <div class="process-line"></div>
             <div class="process-steps">
                 <div class="process-step animate-on-scroll">
                     <div class="step-number"><span>1</span></div>
-                    <h3>Book a Shoot</h3>
-                    <p>Fill out our simple contact form and tell us about your business. We'll schedule your 1-hour shoot at your location.</p>
+                    <h3>Strategy Call</h3>
+                    <p>We learn your goal (leads, sales, bookings), define your target audience, and map out the video approach.</p>
                 </div>
                 <div class="process-step animate-on-scroll">
                     <div class="step-number"><span>2</span></div>
-                    <h3>We Film</h3>
-                    <p>Our videographer arrives on-site to capture your business in action. Professional, efficient, and seamless.</p>
+                    <h3>Script & Production</h3>
+                    <p>We write a conversion-focused script, then produce professional video assets optimized for your platforms.</p>
                 </div>
                 <div class="process-step animate-on-scroll">
                     <div class="step-number"><span>3</span></div>
-                    <h3>You Receive Your Video</h3>
-                    <p>Within 48–72 hours, receive your polished, cinematic promo video ready to share across all platforms.</p>
+                    <h3>Deliver & Optimize</h3>
+                    <p>You get your finished video. We follow up to see how it's performing and adjust strategy as needed.</p>
                 </div>
             </div>
         </div>
@@ -1753,90 +1984,91 @@
 
     <section id="gallery">
         <div class="section-header animate-on-scroll">
-            <div class="section-tag">Portfolio</div>
-            <h2 class="section-title">Sample Work</h2>
-            <p class="section-subtitle">See the cinematic quality we deliver for our clients.</p>
+            <div class="section-tag">Results</div>
+            <h2 class="section-title">Videos Built to Convert</h2>
+            <p class="section-subtitle">See how we help companies generate leads, bookings, and sales.</p>
         </div>
         <div class="gallery-grid">
             <div class="gallery-item animate-on-scroll" style="background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);">
                 <div class="gallery-play"></div>
-                <div class="gallery-label"><span>Restaurant Promo</span></div>
+                <div class="gallery-label"><span>SaaS Product Launch</span></div>
             </div>
             <div class="gallery-item animate-on-scroll" style="background: linear-gradient(135deg, #2d132c 0%, #801336 50%, #c72c41 100%);">
                 <div class="gallery-play"></div>
-                <div class="gallery-label"><span>Barbershop</span></div>
+                <div class="gallery-label"><span>Agency Case Study</span></div>
             </div>
             <div class="gallery-item animate-on-scroll" style="background: linear-gradient(135deg, #0a3d62 0%, #3c6382 50%, #60a3bc 100%);">
                 <div class="gallery-play"></div>
-                <div class="gallery-label"><span>Fitness Studio</span></div>
+                <div class="gallery-label"><span>Consulting Firm</span></div>
             </div>
             <div class="gallery-item animate-on-scroll" style="background: linear-gradient(135deg, #1e3c72 0%, #2a5298 50%, #4a69bd 100%);">
                 <div class="gallery-play"></div>
-                <div class="gallery-label"><span>Auto Detailing</span></div>
+                <div class="gallery-label"><span>Landing Page Hero</span></div>
             </div>
             <div class="gallery-item animate-on-scroll" style="background: linear-gradient(135deg, #2c3e50 0%, #3d566e 50%, #5d6d7e 100%);">
                 <div class="gallery-play"></div>
-                <div class="gallery-label"><span>Real Estate</span></div>
+                <div class="gallery-label"><span>Paid Ad Campaign</span></div>
             </div>
             <div class="gallery-item animate-on-scroll" style="background: linear-gradient(135deg, #1a1a2e 0%, #4a266a 50%, #7c3aed 100%);">
                 <div class="gallery-play"></div>
-                <div class="gallery-label"><span>Beauty Salon</span></div>
+                <div class="gallery-label"><span>Professional Services</span></div>
             </div>
         </div>
     </section>
 
     <section id="pricing">
         <div class="section-header animate-on-scroll">
-            <div class="section-tag">Pricing</div>
-            <h2 class="section-title">Simple, Transparent Pricing</h2>
-            <p class="section-subtitle">No hidden fees. Just premium video at an affordable price.</p>
+            <div class="section-tag">Investment</div>
+            <h2 class="section-title">Packages That Pay for Themselves</h2>
+            <p class="section-subtitle">Every package includes strategy, production, and assets built to convert.</p>
         </div>
-        <div class="pricing-card animate-on-scroll">
-            <div class="pricing-badge">Most Popular</div>
-            <h3>Signature Promo Video</h3>
-            <div class="price">$350</div>
-            <div class="pricing-features">
-                <div class="pricing-feature">
-                    <div class="pricing-check">✓</div>
-                    <span>Full production package included</span>
-                </div>
-                <div class="pricing-feature">
-                    <div class="pricing-check">✓</div>
-                    <span>1-hour professional shoot</span>
-                </div>
-                <div class="pricing-feature">
-                    <div class="pricing-check">✓</div>
-                    <span>48–72 hour delivery</span>
-                </div>
-                <div class="pricing-feature">
-                    <div class="pricing-check">✓</div>
-                    <span>1 revision included</span>
-                </div>
+        <div class="pricing-summary animate-on-scroll">
+            <div class="pricing-tier">
+                <h3>The Closer</h3>
+                <div class="tier-price">$1,500</div>
+                <p>Single conversion video for one platform</p>
+                <a href="#services" class="tier-link">View details</a>
             </div>
-            <a href="#contact" class="btn-primary">Book Now →</a>
-            <p class="pricing-note">Need something custom? Additional services available upon request.</p>
+            <div class="pricing-tier featured">
+                <div class="tier-badge">Most Popular</div>
+                <h3>The Campaign Kit</h3>
+                <div class="tier-price">$3,500</div>
+                <p>Complete video system for multi-channel campaigns</p>
+                <a href="#services" class="tier-link">View details</a>
+            </div>
+            <div class="pricing-tier">
+                <h3>The Conversion Engine</h3>
+                <div class="tier-price">$6,500<span>/mo</span></div>
+                <p>Ongoing partnership for video-driven growth</p>
+                <a href="#services" class="tier-link">View details</a>
+            </div>
+        </div>
+        <div class="pricing-cta animate-on-scroll">
+            <p>Not sure which package fits? Let's talk about your goals.</p>
+            <a href="#contact" class="btn-primary">Book a Strategy Call →</a>
         </div>
     </section>
 
     <section id="contact">
         <div class="contact-container">
             <div class="contact-info animate-on-scroll">
-                <h2>Ready to Get Started?</h2>
-                <p>Book your shoot today and get a cinematic promo video that elevates your brand. We'll be in touch within 24 hours.</p>
+                <h2>Book a Strategy Call</h2>
+                <p>Tell us your goal. We'll show you exactly how video gets you there.</p>
                 <div class="contact-details">
                     <div class="contact-item">
-                        <span>⚡</span>
-                        <div>Fast 24-hour response time</div>
+                        <span>1</span>
+                        <div>Share your business goal</div>
                     </div>
                     <div class="contact-item">
-                        <span>📍</span>
-                        <div>We come to your location</div>
+                        <span>2</span>
+                        <div>We'll recommend a package</div>
                     </div>
                     <div class="contact-item">
-                        <span>🎬</span>
-                        <div>Professional results guaranteed</div>
+                        <span>3</span>
+                        <div>Start converting with video</div>
                     </div>
                 </div>
+                <p class="contact-note">Response within 24 hours. No pressure, no obligation.</p>
             </div>
             <form class="contact-form animate-on-scroll" id="contactForm">
                 <div class="form-row">
@@ -1845,29 +2077,41 @@
                         <input type="text" id="name" name="name" placeholder="John Smith" required>
                     </div>
                     <div class="form-group">
-                        <label for="business">Business Name *</label>
-                        <input type="text" id="business" name="business" placeholder="Your Business" required>
+                        <label for="business">Company Name *</label>
+                        <input type="text" id="business" name="business" placeholder="Your Company" required>
                     </div>
                 </div>
                 <div class="form-row">
                     <div class="form-group">
-                        <label for="phone">Phone Number *</label>
-                        <input type="tel" id="phone" name="phone" placeholder="(555) 123-4567" required>
+                        <label for="email">Email Address *</label>
+                        <input type="email" id="email" name="email" placeholder="you@company.com" required>
                     </div>
                     <div class="form-group">
-                        <label for="email">Email Address *</label>
-                        <input type="email" id="email" name="email" placeholder="you@email.com" required>
+                        <label for="package">Interested In</label>
+                        <select id="package" name="package">
+                            <option value="not-sure">Not sure yet</option>
+                            <option value="the-closer">The Closer - $1,500</option>
+                            <option value="campaign-kit">The Campaign Kit - $3,500</option>
+                            <option value="conversion-engine">The Conversion Engine - $6,500/mo</option>
+                        </select>
                     </div>
                 </div>
                 <div class="form-group full-width">
-                    <label for="service">Service Needed *</label>
-                    <input type="text" id="service" name="service" value="Signature Promo Video - $350" required>
+                    <label for="goal">What's your primary goal? *</label>
+                    <select id="goal" name="goal" required>
+                        <option value="">Select your goal...</option>
+                        <option value="more-leads">Generate more leads</option>
+                        <option value="more-sales">Increase sales/conversions</option>
+                        <option value="more-bookings">Get more bookings/demos</option>
+                        <option value="brand-awareness">Build brand awareness</option>
+                        <option value="other">Other</option>
+                    </select>
                 </div>
                 <div class="form-group full-width">
-                    <label for="message">Tell Us About Your Project</label>
-                    <textarea id="message" name="message" placeholder="Share details about your business and what you'd like to showcase..."></textarea>
+                    <label for="message">Tell us about your project (optional)</label>
+                    <textarea id="message" name="message" placeholder="What are you looking to achieve? Any specific campaigns or launches coming up?"></textarea>
                 </div>
-                <button type="submit" class="btn-primary submit-btn">Submit Request →</button>
+                <button type="submit" class="btn-primary submit-btn">Book Strategy Call →</button>
             </form>
         </div>
     </section>
@@ -1880,7 +2124,7 @@
             <a href="#" aria-label="Facebook">📘</a>
             <a href="#" aria-label="Email">✉️</a>
         </div>
-        <p>&copy; 2025 ReadyMadeVideo. All rights reserved.</p>
+        <p>&copy; 2026 ReadyMadeVideo. All rights reserved.</p>
     </footer>
 
     <script>
@@ -1906,14 +2150,14 @@
             const formData = {
                 name: document.getElementById('name').value,
                 business: document.getElementById('business').value,
-                phone: document.getElementById('phone').value,
                 email: document.getElementById('email').value,
-                service: document.getElementById('service').value,
+                package: document.getElementById('package').value,
+                goal: document.getElementById('goal').value,
                 message: document.getElementById('message').value
             };
 
-            console.log('Form submitted:', formData);
-            alert('Thank you for your request! We\'ll be in touch within 24 hours to schedule your shoot.');
+            console.log('Strategy call request:', formData);
+            alert('Thank you! We\'ll be in touch within 24 hours to schedule your strategy call.');
             contactForm.reset();
         });
 
