@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ReadyMadeVideo | Videos That Sell. Not Just Play.</title>
+    <title>ReadyMadeVideo | We Bring Your Vision to Life</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
@@ -359,7 +359,7 @@
         }
 
         .hero h1 .highlight::after {
-            content: 'Sell.';
+            content: 'Life';
             position: absolute;
             top: 0;
             left: 0;
@@ -506,31 +506,34 @@
             line-height: 1.8;
         }
 
-        .about-stats {
-            display: flex;
-            gap: 3rem;
-            margin-top: 3rem;
+        .who-list {
+            list-style: none;
+            margin-top: 2rem;
         }
 
-        .stat-item {
-            text-align: left;
-        }
-
-        .stat-number {
-            font-family: 'Space Grotesk', sans-serif;
-            font-size: 3rem;
-            font-weight: 700;
-            background: var(--gradient-primary);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-            line-height: 1;
-        }
-
-        .stat-label {
+        .who-list li {
+            padding: 1rem 0;
+            padding-left: 2rem;
+            position: relative;
             color: var(--text-gray);
-            font-size: 0.9rem;
-            margin-top: 0.5rem;
+            font-size: 1.05rem;
+            line-height: 1.6;
+            border-bottom: 1px solid rgba(255,255,255,0.05);
+        }
+
+        .who-list li:last-child {
+            border-bottom: none;
+        }
+
+        .who-list li::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 1.4rem;
+            width: 8px;
+            height: 8px;
+            background: var(--gradient-primary);
+            border-radius: 50%;
         }
 
         .about-visual {
@@ -785,6 +788,60 @@
             flex-wrap: wrap;
         }
 
+        /* Services Grid */
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+            margin-top: 4rem;
+        }
+
+        .service-item {
+            background: var(--dark-card);
+            border: 1px solid rgba(255,255,255,0.05);
+            border-radius: 24px;
+            padding: 2.5rem 2rem;
+            text-align: center;
+            transition: all 0.4s ease;
+        }
+
+        .service-item:hover {
+            transform: translateY(-8px);
+            border-color: rgba(255,60,60,0.3);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.3);
+        }
+
+        .service-icon {
+            font-size: 3rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .service-item h3 {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 1.3rem;
+            font-weight: 600;
+            margin-bottom: 0.75rem;
+            letter-spacing: -0.5px;
+        }
+
+        .service-item p {
+            color: var(--text-gray);
+            font-size: 0.95rem;
+            line-height: 1.5;
+        }
+
+        @media (max-width: 992px) {
+            .services-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 600px) {
+            .services-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
         /* Packages Grid */
         .packages-grid {
             display: grid;
@@ -943,84 +1000,79 @@
             }
         }
 
-        /* Why Us / Comparison Section */
+        /* Why Us Section */
         #why-us {
             padding-top: 6rem;
         }
 
-        .comparison-table {
-            max-width: 800px;
-            margin: 4rem auto 3rem;
-            border-radius: 20px;
-            overflow: hidden;
-            border: 1px solid rgba(255,255,255,0.05);
-        }
-
-        .comparison-row {
+        .why-grid {
             display: grid;
-            grid-template-columns: 1fr 1fr;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+            margin-top: 4rem;
         }
 
-        .comparison-row.header-row {
-            background: var(--dark-tertiary);
+        .why-item {
+            background: var(--dark-card);
+            border: 1px solid rgba(255,255,255,0.05);
+            border-radius: 24px;
+            padding: 2.5rem;
+            transition: all 0.4s ease;
         }
 
-        .comparison-row.header-row .comparison-cell {
+        .why-item:hover {
+            border-color: rgba(255,60,60,0.3);
+            transform: translateY(-5px);
+        }
+
+        .why-item:nth-child(4),
+        .why-item:nth-child(5) {
+            grid-column: span 1;
+        }
+
+        .why-number {
             font-family: 'Space Grotesk', sans-serif;
+            font-size: 2.5rem;
             font-weight: 700;
-            font-size: 1.1rem;
-            text-transform: uppercase;
-            letter-spacing: 1px;
+            background: var(--gradient-primary);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 1.5rem;
+            opacity: 0.6;
         }
 
-        .comparison-cell {
-            padding: 1.2rem 1.5rem;
-            border-bottom: 1px solid rgba(255,255,255,0.05);
+        .why-item h3 {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 1.3rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+            letter-spacing: -0.5px;
+        }
+
+        .why-item p {
             color: var(--text-gray);
             font-size: 0.95rem;
-        }
-
-        .comparison-cell.highlight-cell {
-            background: rgba(255,60,60,0.08);
-            color: var(--text-light);
-            font-weight: 500;
-            border-left: 2px solid var(--primary);
-        }
-
-        .comparison-row:last-child .comparison-cell {
-            border-bottom: none;
-        }
-
-        .not-for-everyone {
-            max-width: 700px;
-            margin: 0 auto;
-            text-align: center;
-            padding: 2.5rem;
-            background: var(--dark-secondary);
-            border-radius: 20px;
-            border: 1px solid rgba(255,255,255,0.05);
-        }
-
-        .not-for-everyone h3 {
-            font-family: 'Space Grotesk', sans-serif;
-            font-size: 1.5rem;
-            margin-bottom: 1rem;
-            color: var(--primary);
-        }
-
-        .not-for-everyone p {
-            color: var(--text-gray);
             line-height: 1.7;
         }
 
-        @media (max-width: 768px) {
-            .comparison-row {
+        @media (max-width: 992px) {
+            .why-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .why-item:nth-child(5) {
+                grid-column: span 2;
+            }
+        }
+
+        @media (max-width: 600px) {
+            .why-grid {
                 grid-template-columns: 1fr;
             }
 
-            .comparison-cell.highlight-cell {
-                border-left: none;
-                border-top: 2px solid var(--primary);
+            .why-item:nth-child(5) {
+                grid-column: span 1;
             }
         }
 
@@ -1802,13 +1854,13 @@
         <div class="hero-content">
             <div class="hero-badge">
                 <span></span>
-                B2B Video Partner
+                Creative Video Studio
             </div>
-            <h1>Videos That <span class="highlight">Sell.</span> Not Just Play.</h1>
-            <p>We create high-converting promo videos for companies that want measurable results—not just content to post.</p>
+            <h1>We Bring Your Vision to <span class="highlight">Life</span></h1>
+            <p>ReadyMadeVideo is a creative studio that produces promotional videos for companies who care how they're seen. From concept to final cut, we craft videos that capture your brand and connect with your audience.</p>
             <div class="hero-buttons">
-                <a href="#contact" class="btn-primary">Book a Strategy Call →</a>
-                <a href="#gallery" class="btn-secondary">See Our Work</a>
+                <a href="#contact" class="btn-primary">Start a Project →</a>
+                <a href="#gallery" class="btn-secondary">View Our Work</a>
             </div>
         </div>
         <div class="scroll-indicator">Scroll</div>
@@ -1817,33 +1869,24 @@
     <section id="about">
         <div class="about-content animate-on-scroll">
             <div class="about-text">
-                <div class="section-tag">Who We Work With</div>
-                <h3>Video That Drives Revenue for B2B Companies</h3>
-                <p>We partner with B2B service companies—agencies, SaaS, consultants, and professional services—who understand that video is a sales asset, not just content.</p>
-                <p>Every video we create starts with your business goal: more leads, more bookings, more sales. We script for conversion, produce for impact, and deliver assets built to perform across landing pages, ads, and social.</p>
-                <div class="about-stats">
-                    <div class="stat-item">
-                        <div class="stat-number">ROI</div>
-                        <div class="stat-label">Focused</div>
-                    </div>
-                    <div class="stat-item">
-                        <div class="stat-number">B2B</div>
-                        <div class="stat-label">Specialists</div>
-                    </div>
-                    <div class="stat-item">
-                        <div class="stat-number">Full</div>
-                        <div class="stat-label">Strategy</div>
-                    </div>
-                </div>
+                <div class="section-tag">Who It's For</div>
+                <h3>We Work With Companies Who Care About Craft</h3>
+                <ul class="who-list">
+                    <li>Founders building a brand they're proud of and ready to show the world</li>
+                    <li>Marketing teams who need a creative partner, not just a vendor</li>
+                    <li>Companies launching a product, service, or campaign and want it to land</li>
+                    <li>Businesses that have outgrown DIY and are ready for professional-quality video</li>
+                    <li>Teams who value craft, clarity, and collaboration over quick turnarounds</li>
+                </ul>
             </div>
             <div class="about-visual">
                 <div class="about-visual-inner">
                     <div class="video-icon">▶</div>
                 </div>
                 <div class="floating-elements">
-                    <div class="floating-element">Landing Pages</div>
-                    <div class="floating-element">Paid Ads</div>
-                    <div class="floating-element">Sales Funnels</div>
+                    <div class="floating-element">Brand Stories</div>
+                    <div class="floating-element">Custom Videos</div>
+                    <div class="floating-element">Your Vision</div>
                 </div>
             </div>
         </div>
@@ -1851,106 +1894,76 @@
 
     <section id="services">
         <div class="section-header animate-on-scroll">
-            <div class="section-tag">Packages</div>
-            <h2 class="section-title">Conversion-Focused Video Packages</h2>
-            <p class="section-subtitle">Every package starts with strategy. Every video is built to generate action.</p>
+            <div class="section-tag">What We Create</div>
+            <h2 class="section-title">Promotional Videos Built From Scratch</h2>
+            <p class="section-subtitle">We produce promotional videos that tell your story with intention and style. Every project is built from scratch around your brand, your goals, and your audience — never pulled from a template, never rushed out the door.</p>
         </div>
-        <div class="packages-grid">
-            <!-- Package 1: The Closer -->
-            <div class="package-card animate-on-scroll">
-                <div class="package-header">
-                    <h3>The Closer</h3>
-                    <p class="package-tagline">Start Converting</p>
-                    <div class="package-price">$1,500</div>
-                </div>
-                <p class="package-description">One conversion-focused promo video (30–60 sec) for a single platform or use case.</p>
-                <ul class="package-features">
-                    <li>Strategy call to define goal, audience & CTA</li>
-                    <li>Script written for conversion</li>
-                    <li>Professional editing with motion graphics</li>
-                    <li>One round of revisions</li>
-                    <li>Optimized export for chosen platform</li>
-                </ul>
-                <p class="package-best-for"><strong>Best for:</strong> Testing video on a landing page or running your first paid campaign.</p>
-                <a href="#contact" class="btn-secondary package-btn">Book Strategy Call</a>
+        <div class="services-grid animate-on-scroll">
+            <div class="service-item">
+                <div class="service-icon">🎬</div>
+                <h3>Brand Story Videos</h3>
+                <p>Capture who you are and why it matters</p>
             </div>
-            <!-- Package 2: The Campaign Kit -->
-            <div class="package-card featured animate-on-scroll">
-                <div class="package-badge">Most Popular</div>
-                <div class="package-header">
-                    <h3>The Campaign Kit</h3>
-                    <p class="package-tagline">Launch & Scale</p>
-                    <div class="package-price">$3,500</div>
-                </div>
-                <p class="package-description">A complete video system built to drive leads across multiple touchpoints.</p>
-                <ul class="package-features">
-                    <li>Everything in The Closer</li>
-                    <li>3 video variations (hero + 2 platform cuts)</li>
-                    <li>Hook testing (2 alternate openings)</li>
-                    <li>Thumbnail/cover design</li>
-                    <li>Caption/subtitle burn-in</li>
-                    <li>Two rounds of revisions</li>
-                </ul>
-                <p class="package-best-for"><strong>Best for:</strong> Companies launching a campaign, product, or funnel.</p>
-                <a href="#contact" class="btn-primary package-btn">Book Strategy Call →</a>
+            <div class="service-item">
+                <div class="service-icon">🌐</div>
+                <h3>Website Hero Videos</h3>
+                <p>Make a powerful first impression</p>
             </div>
-            <!-- Package 3: The Conversion Engine -->
-            <div class="package-card animate-on-scroll">
-                <div class="package-header">
-                    <h3>The Conversion Engine</h3>
-                    <p class="package-tagline">Ongoing Partnership</p>
-                    <div class="package-price">$6,500<span>/month</span></div>
-                </div>
-                <p class="package-description">Ongoing video production partnership for companies serious about video as a growth channel.</p>
-                <ul class="package-features">
-                    <li>4 videos/month (promos, testimonials, ads, social)</li>
-                    <li>Dedicated monthly strategy session</li>
-                    <li>Performance review: what's working, what to test</li>
-                    <li>Priority turnaround</li>
-                    <li>Unlimited revisions</li>
-                    <li>Raw asset library access</li>
-                </ul>
-                <p class="package-best-for"><strong>Best for:</strong> Companies using video as a core sales and marketing engine.</p>
-                <a href="#contact" class="btn-secondary package-btn">Book Strategy Call</a>
+            <div class="service-item">
+                <div class="service-icon">📱</div>
+                <h3>Social Media Promos</h3>
+                <p>Scroll-stopping content that connects</p>
+            </div>
+            <div class="service-item">
+                <div class="service-icon">📣</div>
+                <h3>Ad Creatives & Paid Media</h3>
+                <p>Videos built to perform in campaigns</p>
+            </div>
+            <div class="service-item">
+                <div class="service-icon">✨</div>
+                <h3>Product & Service Highlights</h3>
+                <p>Showcase what you offer with clarity</p>
+            </div>
+            <div class="service-item">
+                <div class="service-icon">🚀</div>
+                <h3>Launch & Event Videos</h3>
+                <p>Build momentum for your next big moment</p>
             </div>
         </div>
     </section>
 
     <section id="why-us">
         <div class="section-header animate-on-scroll">
-            <div class="section-tag">The Difference</div>
-            <h2 class="section-title">We're Not a Video Vendor. We're a Conversion Partner.</h2>
-            <p class="section-subtitle">We don't make videos for your feed. We make videos for your funnel.</p>
+            <div class="section-tag">Why ReadyMadeVideo</div>
+            <h2 class="section-title">A Creative Partner, Not a Production House</h2>
+            <p class="section-subtitle">We're a small, focused studio that treats your project like our own.</p>
         </div>
-        <div class="comparison-table animate-on-scroll">
-            <div class="comparison-row header-row">
-                <div class="comparison-cell">What Others Do</div>
-                <div class="comparison-cell highlight-cell">What We Do</div>
+        <div class="why-grid animate-on-scroll">
+            <div class="why-item">
+                <div class="why-number">01</div>
+                <h3>Every Video is Custom</h3>
+                <p>We don't use templates, and we don't recycle concepts between clients. Your video is built from the ground up.</p>
             </div>
-            <div class="comparison-row">
-                <div class="comparison-cell">Deliver "nice looking" videos</div>
-                <div class="comparison-cell highlight-cell">Deliver videos built to generate action</div>
+            <div class="why-item">
+                <div class="why-number">02</div>
+                <h3>Brand-First Thinking</h3>
+                <p>Your video will feel like you, not like us. We immerse ourselves in your brand before we create anything.</p>
             </div>
-            <div class="comparison-row">
-                <div class="comparison-cell">Start with templates</div>
-                <div class="comparison-cell highlight-cell">Start with your sales goal</div>
+            <div class="why-item">
+                <div class="why-number">03</div>
+                <h3>Collaborative by Design</h3>
+                <p>You're involved at every stage, never left guessing. We share, we listen, we refine together.</p>
             </div>
-            <div class="comparison-row">
-                <div class="comparison-cell">Optimize for views</div>
-                <div class="comparison-cell highlight-cell">Optimize for leads, bookings & sales</div>
+            <div class="why-item">
+                <div class="why-number">04</div>
+                <h3>Polished & Professional</h3>
+                <p>Our work is built to represent your company at its best. Quality isn't an upgrade — it's the standard.</p>
             </div>
-            <div class="comparison-row">
-                <div class="comparison-cell">Hand off a file and disappear</div>
-                <div class="comparison-cell highlight-cell">Stay involved until the video performs</div>
+            <div class="why-item">
+                <div class="why-number">05</div>
+                <h3>Direct Access to Creators</h3>
+                <p>You work directly with the people making your video. No account managers, no layers, no telephone game.</p>
             </div>
-            <div class="comparison-row">
-                <div class="comparison-cell">Compete on price and speed</div>
-                <div class="comparison-cell highlight-cell">Compete on results and strategy</div>
-            </div>
-        </div>
-        <div class="not-for-everyone animate-on-scroll">
-            <h3>Not For Everyone</h3>
-            <p>We don't do wedding videos. We don't do $300 edits. We don't compete with Fiverr. We build sales assets for companies that measure ROI.</p>
         </div>
     </section>
 
