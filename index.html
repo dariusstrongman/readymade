@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ReadyMadeVideo | We Bring Your Vision to Life</title>
+    <title>ReadyMadeVideo | Creative Video Studio</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
@@ -359,7 +359,7 @@
         }
 
         .hero h1 .highlight::after {
-            content: 'Life';
+            content: 'Are';
             position: absolute;
             top: 0;
             left: 0;
@@ -1103,6 +1103,11 @@
             position: relative;
         }
 
+        .process-steps-4 {
+            grid-template-columns: repeat(4, 1fr);
+            gap: 2.5rem;
+        }
+
         .process-step {
             text-align: center;
             position: relative;
@@ -1333,7 +1338,9 @@
         }
 
         .tier-price span {
-            font-size: 1rem;
+            font-size: 0.85rem;
+            font-weight: 500;
+            opacity: 0.8;
         }
 
         .pricing-tier p {
@@ -1376,6 +1383,172 @@
             .pricing-tier.featured {
                 order: -1;
             }
+        }
+
+        /* Testimonials Section */
+        #testimonials {
+            padding: 6rem 2rem;
+        }
+
+        .testimonials-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+            margin-top: 4rem;
+        }
+
+        .testimonial-card {
+            background: var(--dark-card);
+            border: 1px solid rgba(255,255,255,0.05);
+            border-radius: 24px;
+            padding: 2.5rem;
+            position: relative;
+            transition: all 0.4s ease;
+        }
+
+        .testimonial-card:hover {
+            border-color: rgba(255,60,60,0.3);
+            transform: translateY(-5px);
+        }
+
+        .testimonial-card::before {
+            content: '"';
+            position: absolute;
+            top: 1.5rem;
+            left: 2rem;
+            font-size: 4rem;
+            font-family: 'Space Grotesk', sans-serif;
+            background: var(--gradient-primary);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            opacity: 0.3;
+            line-height: 1;
+        }
+
+        .testimonial-content {
+            margin-top: 2rem;
+        }
+
+        .testimonial-content p {
+            color: var(--text-light);
+            font-size: 1.05rem;
+            line-height: 1.7;
+            font-style: italic;
+        }
+
+        .testimonial-author {
+            margin-top: 2rem;
+            padding-top: 1.5rem;
+            border-top: 1px solid rgba(255,255,255,0.05);
+        }
+
+        .author-info strong {
+            display: block;
+            color: var(--text-light);
+            font-weight: 600;
+            margin-bottom: 0.25rem;
+        }
+
+        .author-info span {
+            color: var(--text-gray);
+            font-size: 0.9rem;
+        }
+
+        @media (max-width: 992px) {
+            .testimonials-grid {
+                grid-template-columns: 1fr;
+                max-width: 500px;
+                margin-left: auto;
+                margin-right: auto;
+            }
+        }
+
+        /* FAQ Section */
+        #faq {
+            padding: 6rem 2rem;
+        }
+
+        .faq-grid {
+            max-width: 800px;
+            margin: 4rem auto 0;
+        }
+
+        .faq-item {
+            border-bottom: 1px solid rgba(255,255,255,0.05);
+        }
+
+        .faq-question {
+            width: 100%;
+            background: none;
+            border: none;
+            padding: 1.5rem 0;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            cursor: pointer;
+            text-align: left;
+        }
+
+        .faq-question h3 {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 1.2rem;
+            font-weight: 600;
+            color: var(--text-light);
+            letter-spacing: -0.5px;
+        }
+
+        .faq-icon {
+            width: 24px;
+            height: 24px;
+            position: relative;
+            flex-shrink: 0;
+        }
+
+        .faq-icon::before,
+        .faq-icon::after {
+            content: '';
+            position: absolute;
+            background: var(--primary);
+            transition: all 0.3s ease;
+        }
+
+        .faq-icon::before {
+            width: 100%;
+            height: 2px;
+            top: 50%;
+            left: 0;
+            transform: translateY(-50%);
+        }
+
+        .faq-icon::after {
+            width: 2px;
+            height: 100%;
+            left: 50%;
+            top: 0;
+            transform: translateX(-50%);
+        }
+
+        .faq-item.active .faq-icon::after {
+            transform: translateX(-50%) rotate(90deg);
+            opacity: 0;
+        }
+
+        .faq-answer {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.4s ease, padding 0.4s ease;
+        }
+
+        .faq-item.active .faq-answer {
+            max-height: 300px;
+            padding-bottom: 1.5rem;
+        }
+
+        .faq-answer p {
+            color: var(--text-gray);
+            font-size: 1rem;
+            line-height: 1.7;
         }
 
         /* Contact Section */
@@ -1716,6 +1889,13 @@
             }
         }
 
+        @media (max-width: 1024px) {
+            .process-steps-4 {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 3rem;
+            }
+        }
+
         @media (max-width: 768px) {
             .hero h1 {
                 letter-spacing: -1px;
@@ -1729,7 +1909,8 @@
                 grid-template-columns: 1fr;
             }
 
-            .process-steps {
+            .process-steps,
+            .process-steps-4 {
                 grid-template-columns: 1fr;
                 gap: 3rem;
             }
@@ -1836,11 +2017,11 @@
         <nav>
             <div class="logo">READYMADEVIDEO</div>
             <ul class="nav-links" id="navLinks">
-                <li><a href="#services">Packages</a></li>
-                <li><a href="#why-us">Why Us</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#approach">Approach</a></li>
                 <li><a href="#process">Process</a></li>
                 <li><a href="#gallery">Work</a></li>
-                <li><a href="#contact" class="btn-primary">Book a Strategy Call</a></li>
+                <li><a href="#contact" class="btn-primary">Start a Conversation</a></li>
             </ul>
             <div class="mobile-toggle" id="mobileToggle">
                 <span></span>
@@ -1856,11 +2037,11 @@
                 <span></span>
                 Creative Video Studio
             </div>
-            <h1>We Bring Your Vision to <span class="highlight">Life</span></h1>
-            <p>ReadyMadeVideo is a creative studio that produces promotional videos for companies who care how they're seen. From concept to final cut, we craft videos that capture your brand and connect with your audience.</p>
+            <h1>Video That Reflects Who You <span class="highlight">Are</span></h1>
+            <p>We're a creative studio that partners with companies to produce promotional videos built around your brand, your story, and your goals. No templates. No shortcuts. Just intentional work that connects.</p>
             <div class="hero-buttons">
-                <a href="#contact" class="btn-primary">Start a Project →</a>
-                <a href="#gallery" class="btn-secondary">View Our Work</a>
+                <a href="#contact" class="btn-primary">Let's Talk About Your Project →</a>
+                <a href="#gallery" class="btn-secondary">See Our Work</a>
             </div>
         </div>
         <div class="scroll-indicator">Scroll</div>
@@ -1869,14 +2050,14 @@
     <section id="about">
         <div class="about-content animate-on-scroll">
             <div class="about-text">
-                <div class="section-tag">Who It's For</div>
-                <h3>We Work With Companies Who Care About Craft</h3>
+                <div class="section-tag">Who We Work With</div>
+                <h3>Companies Who Value Craft and Collaboration</h3>
                 <ul class="who-list">
-                    <li>Founders building a brand they're proud of and ready to show the world</li>
-                    <li>Marketing teams who need a creative partner, not just a vendor</li>
-                    <li>Companies launching a product, service, or campaign and want it to land</li>
-                    <li>Businesses that have outgrown DIY and are ready for professional-quality video</li>
-                    <li>Teams who value craft, clarity, and collaboration over quick turnarounds</li>
+                    <li>Founders building a brand they're proud of and ready to share with the world</li>
+                    <li>Marketing teams seeking a creative partner, not just another vendor</li>
+                    <li>Companies preparing to launch a product, service, or campaign that needs to resonate</li>
+                    <li>Businesses that have outgrown DIY and are ready for thoughtful, professional video</li>
+                    <li>Teams who value intention, clarity, and partnership over rushed timelines</li>
                 </ul>
             </div>
             <div class="about-visual">
@@ -1884,8 +2065,8 @@
                     <div class="video-icon">▶</div>
                 </div>
                 <div class="floating-elements">
-                    <div class="floating-element">Brand Stories</div>
-                    <div class="floating-element">Custom Videos</div>
+                    <div class="floating-element">Your Brand</div>
+                    <div class="floating-element">Your Story</div>
                     <div class="floating-element">Your Vision</div>
                 </div>
             </div>
@@ -1895,8 +2076,8 @@
     <section id="services">
         <div class="section-header animate-on-scroll">
             <div class="section-tag">What We Create</div>
-            <h2 class="section-title">Promotional Videos Built From Scratch</h2>
-            <p class="section-subtitle">We produce promotional videos that tell your story with intention and style. Every project is built from scratch around your brand, your goals, and your audience — never pulled from a template, never rushed out the door.</p>
+            <h2 class="section-title">Promotional Videos, Thoughtfully Crafted</h2>
+            <p class="section-subtitle">We produce promotional videos that tell your story with intention and care. Every project is developed around your brand, your goals, and your audience—never pulled from a template, never rushed.</p>
         </div>
         <div class="services-grid animate-on-scroll">
             <div class="service-item">
@@ -1907,89 +2088,94 @@
             <div class="service-item">
                 <div class="service-icon">🌐</div>
                 <h3>Website Hero Videos</h3>
-                <p>Make a powerful first impression</p>
+                <p>Make a memorable first impression</p>
             </div>
             <div class="service-item">
                 <div class="service-icon">📱</div>
-                <h3>Social Media Promos</h3>
-                <p>Scroll-stopping content that connects</p>
+                <h3>Social Media Content</h3>
+                <p>Engaging video tailored for your platforms</p>
             </div>
             <div class="service-item">
                 <div class="service-icon">📣</div>
-                <h3>Ad Creatives & Paid Media</h3>
-                <p>Videos built to perform in campaigns</p>
+                <h3>Campaign Videos</h3>
+                <p>Polished creative for paid and organic reach</p>
             </div>
             <div class="service-item">
                 <div class="service-icon">✨</div>
-                <h3>Product & Service Highlights</h3>
+                <h3>Product & Service Videos</h3>
                 <p>Showcase what you offer with clarity</p>
             </div>
             <div class="service-item">
                 <div class="service-icon">🚀</div>
-                <h3>Launch & Event Videos</h3>
-                <p>Build momentum for your next big moment</p>
+                <h3>Launch Videos</h3>
+                <p>Build momentum for your next chapter</p>
             </div>
         </div>
     </section>
 
-    <section id="why-us">
+    <section id="approach">
         <div class="section-header animate-on-scroll">
-            <div class="section-tag">Why ReadyMadeVideo</div>
+            <div class="section-tag">Our Approach</div>
             <h2 class="section-title">A Creative Partner, Not a Production House</h2>
-            <p class="section-subtitle">We're a small, focused studio that treats your project like our own.</p>
+            <p class="section-subtitle">We're a small, focused studio that treats your project with the same care we'd give our own.</p>
         </div>
         <div class="why-grid animate-on-scroll">
             <div class="why-item">
                 <div class="why-number">01</div>
-                <h3>Every Video is Custom</h3>
-                <p>We don't use templates, and we don't recycle concepts between clients. Your video is built from the ground up.</p>
+                <h3>Every Project is Custom</h3>
+                <p>We don't use templates, and we don't recycle ideas between clients. Your video is developed from the ground up, tailored to your brand.</p>
             </div>
             <div class="why-item">
                 <div class="why-number">02</div>
                 <h3>Brand-First Thinking</h3>
-                <p>Your video will feel like you, not like us. We immerse ourselves in your brand before we create anything.</p>
+                <p>Your video will feel like you, not like us. We take time to understand your brand before we create anything.</p>
             </div>
             <div class="why-item">
                 <div class="why-number">03</div>
                 <h3>Collaborative by Design</h3>
-                <p>You're involved at every stage, never left guessing. We share, we listen, we refine together.</p>
+                <p>You're involved at every stage, never left wondering. We share our thinking, listen to yours, and refine together.</p>
             </div>
             <div class="why-item">
                 <div class="why-number">04</div>
-                <h3>Polished & Professional</h3>
-                <p>Our work is built to represent your company at its best. Quality isn't an upgrade — it's the standard.</p>
+                <h3>Polished and Intentional</h3>
+                <p>Every detail matters. Our work is crafted to represent your company at its best—quality is the standard, not an upgrade.</p>
             </div>
             <div class="why-item">
                 <div class="why-number">05</div>
                 <h3>Direct Access to Creators</h3>
-                <p>You work directly with the people making your video. No account managers, no layers, no telephone game.</p>
+                <p>You work directly with the people making your video. No account managers, no layers, no miscommunication.</p>
             </div>
         </div>
     </section>
 
     <section id="process">
         <div class="section-header animate-on-scroll">
-            <div class="section-tag">Process</div>
-            <h2 class="section-title">From Strategy Call to Converting Video</h2>
-            <p class="section-subtitle">A streamlined process designed around your business goals.</p>
+            <div class="section-tag">How We Work Together</div>
+            <h2 class="section-title">From First Conversation to Final Cut</h2>
+            <p class="section-subtitle">A thoughtful process built around collaboration and clarity.</p>
         </div>
         <div class="process-container">
             <div class="process-line"></div>
-            <div class="process-steps">
+            <div class="process-steps process-steps-4">
                 <div class="process-step animate-on-scroll">
                     <div class="step-number"><span>1</span></div>
-                    <h3>Strategy Call</h3>
-                    <p>We learn your goal (leads, sales, bookings), define your target audience, and map out the video approach.</p>
+                    <h3>Discovery</h3>
+                    <p>We start by listening. We learn about your brand, your audience, and what you're trying to achieve—so every creative decision is grounded in your goals.</p>
                 </div>
                 <div class="process-step animate-on-scroll">
                     <div class="step-number"><span>2</span></div>
-                    <h3>Script & Production</h3>
-                    <p>We write a conversion-focused script, then produce professional video assets optimized for your platforms.</p>
+                    <h3>Creative Direction</h3>
+                    <p>We develop a concept and script tailored to your brand. You'll see our thinking before production begins, and we refine it together until it feels right.</p>
                 </div>
                 <div class="process-step animate-on-scroll">
                     <div class="step-number"><span>3</span></div>
-                    <h3>Deliver & Optimize</h3>
-                    <p>You get your finished video. We follow up to see how it's performing and adjust strategy as needed.</p>
+                    <h3>Production</h3>
+                    <p>We bring the concept to life with care and attention to detail. Every frame, transition, and sound is intentional—crafted to represent your company at its best.</p>
+                </div>
+                <div class="process-step animate-on-scroll">
+                    <div class="step-number"><span>4</span></div>
+                    <h3>Delivery & Refinement</h3>
+                    <p>You receive your finished video with time for feedback and adjustments. We stay engaged to ensure the final product exceeds expectations.</p>
                 </div>
             </div>
         </div>
@@ -1997,91 +2183,192 @@
 
     <section id="gallery">
         <div class="section-header animate-on-scroll">
-            <div class="section-tag">Results</div>
-            <h2 class="section-title">Videos Built to Convert</h2>
-            <p class="section-subtitle">See how we help companies generate leads, bookings, and sales.</p>
+            <div class="section-tag">Selected Work</div>
+            <h2 class="section-title">Stories We've Helped Tell</h2>
+            <p class="section-subtitle">A look at recent projects crafted for companies who value thoughtful, intentional video.</p>
         </div>
         <div class="gallery-grid">
             <div class="gallery-item animate-on-scroll" style="background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);">
                 <div class="gallery-play"></div>
-                <div class="gallery-label"><span>SaaS Product Launch</span></div>
+                <div class="gallery-label"><span>Brand Story</span></div>
             </div>
             <div class="gallery-item animate-on-scroll" style="background: linear-gradient(135deg, #2d132c 0%, #801336 50%, #c72c41 100%);">
                 <div class="gallery-play"></div>
-                <div class="gallery-label"><span>Agency Case Study</span></div>
+                <div class="gallery-label"><span>Product Launch</span></div>
             </div>
             <div class="gallery-item animate-on-scroll" style="background: linear-gradient(135deg, #0a3d62 0%, #3c6382 50%, #60a3bc 100%);">
                 <div class="gallery-play"></div>
-                <div class="gallery-label"><span>Consulting Firm</span></div>
+                <div class="gallery-label"><span>Website Hero</span></div>
             </div>
             <div class="gallery-item animate-on-scroll" style="background: linear-gradient(135deg, #1e3c72 0%, #2a5298 50%, #4a69bd 100%);">
                 <div class="gallery-play"></div>
-                <div class="gallery-label"><span>Landing Page Hero</span></div>
+                <div class="gallery-label"><span>Social Campaign</span></div>
             </div>
             <div class="gallery-item animate-on-scroll" style="background: linear-gradient(135deg, #2c3e50 0%, #3d566e 50%, #5d6d7e 100%);">
                 <div class="gallery-play"></div>
-                <div class="gallery-label"><span>Paid Ad Campaign</span></div>
+                <div class="gallery-label"><span>Event Promo</span></div>
             </div>
             <div class="gallery-item animate-on-scroll" style="background: linear-gradient(135deg, #1a1a2e 0%, #4a266a 50%, #7c3aed 100%);">
                 <div class="gallery-play"></div>
-                <div class="gallery-label"><span>Professional Services</span></div>
+                <div class="gallery-label"><span>Company Culture</span></div>
+            </div>
+        </div>
+    </section>
+
+    <section id="testimonials">
+        <div class="section-header animate-on-scroll">
+            <div class="section-tag">What Clients Say</div>
+            <h2 class="section-title">Trusted by Teams Who Care About Craft</h2>
+        </div>
+        <div class="testimonials-grid animate-on-scroll">
+            <div class="testimonial-card">
+                <div class="testimonial-content">
+                    <p>"ReadyMadeVideo understood our brand from the first call. The final video felt like us—elevated, polished, and exactly what we needed to launch confidently."</p>
+                </div>
+                <div class="testimonial-author">
+                    <div class="author-info">
+                        <strong>Sarah Chen</strong>
+                        <span>Founder, Lumina Design Co.</span>
+                    </div>
+                </div>
+            </div>
+            <div class="testimonial-card">
+                <div class="testimonial-content">
+                    <p>"We've worked with video vendors before, but this felt like a true partnership. They brought ideas we hadn't considered and executed them beautifully."</p>
+                </div>
+                <div class="testimonial-author">
+                    <div class="author-info">
+                        <strong>Marcus Rivera</strong>
+                        <span>Marketing Director, Ascend Growth</span>
+                    </div>
+                </div>
+            </div>
+            <div class="testimonial-card">
+                <div class="testimonial-content">
+                    <p>"The process was seamless and collaborative. We felt heard at every step, and the result exceeded our expectations."</p>
+                </div>
+                <div class="testimonial-author">
+                    <div class="author-info">
+                        <strong>Elena Voss</strong>
+                        <span>CEO, Clarity Consulting</span>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
 
     <section id="pricing">
         <div class="section-header animate-on-scroll">
-            <div class="section-tag">Investment</div>
-            <h2 class="section-title">Packages That Pay for Themselves</h2>
-            <p class="section-subtitle">Every package includes strategy, production, and assets built to convert.</p>
+            <div class="section-tag">Project Options</div>
+            <h2 class="section-title">Ways to Work Together</h2>
+            <p class="section-subtitle">Every project includes discovery, creative direction, production, and refinement. Here's a guide to help you understand scope and investment.</p>
         </div>
         <div class="pricing-summary animate-on-scroll">
             <div class="pricing-tier">
-                <h3>The Closer</h3>
-                <div class="tier-price">$1,500</div>
-                <p>Single conversion video for one platform</p>
-                <a href="#services" class="tier-link">View details</a>
-            </div>
-            <div class="pricing-tier featured">
-                <div class="tier-badge">Most Popular</div>
-                <h3>The Campaign Kit</h3>
-                <div class="tier-price">$3,500</div>
-                <p>Complete video system for multi-channel campaigns</p>
-                <a href="#services" class="tier-link">View details</a>
+                <h3>Single Project</h3>
+                <div class="tier-price"><span>Starting at </span>$1,500</div>
+                <p>A focused, standalone video developed through our full creative process. Ideal for a landing page, campaign launch, or brand introduction.</p>
             </div>
             <div class="pricing-tier">
-                <h3>The Conversion Engine</h3>
-                <div class="tier-price">$6,500<span>/mo</span></div>
-                <p>Ongoing partnership for video-driven growth</p>
-                <a href="#services" class="tier-link">View details</a>
+                <h3>Campaign Suite</h3>
+                <div class="tier-price"><span>Starting at </span>$3,500</div>
+                <p>A coordinated set of videos designed to work together across platforms. For teams launching across multiple channels who need cohesive creative.</p>
+            </div>
+            <div class="pricing-tier">
+                <h3>Ongoing Partnership</h3>
+                <div class="tier-price"><span>Starting at </span>$6,500<span>/mo</span></div>
+                <p>A retained creative partnership for brands investing in video as a long-term channel. Includes regular production cycles and strategic collaboration.</p>
             </div>
         </div>
         <div class="pricing-cta animate-on-scroll">
-            <p>Not sure which package fits? Let's talk about your goals.</p>
-            <a href="#contact" class="btn-primary">Book a Strategy Call →</a>
+            <p>Not sure where to start? We're happy to talk through your goals and recommend the right approach.</p>
+            <a href="#contact" class="btn-primary">Start a Conversation →</a>
+        </div>
+    </section>
+
+    <section id="faq">
+        <div class="section-header animate-on-scroll">
+            <div class="section-tag">Common Questions</div>
+            <h2 class="section-title">Things You Might Be Wondering</h2>
+        </div>
+        <div class="faq-grid animate-on-scroll">
+            <div class="faq-item">
+                <button class="faq-question">
+                    <h3>How long does a typical project take?</h3>
+                    <div class="faq-icon"></div>
+                </button>
+                <div class="faq-answer">
+                    <p>Most single-video projects take 3-5 weeks from kickoff to delivery. Larger campaigns or more complex productions may take longer. We'll give you a realistic timeline during our first conversation based on your specific project.</p>
+                </div>
+            </div>
+            <div class="faq-item">
+                <button class="faq-question">
+                    <h3>What's included in revisions?</h3>
+                    <div class="faq-icon"></div>
+                </button>
+                <div class="faq-answer">
+                    <p>Every project includes revision rounds built into the process. We typically include two rounds of revisions at each stage (concept, rough cut, and final), though we're flexible. Our goal is a video you're proud of.</p>
+                </div>
+            </div>
+            <div class="faq-item">
+                <button class="faq-question">
+                    <h3>How does pricing work?</h3>
+                    <div class="faq-icon"></div>
+                </button>
+                <div class="faq-answer">
+                    <p>We quote projects based on scope and complexity, not hourly rates. After our initial conversation, we'll provide a clear proposal with a fixed price—no surprises. The ranges on this page give you a general sense of investment.</p>
+                </div>
+            </div>
+            <div class="faq-item">
+                <button class="faq-question">
+                    <h3>Do I need to provide footage?</h3>
+                    <div class="faq-icon"></div>
+                </button>
+                <div class="faq-answer">
+                    <p>Not necessarily. We can work with existing footage, shoot new content, or create motion-based videos entirely from scratch. We'll figure out the best approach together based on your goals and resources.</p>
+                </div>
+            </div>
+            <div class="faq-item">
+                <button class="faq-question">
+                    <h3>What formats and sizes will I receive?</h3>
+                    <div class="faq-icon"></div>
+                </button>
+                <div class="faq-answer">
+                    <p>You'll receive files optimized for wherever you plan to use them—web, social, presentations, etc. We deliver in all the formats and aspect ratios you need, ready to publish.</p>
+                </div>
+            </div>
+            <div class="faq-item">
+                <button class="faq-question">
+                    <h3>How do I get started?</h3>
+                    <div class="faq-icon"></div>
+                </button>
+                <div class="faq-answer">
+                    <p>Just reach out through the form below or email us directly. We'll set up a short call to learn about your project, and if it feels like a good fit, we'll move forward with a proposal.</p>
+                </div>
+            </div>
         </div>
     </section>
 
     <section id="contact">
         <div class="contact-container">
             <div class="contact-info animate-on-scroll">
-                <h2>Book a Strategy Call</h2>
-                <p>Tell us your goal. We'll show you exactly how video gets you there.</p>
+                <h2>Start a Conversation</h2>
+                <p>Tell us about your project. We'll listen, ask questions, and share how we might be able to help.</p>
                 <div class="contact-details">
                     <div class="contact-item">
                         <span>1</span>
-                        <div>Share your business goal</div>
+                        <div>Share what you're working on</div>
                     </div>
                     <div class="contact-item">
                         <span>2</span>
-                        <div>We'll recommend a package</div>
+                        <div>We'll discuss approach and fit</div>
                     </div>
                     <div class="contact-item">
                         <span>3</span>
-                        <div>Start converting with video</div>
+                        <div>If it feels right, we begin</div>
                     </div>
                 </div>
-                <p class="contact-note">Response within 24 hours. No pressure, no obligation.</p>
+                <p class="contact-note">We respond within 24 hours. No pressure, no obligation—just a conversation.</p>
             </div>
             <form class="contact-form animate-on-scroll" id="contactForm">
                 <div class="form-row">
@@ -2103,28 +2390,29 @@
                         <label for="package">Interested In</label>
                         <select id="package" name="package">
                             <option value="not-sure">Not sure yet</option>
-                            <option value="the-closer">The Closer - $1,500</option>
-                            <option value="campaign-kit">The Campaign Kit - $3,500</option>
-                            <option value="conversion-engine">The Conversion Engine - $6,500/mo</option>
+                            <option value="single-project">Single Project</option>
+                            <option value="campaign-suite">Campaign Suite</option>
+                            <option value="ongoing-partnership">Ongoing Partnership</option>
                         </select>
                     </div>
                 </div>
                 <div class="form-group full-width">
-                    <label for="goal">What's your primary goal? *</label>
+                    <label for="goal">What are you hoping to achieve? *</label>
                     <select id="goal" name="goal" required>
-                        <option value="">Select your goal...</option>
-                        <option value="more-leads">Generate more leads</option>
-                        <option value="more-sales">Increase sales/conversions</option>
-                        <option value="more-bookings">Get more bookings/demos</option>
-                        <option value="brand-awareness">Build brand awareness</option>
-                        <option value="other">Other</option>
+                        <option value="">Select...</option>
+                        <option value="brand-story">Tell our brand story</option>
+                        <option value="product-launch">Launch a product or service</option>
+                        <option value="campaign-creative">Create campaign content</option>
+                        <option value="website-video">Add video to our website</option>
+                        <option value="ongoing-content">Build ongoing video content</option>
+                        <option value="other">Something else</option>
                     </select>
                 </div>
                 <div class="form-group full-width">
                     <label for="message">Tell us about your project (optional)</label>
-                    <textarea id="message" name="message" placeholder="What are you looking to achieve? Any specific campaigns or launches coming up?"></textarea>
+                    <textarea id="message" name="message" placeholder="What's the context? What are you hoping video can do for your company?"></textarea>
                 </div>
-                <button type="submit" class="btn-primary submit-btn">Book Strategy Call →</button>
+                <button type="submit" class="btn-primary submit-btn">Send Message →</button>
             </form>
         </div>
     </section>
@@ -2169,8 +2457,8 @@
                 message: document.getElementById('message').value
             };
 
-            console.log('Strategy call request:', formData);
-            alert('Thank you! We\'ll be in touch within 24 hours to schedule your strategy call.');
+            console.log('Project inquiry:', formData);
+            alert('Thank you for reaching out. We\'ll be in touch within 24 hours.');
             contactForm.reset();
         });
 
@@ -2225,6 +2513,24 @@
             });
             item.addEventListener('mouseleave', function() {
                 this.style.zIndex = '1';
+            });
+        });
+
+        // FAQ Accordion
+        document.querySelectorAll('.faq-question').forEach(button => {
+            button.addEventListener('click', () => {
+                const faqItem = button.parentElement;
+                const isActive = faqItem.classList.contains('active');
+
+                // Close all FAQ items
+                document.querySelectorAll('.faq-item').forEach(item => {
+                    item.classList.remove('active');
+                });
+
+                // Open clicked item if it wasn't active
+                if (!isActive) {
+                    faqItem.classList.add('active');
+                }
             });
         });
     </script>
