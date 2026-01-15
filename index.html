@@ -6,7 +6,7 @@
     <title>ReadyMadeVideo | Creative Video Studio</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600;700;800;900&family=Syne:wght@700&family=Outfit:wght@400;500;600&display=swap" rel="stylesheet">
     <style>
         * {
             margin: 0;
@@ -116,31 +116,15 @@
         }
 
         .logo {
-            font-family: 'Space Grotesk', sans-serif;
-            font-size: 1.6rem;
-            font-weight: 700;
-            background: var(--gradient-primary);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-            letter-spacing: -1px;
-            position: relative;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.6rem;
         }
 
-        .logo::after {
-            content: '';
-            position: absolute;
-            bottom: -4px;
-            left: 0;
-            width: 100%;
-            height: 2px;
-            background: var(--gradient-primary);
-            transform: scaleX(0);
-            transition: transform 0.3s ease;
-        }
-
-        .logo:hover::after {
-            transform: scaleX(1);
+        .logo svg {
+            height: 32px;
+            width: auto;
+            display: block;
         }
 
         .nav-links {
@@ -252,6 +236,14 @@
             gap: 6px;
             cursor: pointer;
             padding: 10px;
+            background: transparent;
+            border: 1px solid transparent;
+        }
+
+        .mobile-toggle:focus-visible {
+            outline: 2px solid var(--primary);
+            outline-offset: 4px;
+            border-radius: 8px;
         }
 
         .mobile-toggle span {
@@ -284,6 +276,10 @@
             padding: 10rem 2rem 6rem;
             position: relative;
             overflow: hidden;
+        }
+
+        header .btn-primary {
+            color: #000000;
         }
 
         .hero::before {
@@ -1278,9 +1274,9 @@
 
         .pricing-summary {
             display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 2rem;
-            max-width: 900px;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 1.5rem;
+            max-width: 1100px;
             margin: 4rem auto 3rem;
         }
 
@@ -1327,19 +1323,35 @@
         }
 
         .tier-price {
+            display: flex;
+            align-items: baseline;
+            justify-content: center;
+            gap: 0.35rem;
+            flex-wrap: wrap;
             font-family: 'Space Grotesk', sans-serif;
+            margin-bottom: 0.75rem;
+        }
+
+        .tier-price .prefix {
+            font-size: 0.75rem;
+            font-weight: 600;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            opacity: 0.7;
+        }
+
+        .tier-price .amount {
             font-size: 2.2rem;
             font-weight: 700;
             background: var(--gradient-primary);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
-            margin-bottom: 0.5rem;
         }
 
-        .tier-price span {
-            font-size: 0.85rem;
-            font-weight: 500;
+        .tier-price .suffix {
+            font-size: 0.9rem;
+            font-weight: 600;
             opacity: 0.8;
         }
 
@@ -1372,6 +1384,13 @@
             color: var(--text-gray);
             margin-bottom: 1.5rem;
             font-size: 1.1rem;
+        }
+
+        @media (max-width: 1024px) {
+            .pricing-summary {
+                grid-template-columns: repeat(2, 1fr);
+                max-width: 600px;
+            }
         }
 
         @media (max-width: 768px) {
@@ -1553,7 +1572,7 @@
 
         /* Contact Section */
         #contact {
-            background: var(--dark-secondary);
+            background: #f7f7f7;
             border-radius: 40px;
             padding: 6rem 4rem;
             max-width: 1200px;
@@ -1569,7 +1588,7 @@
             left: 50%;
             width: 600px;
             height: 600px;
-            background: radial-gradient(circle, rgba(255,60,60,0.1) 0%, transparent 70%);
+            background: radial-gradient(circle, rgba(255,60,60,0.08) 0%, transparent 70%);
             transform: translate(-50%, -50%);
         }
 
@@ -1588,10 +1607,11 @@
             letter-spacing: -2px;
             line-height: 1.1;
             margin-bottom: 1.5rem;
+            color: #111111;
         }
 
         .contact-info p {
-            color: var(--text-gray);
+            color: #333333;
             font-size: 1.15rem;
             line-height: 1.7;
             margin-bottom: 2rem;
@@ -1607,7 +1627,7 @@
             display: flex;
             align-items: center;
             gap: 1rem;
-            color: var(--text-gray);
+            color: #333333;
         }
 
         .contact-item span {
@@ -1615,10 +1635,10 @@
         }
 
         .contact-form {
-            background: var(--dark-bg);
+            background: #ffffff;
             padding: 3rem;
             border-radius: 30px;
-            border: 1px solid rgba(255,255,255,0.05);
+            border: 1px solid #e6e6e6;
         }
 
         .form-row {
@@ -1639,7 +1659,7 @@
             display: block;
             margin-bottom: 0.75rem;
             font-weight: 500;
-            color: var(--text-light);
+            color: #111111;
             font-size: 0.9rem;
         }
 
@@ -1647,10 +1667,10 @@
         .form-group textarea {
             width: 100%;
             padding: 1.1rem 1.5rem;
-            background: var(--dark-secondary);
-            border: 1px solid rgba(255,255,255,0.05);
+            background: #f2f2f2;
+            border: 1px solid #e1e1e1;
             border-radius: 16px;
-            color: var(--text-light);
+            color: #111111;
             font-family: 'Inter', sans-serif;
             font-size: 1rem;
             transition: all 0.3s ease;
@@ -1666,16 +1686,16 @@
 
         .form-group input::placeholder,
         .form-group textarea::placeholder {
-            color: var(--text-muted);
+            color: #777777;
         }
 
         .form-group select {
             width: 100%;
             padding: 1.1rem 1.5rem;
-            background: var(--dark-secondary);
-            border: 1px solid rgba(255,255,255,0.05);
+            background: #f2f2f2;
+            border: 1px solid #e1e1e1;
             border-radius: 16px;
-            color: var(--text-light);
+            color: #111111;
             font-family: 'Inter', sans-serif;
             font-size: 1rem;
             transition: all 0.3s ease;
@@ -1687,8 +1707,8 @@
         }
 
         .form-group select option {
-            background: var(--dark-bg);
-            color: var(--text-light);
+            background: #ffffff;
+            color: #111111;
         }
 
         .form-group textarea {
@@ -1698,9 +1718,13 @@
 
         .contact-note {
             margin-top: 2rem;
-            color: var(--text-muted);
+            color: #555555;
             font-size: 0.9rem;
             font-style: italic;
+        }
+
+        .contact-form .form-status {
+            color: #333333;
         }
 
         .submit-btn {
@@ -1708,6 +1732,20 @@
             padding: 1.2rem;
             font-size: 1rem;
             margin-top: 0.5rem;
+        }
+
+        .form-status {
+            margin-top: 1rem;
+            font-size: 0.95rem;
+            color: var(--text-gray);
+        }
+
+        .form-status.is-success {
+            color: #7adf9e;
+        }
+
+        .form-status.is-error {
+            color: #ff9a9a;
         }
 
         /* Footer */
@@ -2015,7 +2053,19 @@
 
     <header>
         <nav>
-            <div class="logo">READYMADEVIDEO</div>
+            <div class="logo" aria-label="readymade video">
+                <svg viewBox="0 0 120 70" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="readymade video logo" style="height: 50px; width: auto;">
+                    <g transform="translate(40, 0)">
+                        <path d="M3 10 L3 3 L10 3" stroke="#ff6b5b" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+                        <path d="M30 3 L37 3 L37 10" stroke="#ff6b5b" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+                        <path d="M37 30 L37 37 L30 37" stroke="#ff6b5b" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+                        <path d="M10 37 L3 37 L3 30" stroke="#ff6b5b" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+                        <text x="12" y="28" font-family="Syne, sans-serif" font-size="22" font-weight="700" fill="#ffffff">R</text>
+                    </g>
+                    <text x="60" y="58" text-anchor="middle" font-family="Outfit, sans-serif" font-size="14" font-weight="600" letter-spacing="0.08em" fill="#ff6b5b">READYMADE</text>
+                    <text x="60" y="70" text-anchor="middle" font-family="Outfit, sans-serif" font-size="10" font-weight="500" letter-spacing="0.15em" fill="#6b6b7b">VIDEO</text>
+                </svg>
+            </div>
             <ul class="nav-links" id="navLinks">
                 <li><a href="#about">About</a></li>
                 <li><a href="#approach">Approach</a></li>
@@ -2023,11 +2073,11 @@
                 <li><a href="#gallery">Work</a></li>
                 <li><a href="#contact" class="btn-primary">Start a Conversation</a></li>
             </ul>
-            <div class="mobile-toggle" id="mobileToggle">
+            <button class="mobile-toggle" id="mobileToggle" type="button" aria-label="Toggle navigation" aria-expanded="false" aria-controls="navLinks">
                 <span></span>
                 <span></span>
                 <span></span>
-            </div>
+            </button>
         </nav>
     </header>
 
@@ -2270,18 +2320,35 @@
         </div>
         <div class="pricing-summary animate-on-scroll">
             <div class="pricing-tier">
+                <h3>Custom Project</h3>
+                <div class="tier-price">
+                    <span class="amount">Let's Talk</span>
+                </div>
+                <p>Have something specific in mind? Tell us what you're looking for and we'll put together a custom quote that fits your needs and budget.</p>
+            </div>
+            <div class="pricing-tier">
                 <h3>Single Project</h3>
-                <div class="tier-price"><span>Starting at </span>$497</div>
+                <div class="tier-price">
+                    <span class="prefix">Starting at</span>
+                    <span class="amount">$497</span>
+                </div>
                 <p>A focused, standalone video developed through our full creative process. Ideal for a landing page, social campaign, or brand introduction.</p>
             </div>
             <div class="pricing-tier">
                 <h3>Campaign Suite</h3>
-                <div class="tier-price"><span>Starting at </span>$1,200</div>
+                <div class="tier-price">
+                    <span class="prefix">Starting at</span>
+                    <span class="amount">$1,200</span>
+                </div>
                 <p>A coordinated set of videos designed to work together across platforms. For teams launching across multiple channels who need cohesive creative.</p>
             </div>
             <div class="pricing-tier">
                 <h3>Ongoing Partnership</h3>
-                <div class="tier-price"><span>Starting at </span>$2,000<span>/mo</span></div>
+                <div class="tier-price">
+                    <span class="prefix">Starting at</span>
+                    <span class="amount">$2,000</span>
+                    <span class="suffix">/mo</span>
+                </div>
                 <p>A retained creative partnership for brands investing in video as a long-term channel. Includes regular production cycles and strategic collaboration.</p>
             </div>
         </div>
@@ -2395,6 +2462,7 @@
                         <label for="package">Interested In</label>
                         <select id="package" name="package">
                             <option value="not-sure">Not sure yet</option>
+                            <option value="custom-project">Custom Project</option>
                             <option value="single-project">Single Project</option>
                             <option value="campaign-suite">Campaign Suite</option>
                             <option value="ongoing-partnership">Ongoing Partnership</option>
@@ -2417,20 +2485,33 @@
                     <label for="message">Tell us about your project (optional)</label>
                     <textarea id="message" name="message" placeholder="What's the context? What are you hoping video can do for your company?"></textarea>
                 </div>
+                <p class="form-status" role="status" aria-live="polite"></p>
                 <button type="submit" class="btn-primary submit-btn">Send Message →</button>
             </form>
         </div>
     </section>
 
     <footer>
-        <div class="footer-logo">READYMADEVIDEO</div>
-        <div class="social-links">
-            <a href="#" aria-label="Instagram">📷</a>
-            <a href="#" aria-label="YouTube">📹</a>
-            <a href="#" aria-label="Facebook">📘</a>
-            <a href="#" aria-label="Email">✉️</a>
+        <div class="footer-logo">
+            <svg viewBox="0 0 120 70" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="readymade video logo" style="height: 60px; width: auto;">
+                <g transform="translate(40, 0)">
+                    <path d="M3 10 L3 3 L10 3" stroke="#ff6b5b" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+                    <path d="M30 3 L37 3 L37 10" stroke="#ff6b5b" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+                    <path d="M37 30 L37 37 L30 37" stroke="#ff6b5b" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+                    <path d="M10 37 L3 37 L3 30" stroke="#ff6b5b" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+                    <text x="12" y="28" font-family="Syne, sans-serif" font-size="22" font-weight="700" fill="#ffffff">R</text>
+                </g>
+                <text x="60" y="58" text-anchor="middle" font-family="Outfit, sans-serif" font-size="14" font-weight="600" letter-spacing="0.08em" fill="#ff6b5b">READYMADE</text>
+                <text x="60" y="70" text-anchor="middle" font-family="Outfit, sans-serif" font-size="10" font-weight="500" letter-spacing="0.15em" fill="#6b6b7b">VIDEO</text>
+            </svg>
         </div>
-        <p>&copy; 2026 ReadyMadeVideo. All rights reserved.</p>
+        <div class="social-links">
+            <a href="https://www.instagram.com/readymadevideo" aria-label="Instagram" target="_blank" rel="noopener">📷</a>
+            <a href="https://www.youtube.com/@readymadevideo" aria-label="YouTube" target="_blank" rel="noopener">📹</a>
+            <a href="https://www.facebook.com/readymadevideo" aria-label="Facebook" target="_blank" rel="noopener">📘</a>
+            <a href="mailto:hello@readymadevideo.com" aria-label="Email">✉️</a>
+        </div>
+        <p>&copy; <span id="currentYear"></span> ReadyMadeVideo. All rights reserved.</p>
     </footer>
 
     <script>
@@ -2440,18 +2521,22 @@
         mobileToggle.addEventListener('click', () => {
             mobileToggle.classList.toggle('active');
             navLinks.classList.toggle('active');
+            mobileToggle.setAttribute('aria-expanded', mobileToggle.classList.contains('active'));
         });
 
         document.querySelectorAll('.nav-links a').forEach(link => {
             link.addEventListener('click', () => {
                 mobileToggle.classList.remove('active');
                 navLinks.classList.remove('active');
+                mobileToggle.setAttribute('aria-expanded', 'false');
             });
         });
 
         const contactForm = document.getElementById('contactForm');
         contactForm.addEventListener('submit', (e) => {
             e.preventDefault();
+            const statusEl = contactForm.querySelector('.form-status');
+            const submitBtn = contactForm.querySelector('.submit-btn');
 
             const formData = {
                 name: document.getElementById('name').value,
@@ -2462,9 +2547,15 @@
                 message: document.getElementById('message').value
             };
 
-            console.log('Project inquiry:', formData);
-            alert('Thank you for reaching out. We\'ll be in touch within 24 hours.');
-            contactForm.reset();
+            statusEl.textContent = 'Thanks! We’ll be in touch within 24 hours.';
+            statusEl.classList.remove('is-error');
+            statusEl.classList.add('is-success');
+            submitBtn.disabled = true;
+
+            setTimeout(() => {
+                contactForm.reset();
+                submitBtn.disabled = false;
+            }, 400);
         });
 
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
@@ -2538,6 +2629,11 @@
                 }
             });
         });
+
+        const yearEl = document.getElementById('currentYear');
+        if (yearEl) {
+            yearEl.textContent = new Date().getFullYear();
+        }
     </script>
 </body>
 </html>
