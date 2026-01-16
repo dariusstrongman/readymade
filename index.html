@@ -1435,85 +1435,6 @@
             }
         }
 
-        /* Testimonials Section */
-        #testimonials {
-            padding: 6rem 2rem;
-        }
-
-        .testimonials-grid {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 2rem;
-            margin-top: 4rem;
-        }
-
-        .testimonial-card {
-            background: var(--dark-card);
-            border: 1px solid rgba(255,255,255,0.05);
-            border-radius: 24px;
-            padding: 2.5rem;
-            position: relative;
-            transition: all 0.4s ease;
-        }
-
-        .testimonial-card:hover {
-            border-color: rgba(255,60,60,0.3);
-            transform: translateY(-5px);
-        }
-
-        .testimonial-card::before {
-            content: '"';
-            position: absolute;
-            top: 1.5rem;
-            left: 2rem;
-            font-size: 4rem;
-            font-family: 'Space Grotesk', sans-serif;
-            background: var(--gradient-primary);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-            opacity: 0.3;
-            line-height: 1;
-        }
-
-        .testimonial-content {
-            margin-top: 2rem;
-        }
-
-        .testimonial-content p {
-            color: var(--text-light);
-            font-size: 1.05rem;
-            line-height: 1.7;
-            font-style: italic;
-        }
-
-        .testimonial-author {
-            margin-top: 2rem;
-            padding-top: 1.5rem;
-            border-top: 1px solid rgba(255,255,255,0.05);
-        }
-
-        .author-info strong {
-            display: block;
-            color: var(--text-light);
-            font-weight: 600;
-            margin-bottom: 0.25rem;
-        }
-
-        .author-info span {
-            color: var(--text-gray);
-            font-size: 0.9rem;
-        }
-
-        @media (max-width: 992px) {
-            .testimonials-grid {
-                grid-template-columns: 1fr;
-                max-width: 500px;
-                margin-left: auto;
-                margin-right: auto;
-            }
-        }
-
         /* FAQ Section */
         #faq {
             padding: 6rem 2rem;
@@ -2102,6 +2023,7 @@
                 <li><a href="#approach">Approach</a></li>
                 <li><a href="#process">Process</a></li>
                 <li><a href="#gallery">Work</a></li>
+                <li><a href="#pricing">Pricing</a></li>
                 <li><a href="#contact" class="btn-primary">Start a Conversation</a></li>
             </ul>
             <button class="mobile-toggle" id="mobileToggle" type="button" aria-label="Toggle navigation" aria-expanded="false" aria-controls="navLinks">
@@ -2297,48 +2219,6 @@
             <div class="gallery-item animate-on-scroll" style="background: linear-gradient(135deg, #1a1a2e 0%, #4a266a 50%, #7c3aed 100%);">
                 <div class="gallery-play"></div>
                 <div class="gallery-label"><span>Company Culture</span></div>
-            </div>
-        </div>
-    </section>
-
-    <section id="testimonials">
-        <div class="section-header animate-on-scroll">
-            <div class="section-tag">What Clients Say</div>
-            <h2 class="section-title">Kind Words from People We've Worked With</h2>
-        </div>
-        <div class="testimonials-grid animate-on-scroll">
-            <div class="testimonial-card">
-                <div class="testimonial-content">
-                    <p>"They understood our brand from the very first call. The final video felt like us. Elevated, polished, and exactly what we needed to launch with confidence."</p>
-                </div>
-                <div class="testimonial-author">
-                    <div class="author-info">
-                        <strong>Sarah Chen</strong>
-                        <span>Founder, Lumina Design Co.</span>
-                    </div>
-                </div>
-            </div>
-            <div class="testimonial-card">
-                <div class="testimonial-content">
-                    <p>"We've worked with video vendors before, but this felt like a true partnership. They brought ideas we hadn't considered and executed them beautifully."</p>
-                </div>
-                <div class="testimonial-author">
-                    <div class="author-info">
-                        <strong>Marcus Rivera</strong>
-                        <span>Marketing Director, Ascend Growth</span>
-                    </div>
-                </div>
-            </div>
-            <div class="testimonial-card">
-                <div class="testimonial-content">
-                    <p>"The process was seamless and collaborative. We felt heard at every step, and the result exceeded our expectations."</p>
-                </div>
-                <div class="testimonial-author">
-                    <div class="author-info">
-                        <strong>Elena Voss</strong>
-                        <span>CEO, Clarity Consulting</span>
-                    </div>
-                </div>
             </div>
         </div>
     </section>
