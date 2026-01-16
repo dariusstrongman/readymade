@@ -1310,6 +1310,8 @@
             text-align: center;
             position: relative;
             transition: all 0.3s ease;
+            display: flex;
+            flex-direction: column;
         }
 
         .pricing-tier:hover {
@@ -1342,16 +1344,20 @@
             font-size: 1.3rem;
             font-weight: 600;
             margin-bottom: 0.5rem;
+            min-height: 3.2rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
         }
 
         .tier-price {
             display: flex;
-            align-items: baseline;
+            align-items: center;
             justify-content: center;
-            gap: 0.35rem;
-            flex-wrap: wrap;
+            flex-direction: column;
             font-family: 'Space Grotesk', sans-serif;
             margin-bottom: 0.75rem;
+            min-height: 5.5rem;
         }
 
         .tier-price .prefix {
@@ -1360,6 +1366,7 @@
             letter-spacing: 0.08em;
             text-transform: uppercase;
             opacity: 0.7;
+            min-height: 1.2em;
         }
 
         .tier-price .amount {
@@ -1369,6 +1376,7 @@
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
+            line-height: 1.2;
         }
 
         .tier-price .suffix {
@@ -1382,6 +1390,7 @@
             font-size: 0.85rem;
             margin-bottom: 1rem;
             line-height: 1.5;
+            flex-grow: 1;
         }
 
         .tier-link {
@@ -2344,6 +2353,7 @@
             <div class="pricing-tier">
                 <h3>Custom Project</h3>
                 <div class="tier-price">
+                    <span class="prefix">Flexible pricing</span>
                     <span class="amount">Let's Talk</span>
                 </div>
                 <p>Have something specific in mind? Tell us what you're looking for and we'll put together a custom quote that fits your needs and budget.</p>
@@ -2365,11 +2375,10 @@
                 <p>A coordinated set of videos designed to work together across platforms. For teams launching across multiple channels who need cohesive creative.</p>
             </div>
             <div class="pricing-tier">
-                <h3>Ongoing Partnership</h3>
+                <h3>Partnership</h3>
                 <div class="tier-price">
                     <span class="prefix">Starting at</span>
-                    <span class="amount">$2,000</span>
-                    <span class="suffix">/mo</span>
+                    <span class="amount">$2k/mo</span>
                 </div>
                 <p>A retained creative partnership for brands investing in video as a long-term channel. Includes regular production cycles and strategic collaboration.</p>
             </div>
