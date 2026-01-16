@@ -1205,11 +1205,13 @@
             transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
         }
 
-        .gallery-item::before {
-            content: '';
+        .gallery-item video {
             position: absolute;
-            inset: 0;
-            background: inherit;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
             z-index: 1;
         }
 
@@ -1269,19 +1271,20 @@
             bottom: 1.5rem;
             left: 1.5rem;
             z-index: 3;
-            opacity: 0;
-            transform: translateY(10px);
+            opacity: 1;
+            transform: translateY(0);
             transition: all 0.3s ease;
         }
 
         .gallery-label span {
-            background: var(--gradient-glass);
+            background: rgba(0,0,0,0.7);
             backdrop-filter: blur(10px);
-            padding: 0.5rem 1rem;
+            padding: 0.6rem 1.2rem;
             border-radius: 100px;
-            font-size: 0.8rem;
-            font-weight: 500;
-            border: 1px solid rgba(255,255,255,0.1);
+            font-size: 0.85rem;
+            font-weight: 600;
+            border: 1px solid rgba(255,255,255,0.15);
+            color: #fff;
         }
 
         .gallery-item:hover .gallery-label {
@@ -2197,26 +2200,44 @@
         </div>
         <div class="gallery-grid">
             <div class="gallery-item animate-on-scroll" style="background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);">
+                <video autoplay muted loop playsinline>
+                    <source src="https://assets.mixkit.co/videos/4809/4809-720.mp4" type="video/mp4">
+                </video>
                 <div class="gallery-play"></div>
                 <div class="gallery-label"><span>Brand Story</span></div>
             </div>
             <div class="gallery-item animate-on-scroll" style="background: linear-gradient(135deg, #2d132c 0%, #801336 50%, #c72c41 100%);">
+                <video autoplay muted loop playsinline>
+                    <source src="https://assets.mixkit.co/videos/50406/50406-720.mp4" type="video/mp4">
+                </video>
                 <div class="gallery-play"></div>
                 <div class="gallery-label"><span>Product Launch</span></div>
             </div>
             <div class="gallery-item animate-on-scroll" style="background: linear-gradient(135deg, #0a3d62 0%, #3c6382 50%, #60a3bc 100%);">
+                <video autoplay muted loop playsinline>
+                    <source src="https://assets.mixkit.co/videos/46635/46635-720.mp4" type="video/mp4">
+                </video>
                 <div class="gallery-play"></div>
                 <div class="gallery-label"><span>Website Hero</span></div>
             </div>
             <div class="gallery-item animate-on-scroll" style="background: linear-gradient(135deg, #1e3c72 0%, #2a5298 50%, #4a69bd 100%);">
+                <video autoplay muted loop playsinline>
+                    <source src="https://assets.mixkit.co/videos/4919/4919-720.mp4" type="video/mp4">
+                </video>
                 <div class="gallery-play"></div>
                 <div class="gallery-label"><span>Social Campaign</span></div>
             </div>
             <div class="gallery-item animate-on-scroll" style="background: linear-gradient(135deg, #2c3e50 0%, #3d566e 50%, #5d6d7e 100%);">
+                <video autoplay muted loop playsinline>
+                    <source src="https://assets.mixkit.co/videos/4632/4632-720.mp4" type="video/mp4">
+                </video>
                 <div class="gallery-play"></div>
                 <div class="gallery-label"><span>Event Promo</span></div>
             </div>
             <div class="gallery-item animate-on-scroll" style="background: linear-gradient(135deg, #1a1a2e 0%, #4a266a 50%, #7c3aed 100%);">
+                <video autoplay muted loop playsinline>
+                    <source src="https://assets.mixkit.co/videos/46680/46680-720.mp4" type="video/mp4">
+                </video>
                 <div class="gallery-play"></div>
                 <div class="gallery-label"><span>Company Culture</span></div>
             </div>
