@@ -3,24 +3,24 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ReadyMadeVideo | Creative Video Studio</title>
-    <meta name="description" content="Frisco, Texas video production studio partnering with local businesses to create promotional videos built around your brand, your story, and your goals. Serving DFW.">
-    <meta name="keywords" content="video production Frisco Texas, promotional video DFW, brand video Dallas, creative studio Frisco, video marketing Texas, local video production">
+    <title>ReadyMadeVideo | Video-First Marketing Agency | Frisco, TX</title>
+    <meta name="description" content="Frisco, Texas video-first marketing agency. We build strategic systems that increase brand presence, credibility, and engagement through video production, social media management, and ads. Serving DFW.">
+    <meta name="keywords" content="video marketing agency Frisco Texas, social media management DFW, video production Dallas, ads management Frisco, brand video Texas, marketing agency DFW, video-first marketing">
     <meta name="author" content="ReadyMadeVideo">
     <meta name="google-site-verification" content="U1YEfey66ZR7pQG-7MbzO2h4FXvBZSbYSzEqmwmIiUg" />
 
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://readymadevideo.com/">
-    <meta property="og:title" content="ReadyMadeVideo | Creative Video Studio">
-    <meta property="og:description" content="Frisco, Texas video production studio partnering with local businesses to create promotional videos. Serving the DFW area.">
+    <meta property="og:title" content="ReadyMadeVideo | Video-First Marketing Agency | Frisco, TX">
+    <meta property="og:description" content="Frisco, Texas video-first marketing agency building strategic systems for brand presence, credibility, and engagement. Serving the DFW area.">
     <meta property="og:image" content="https://readymadevideo.com/og-image.png">
 
     <!-- Twitter -->
     <meta property="twitter:card" content="summary_large_image">
     <meta property="twitter:url" content="https://readymadevideo.com/">
-    <meta property="twitter:title" content="ReadyMadeVideo | Creative Video Studio">
-    <meta property="twitter:description" content="Frisco, Texas video production studio partnering with local businesses to create promotional videos. Serving the DFW area.">
+    <meta property="twitter:title" content="ReadyMadeVideo | Video-First Marketing Agency | Frisco, TX">
+    <meta property="twitter:description" content="Frisco, Texas video-first marketing agency building strategic systems for brand presence, credibility, and engagement. Serving the DFW area.">
     <meta property="twitter:image" content="https://readymadevideo.com/og-image.png">
 
     <!-- Favicon -->
@@ -32,11 +32,11 @@
         "@context": "https://schema.org",
         "@type": "LocalBusiness",
         "name": "ReadyMadeVideo",
-        "description": "Frisco-based creative video production studio partnering with local businesses to create promotional videos built around your brand, your story, and your goals.",
+        "description": "Frisco-based video-first marketing agency building brand presence through video production, social media management, and strategic advertising for local businesses in the DFW area.",
         "url": "https://readymadevideo.com",
         "logo": "https://readymadevideo.com/og-image.png",
         "image": "https://readymadevideo.com/og-image.png",
-        "email": "hello@readymadevideo.com",
+        "email": "contact@readymadevideo.com",
         "priceRange": "$497 - $2000+",
         "areaServed": [
             {
@@ -86,15 +86,15 @@
         ],
         "serviceType": [
             "Video Production",
+            "Social Media Management",
+            "Ads Management",
             "Brand Video",
-            "Promotional Video",
-            "Social Media Video",
-            "Website Video",
-            "Product Video"
+            "Digital Marketing",
+            "Content Marketing"
         ],
         "hasOfferCatalog": {
             "@type": "OfferCatalog",
-            "name": "Video Production Services",
+            "name": "Marketing Services",
             "itemListElement": [
                 {
                     "@type": "Offer",
@@ -775,7 +775,7 @@
             background: var(--dark-secondary);
             border-radius: 40px;
             padding: 6rem 4rem;
-            max-width: 1200px;
+            max-width: 1400px;
             margin: 0 auto;
             position: relative;
             overflow: hidden;
@@ -2106,6 +2106,166 @@
                 font-size: 3rem;
             }
         }
+
+        /* Service Pillars */
+        .marketing-pillars {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+            margin: 0 auto;
+        }
+
+        .pillar-card {
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 20px;
+            padding: 3rem;
+            transition: all 0.3s ease;
+        }
+
+        .pillar-card:hover {
+            background: rgba(255, 255, 255, 0.05);
+            border-color: rgba(255, 255, 255, 0.2);
+            transform: translateY(-5px);
+        }
+
+        .pillar-icon {
+            width: 60px;
+            height: 60px;
+            background: var(--gradient-primary);
+            border-radius: 16px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 1.5rem;
+        }
+
+        .pillar-icon svg {
+            width: 30px;
+            height: 30px;
+            fill: none;
+            stroke: white;
+            stroke-width: 2;
+            stroke-linecap: round;
+            stroke-linejoin: round;
+        }
+
+        .pillar-card h3 {
+            font-size: 1.75rem;
+            margin-bottom: 0.5rem;
+            color: white;
+        }
+
+        .pillar-tagline {
+            color: #ff8c00;
+            font-size: 1rem;
+            margin-bottom: 1.5rem;
+            font-style: italic;
+        }
+
+        .pillar-bullets {
+            list-style: none;
+            padding: 0;
+            margin-bottom: 2rem;
+        }
+
+        .pillar-bullets li {
+            display: flex;
+            align-items: flex-start;
+            gap: 0.75rem;
+            margin-bottom: 0.75rem;
+            color: rgba(255, 255, 255, 0.8);
+        }
+
+        .pillar-bullets li::before {
+            content: "✓";
+            color: #ff6b5b;
+            font-weight: bold;
+            flex-shrink: 0;
+        }
+
+        .pillar-process {
+            background: rgba(255, 255, 255, 0.03);
+            border-radius: 12px;
+            padding: 1.5rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .pillar-process h4 {
+            font-size: 0.9rem;
+            color: rgba(255, 255, 255, 0.5);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 1rem;
+        }
+
+        .pillar-process-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+        }
+
+        .pillar-process-tag {
+            background: rgba(255, 60, 60, 0.15);
+            border: 1px solid rgba(255, 60, 60, 0.3);
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            color: rgba(255, 255, 255, 0.8);
+        }
+
+        .pillar-addons h4 {
+            font-size: 0.9rem;
+            color: rgba(255, 255, 255, 0.5);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 0.75rem;
+        }
+
+        .addon-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+        }
+
+        .addon-tag {
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            padding: 0.4rem 0.8rem;
+            border-radius: 15px;
+            font-size: 0.8rem;
+            color: rgba(255, 255, 255, 0.6);
+        }
+
+        @media (max-width: 1100px) {
+            .marketing-pillars {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .marketing-pillars {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .pillar-card {
+                padding: 2rem;
+            }
+
+            .pillar-card h3 {
+                font-size: 1.5rem;
+            }
+
+            .pillar-process-tags {
+                flex-direction: column;
+            }
+
+            .pillar-process-tag {
+                text-align: center;
+            }
+        }
     </style>
 </head>
 <body>
@@ -2128,11 +2288,10 @@
                 </svg>
             </div>
             <ul class="nav-links" id="navLinks">
-                <li><a href="#about">About</a></li>
-                <li><a href="#approach">Approach</a></li>
-                <li><a href="#process">Process</a></li>
+                <li><a href="#services">Services</a></li>
                 <li><a href="#gallery">Work</a></li>
                 <li><a href="#pricing">Pricing</a></li>
+                <li><a href="#faq">FAQ</a></li>
                 <li><a href="#contact" class="btn-primary">Start a Conversation</a></li>
             </ul>
             <button class="mobile-toggle" id="mobileToggle" type="button" aria-label="Toggle navigation" aria-expanded="false" aria-controls="navLinks">
@@ -2147,12 +2306,12 @@
         <div class="hero-content">
             <div class="hero-badge">
                 <span></span>
-                Creative Video Studio • Frisco, TX
+                Video-First Marketing Agency • Frisco, TX
             </div>
-            <h1>Video That Reflects Who You <span class="highlight">Are</span></h1>
-            <p>We're a Frisco-based creative studio that partners with local businesses to produce promotional videos built around your brand, your story, and your goals. No templates. No shortcuts. Just intentional work that connects.</p>
+            <h1>Marketing That <span class="highlight">Moves</span> People</h1>
+            <p>We're a Frisco-based agency that builds brand presence through video production, social media management, and strategic advertising. No templates. No guesswork. Just intentional systems that grow your business.</p>
             <div class="hero-buttons">
-                <a href="#contact" class="btn-primary">Let's Talk About Your Project →</a>
+                <a href="#contact" class="btn-primary">Start a Conversation →</a>
                 <a href="#gallery" class="btn-secondary">See Our Work</a>
             </div>
         </div>
@@ -2163,13 +2322,13 @@
         <div class="about-content animate-on-scroll">
             <div class="about-text">
                 <div class="section-tag">Who We Work With</div>
-                <h3>Companies Who Value Craft and Collaboration</h3>
+                <h3>Businesses Ready to Build Real Presence</h3>
                 <ul class="who-list">
-                    <li>Founders building a brand they're proud of and ready to share with the world</li>
-                    <li>Marketing teams seeking a creative partner, not just another vendor</li>
-                    <li>Companies preparing to launch a product, service, or campaign that needs to resonate</li>
-                    <li>Businesses that have outgrown DIY and are ready for thoughtful, professional video</li>
-                    <li>Teams who value intention, clarity, and partnership over rushed timelines</li>
+                    <li>Founders building a brand they're proud of and ready to grow strategically</li>
+                    <li>Marketing teams seeking a partner who thinks like an extension of their team</li>
+                    <li>Companies tired of scattered tactics and ready for a unified system</li>
+                    <li>Businesses that have outgrown DIY and need professional marketing infrastructure</li>
+                    <li>Teams who value transparency, craft, and long-term partnership over quick fixes</li>
                 </ul>
             </div>
             <div class="about-visual">
@@ -2177,9 +2336,9 @@
                     <div class="video-icon">▶</div>
                 </div>
                 <div class="floating-elements">
-                    <div class="floating-element">Your Brand</div>
-                    <div class="floating-element">Your Story</div>
-                    <div class="floating-element">Your Vision</div>
+                    <div class="floating-element">Video</div>
+                    <div class="floating-element">Social</div>
+                    <div class="floating-element">Ads</div>
                 </div>
             </div>
         </div>
@@ -2187,80 +2346,97 @@
 
     <section id="services">
         <div class="section-header animate-on-scroll">
-            <div class="section-tag">What We Create</div>
-            <h2 class="section-title">Promotional Videos, Made with Care</h2>
-            <p class="section-subtitle">We make promotional videos that tell your story with intention and care. Every project is built around your brand, your goals, and your audience. Never from a template. Never rushed.</p>
+            <div class="section-tag">What We Do</div>
+            <h2 class="section-title">A Partner, Not a Vendor</h2>
+            <p class="section-subtitle">We embed into your business, learn your voice, and operate like an extension of your team. Video production, social media, and ads—designed to work together.</p>
         </div>
-        <div class="services-grid animate-on-scroll">
-            <div class="service-item">
-                <div class="service-icon">🎬</div>
-                <h3>Brand Story Videos</h3>
-                <p>Capture who you are and why it matters</p>
-            </div>
-            <div class="service-item">
-                <div class="service-icon">🌐</div>
-                <h3>Website Hero Videos</h3>
-                <p>Make a memorable first impression</p>
-            </div>
-            <div class="service-item">
-                <div class="service-icon">📱</div>
-                <h3>Social Media Content</h3>
-                <p>Engaging video tailored for your platforms</p>
-            </div>
-            <div class="service-item">
-                <div class="service-icon">📣</div>
-                <h3>Campaign Videos</h3>
-                <p>Polished creative for paid and organic reach</p>
-            </div>
-            <div class="service-item">
-                <div class="service-icon">✨</div>
-                <h3>Product & Service Videos</h3>
-                <p>Showcase what you offer with clarity</p>
-            </div>
-            <div class="service-item">
-                <div class="service-icon">🚀</div>
-                <h3>Launch Videos</h3>
-                <p>Build momentum for your next chapter</p>
-            </div>
-        </div>
-    </section>
+        <div class="marketing-pillars" style="margin-bottom: 0;">
+            <!-- Video Production Pillar -->
+            <div class="pillar-card animate-on-scroll">
+                <div class="pillar-icon">
+                    <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <polygon points="23 7 16 12 23 17 23 7"/>
+                        <rect x="1" y="5" width="15" height="14" rx="2" ry="2"/>
+                    </svg>
+                </div>
+                <h3>Video Production</h3>
+                <p class="pillar-tagline">The foundation. Content that captures who you are.</p>
 
-    <section id="approach">
-        <div class="section-header animate-on-scroll">
-            <div class="section-tag">Our Approach</div>
-            <h2 class="section-title">A Creative Partner, Not a Production House</h2>
-            <p class="section-subtitle">We're a small, focused studio that treats your project with the same care we'd give our own.</p>
-        </div>
-        <div class="why-grid animate-on-scroll">
-            <div class="why-item">
-                <div class="why-number">01</div>
-                <h3>Every Project is Custom</h3>
-                <p>We don't use templates, and we don't recycle ideas between clients. Your video is developed from the ground up, tailored to your brand.</p>
+                <ul class="pillar-bullets">
+                    <li>Brand story videos that connect on a human level</li>
+                    <li>Website hero videos that make a lasting first impression</li>
+                    <li>Social-first content designed for engagement</li>
+                    <li>Product and service videos with clarity and polish</li>
+                    <li>Campaign creative for launches and promotions</li>
+                </ul>
+
+                <div class="pillar-process">
+                    <h4>Our Process</h4>
+                    <div class="pillar-process-tags">
+                        <span class="pillar-process-tag">Discovery</span>
+                        <span class="pillar-process-tag">Creative Direction</span>
+                        <span class="pillar-process-tag">Production</span>
+                        <span class="pillar-process-tag">Delivery</span>
+                    </div>
+                </div>
             </div>
-            <div class="why-item">
-                <div class="why-number">02</div>
-                <h3>Brand-First Thinking</h3>
-                <p>Your video will feel like you, not like us. We take time to understand your brand before we create anything.</p>
+
+            <!-- Social Media Management Pillar -->
+            <div class="pillar-card animate-on-scroll">
+                <div class="pillar-icon">
+                    <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/>
+                    </svg>
+                </div>
+                <h3>Social Media Management</h3>
+                <p class="pillar-tagline">Consistency is currency. We make sure you never go silent.</p>
+
+                <ul class="pillar-bullets">
+                    <li>Done-for-you content calendars that reflect your voice</li>
+                    <li>Video-first content designed for engagement</li>
+                    <li>Posting across Instagram, TikTok, LinkedIn, YouTube</li>
+                    <li>Community management and response strategy</li>
+                    <li>Monthly performance reviews with transparent reporting</li>
+                </ul>
+
+                <div class="pillar-process">
+                    <h4>Our Process</h4>
+                    <div class="pillar-process-tags">
+                        <span class="pillar-process-tag">Brand Immersion</span>
+                        <span class="pillar-process-tag">Content Planning</span>
+                        <span class="pillar-process-tag">Creation</span>
+                        <span class="pillar-process-tag">Optimization</span>
+                    </div>
+                </div>
             </div>
-            <div class="why-item">
-                <div class="why-number">03</div>
-                <h3>Collaborative by Design</h3>
-                <p>You're involved at every stage, never left wondering. We share our thinking, listen to yours, and refine together.</p>
-            </div>
-            <div class="why-item">
-                <div class="why-number">04</div>
-                <h3>Polished and Intentional</h3>
-                <p>Every detail matters. We put real care into representing your company at its best. Quality isn't an upgrade here, it's just how we work.</p>
-            </div>
-            <div class="why-item">
-                <div class="why-number">05</div>
-                <h3>Direct Access to Creators</h3>
-                <p>You work directly with the people making your video. No account managers, no layers, no miscommunication.</p>
-            </div>
-            <div class="why-item">
-                <div class="why-number">06</div>
-                <h3>Built for Longevity</h3>
-                <p>We make videos meant to represent your brand for years, not weeks. These aren't throwaway clips. They're lasting assets you'll actually be proud to share.</p>
+
+            <!-- Ads Management Pillar -->
+            <div class="pillar-card animate-on-scroll">
+                <div class="pillar-icon">
+                    <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/>
+                    </svg>
+                </div>
+                <h3>Ads Management</h3>
+                <p class="pillar-tagline">You bring the offer. We bring the audience.</p>
+
+                <ul class="pillar-bullets">
+                    <li>Strategic ad creative built around video</li>
+                    <li>Full-funnel campaigns on Meta, Google, YouTube</li>
+                    <li>Audience targeting, retargeting, and lookalikes</li>
+                    <li>A/B testing of hooks, creative, and copy</li>
+                    <li>Weekly optimization with transparent reporting</li>
+                </ul>
+
+                <div class="pillar-process">
+                    <h4>Our Process</h4>
+                    <div class="pillar-process-tags">
+                        <span class="pillar-process-tag">Audit</span>
+                        <span class="pillar-process-tag">Strategy</span>
+                        <span class="pillar-process-tag">Launch</span>
+                        <span class="pillar-process-tag">Scale</span>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
@@ -2404,47 +2580,29 @@
         <div class="faq-grid animate-on-scroll">
             <div class="faq-item">
                 <button class="faq-question">
-                    <h3>How long does a typical project take?</h3>
-                    <div class="faq-icon"></div>
-                </button>
-                <div class="faq-answer">
-                    <p>Most single-video projects take about 3-5 weeks from kickoff to delivery. Bigger campaigns can take longer depending on complexity. We'll give you a realistic timeline when we chat about your specific project.</p>
-                </div>
-            </div>
-            <div class="faq-item">
-                <button class="faq-question">
-                    <h3>What's included in revisions?</h3>
-                    <div class="faq-icon"></div>
-                </button>
-                <div class="faq-answer">
-                    <p>Every project includes revision rounds. We typically do two rounds at each stage (concept, rough cut, and final), but we're flexible. We want you to end up with something you're genuinely proud of.</p>
-                </div>
-            </div>
-            <div class="faq-item">
-                <button class="faq-question">
                     <h3>How does pricing work?</h3>
                     <div class="faq-icon"></div>
                 </button>
                 <div class="faq-answer">
-                    <p>We quote projects based on scope and complexity, not hourly rates. After we chat, we'll send you a clear proposal with a fixed price. No surprises. The ranges on this page are just meant to give you a ballpark.</p>
+                    <p>We quote based on scope, not hourly rates. After we chat, you'll get a clear proposal with a fixed price. No surprises.</p>
                 </div>
             </div>
             <div class="faq-item">
                 <button class="faq-question">
-                    <h3>Do I need to provide footage?</h3>
+                    <h3>What's the minimum commitment?</h3>
                     <div class="faq-icon"></div>
                 </button>
                 <div class="faq-answer">
-                    <p>Nope, not necessarily. We can work with footage you already have, shoot new stuff, or create motion-based videos from scratch. We'll figure out the best path together based on what you need and what you've got.</p>
+                    <p>Video projects are one-time. For social media and ads, we start with a 3-month commitment, then month-to-month.</p>
                 </div>
             </div>
             <div class="faq-item">
                 <button class="faq-question">
-                    <h3>What formats and sizes will I receive?</h3>
+                    <h3>Do you work outside DFW?</h3>
                     <div class="faq-icon"></div>
                 </button>
                 <div class="faq-answer">
-                    <p>You'll get files optimized for wherever you're planning to use them: web, social, presentations, you name it. We'll deliver in all the formats and aspect ratios you need, ready to go.</p>
+                    <p>For social media and ads, yes—we work with clients anywhere. Video production is DFW-focused, but we can discuss travel.</p>
                 </div>
             </div>
             <div class="faq-item">
@@ -2453,7 +2611,7 @@
                     <div class="faq-icon"></div>
                 </button>
                 <div class="faq-answer">
-                    <p>Just fill out the form below or shoot us an email. We'll set up a quick call to learn about what you're working on, and if it feels like a good fit, we'll put together a proposal.</p>
+                    <p>Fill out the form below or email us. We'll hop on a quick call, and if it's a fit, we'll send a proposal.</p>
                 </div>
             </div>
         </div>
@@ -2501,13 +2659,13 @@
                         <input type="email" id="email" name="email" placeholder="you@company.com" required>
                     </div>
                     <div class="form-group">
-                        <label for="package">Interested In</label>
+                        <label for="package">Budget Range</label>
                         <select id="package" name="package">
                             <option value="not-sure">Not sure yet</option>
-                            <option value="custom-project">Custom Project</option>
-                            <option value="single-project">Single Project</option>
-                            <option value="campaign-suite">Campaign Suite</option>
-                            <option value="ongoing-partnership">Ongoing Partnership</option>
+                            <option value="under-1k">Under $1,000</option>
+                            <option value="1k-3k">$1,000 - $3,000</option>
+                            <option value="3k-5k">$3,000 - $5,000</option>
+                            <option value="5k-plus">$5,000+</option>
                         </select>
                     </div>
                 </div>
@@ -2515,17 +2673,16 @@
                     <label for="goal">What are you hoping to achieve? *</label>
                     <select id="goal" name="goal" required>
                         <option value="">Select...</option>
-                        <option value="brand-story">Tell our brand story</option>
-                        <option value="product-launch">Launch a product or service</option>
-                        <option value="campaign-creative">Create campaign content</option>
-                        <option value="website-video">Add video to our website</option>
-                        <option value="ongoing-content">Build ongoing video content</option>
+                        <option value="video-production">Video production</option>
+                        <option value="social-media">Social media management</option>
+                        <option value="ads-management">Ads management</option>
+                        <option value="full-service">Full service (video + social + ads)</option>
                         <option value="other">Something else</option>
                     </select>
                 </div>
                 <div class="form-group full-width">
                     <label for="message">Tell us about your project (optional)</label>
-                    <textarea id="message" name="message" placeholder="What's the context? What are you hoping video can do for your company?"></textarea>
+                    <textarea id="message" name="message" placeholder="Tell us about your business and what you're looking to achieve..."></textarea>
                 </div>
                 <p class="form-status" role="status" aria-live="polite"></p>
                 <button type="submit" class="btn-primary submit-btn">Send Message →</button>
@@ -2551,8 +2708,9 @@
             <a href="https://www.instagram.com/readymadevideo" aria-label="Instagram" target="_blank" rel="noopener">📷</a>
             <a href="https://www.youtube.com/@readymadevideo" aria-label="YouTube" target="_blank" rel="noopener">📹</a>
             <a href="https://www.facebook.com/readymadevideo" aria-label="Facebook" target="_blank" rel="noopener">📘</a>
-            <a href="mailto:hello@readymadevideo.com" aria-label="Email">✉️</a>
+            <a href="mailto:contact@readymadevideo.com" aria-label="Email">✉️</a>
         </div>
+        <p><a href="mailto:contact@readymadevideo.com" style="color: #ff8c00; text-decoration: none;">contact@readymadevideo.com</a></p>
         <p>📍 Frisco, Texas — Serving businesses in DFW and beyond</p>
         <p>&copy; <span id="currentYear"></span> ReadyMadeVideo. All rights reserved.</p>
     </footer>
