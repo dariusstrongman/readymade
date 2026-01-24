@@ -1,0 +1,10 @@
+{
+  "permissions": {
+    "allow": [
+      "Skill(remotion-best-practices)",
+      "Skill(remotion-best-practices:*)",
+      "Bash(npm install:*)",
+      "Bash(npx remotion:*)"
+    ]
+  }
+}

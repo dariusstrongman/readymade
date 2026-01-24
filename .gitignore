@@ -1,0 +1,26 @@
+# Dependencies
+node_modules/
+remotion/node_modules/
+
+# Build outputs
+out/
+dist/
+.remotion/
+
+# Cache
+.cache/
+*.log
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Environment
+.env
+.env.local
+
+# Large media files (keep in local only)
+Sounds/
+public/*.mp3
+public/video/
+landing-video.mp4

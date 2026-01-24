@@ -1,0 +1,35 @@
+{
+  "name": "readymade",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "remotion:studio": "remotion studio --config remotion/remotion.config.ts remotion/src/index.ts",
+    "remotion:render": "remotion render --config remotion/remotion.config.ts remotion/src/index.ts LandingPageVideo out/landing-video.mp4",
+    "remotion:render-square": "remotion render --config remotion/remotion.config.ts remotion/src/index.ts LandingPageVideo-Square out/landing-video-square.mp4",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dariusstrongman/readymade.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/dariusstrongman/readymade/issues"
+  },
+  "homepage": "https://github.com/dariusstrongman/readymade#readme",
+  "dependencies": {
+    "@remotion/cli": "^4.0.409",
+    "@remotion/google-fonts": "^4.0.409",
+    "@remotion/media": "^4.0.409",
+    "@remotion/transitions": "^4.0.409",
+    "@types/react": "^19.2.9",
+    "react": "^19.2.3",
+    "react-dom": "^19.2.3",
+    "remotion": "^4.0.409",
+    "typescript": "^5.9.3"
+  }
+}
