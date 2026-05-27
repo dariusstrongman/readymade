@@ -48,12 +48,26 @@
             "addressCountry": "US"
         },
         "areaServed": [
-            {"@type": "City", "name": "Dallas"},
-            {"@type": "City", "name": "Fort Worth"},
             {"@type": "City", "name": "Frisco"},
             {"@type": "City", "name": "Plano"},
             {"@type": "City", "name": "McKinney"},
+            {"@type": "City", "name": "Dallas"},
+            {"@type": "City", "name": "Fort Worth"},
             {"@type": "City", "name": "Arlington"},
+            {"@type": "City", "name": "Allen"},
+            {"@type": "City", "name": "Prosper"},
+            {"@type": "City", "name": "Southlake"},
+            {"@type": "City", "name": "Irving"},
+            {"@type": "City", "name": "Richardson"},
+            {"@type": "City", "name": "Denton"},
+            {"@type": "City", "name": "Grapevine"},
+            {"@type": "City", "name": "Coppell"},
+            {"@type": "City", "name": "Lewisville"},
+            {"@type": "City", "name": "Flower Mound"},
+            {"@type": "City", "name": "Carrollton"},
+            {"@type": "City", "name": "The Colony"},
+            {"@type": "City", "name": "Little Elm"},
+            {"@type": "City", "name": "Rockwall"},
             {"@type": "Place", "name": "Dallas-Fort Worth Metroplex"}
         ],
         "serviceType": ["Real Estate Videography", "Real Estate Photography", "Drone Real Estate Media", "Virtual Staging", "Listing Video Production"],
@@ -63,7 +77,12 @@
             "itemListElement": [
                 {"@type": "Offer", "name": "Starter", "price": "300", "priceCurrency": "USD"},
                 {"@type": "Offer", "name": "Pro", "price": "750", "priceCurrency": "USD"},
-                {"@type": "Offer", "name": "Luxury Feature", "price": "1500", "priceCurrency": "USD"}
+                {"@type": "Offer", "name": "Luxury Feature", "price": "1500", "priceCurrency": "USD"},
+                {"@type": "Offer", "name": "Drone Exterior Add-on", "price": "150", "priceCurrency": "USD"},
+                {"@type": "Offer", "name": "Virtual Staging Add-on", "price": "35", "priceCurrency": "USD"},
+                {"@type": "Offer", "name": "Twilight Conversion Add-on", "price": "50", "priceCurrency": "USD"},
+                {"@type": "Offer", "name": "AI Listing Description Add-on", "price": "25", "priceCurrency": "USD"},
+                {"@type": "Offer", "name": "Closing-Gift Video Add-on", "price": "125", "priceCurrency": "USD"}
             ]
         }
     }
@@ -74,10 +93,11 @@
         "@context": "https://schema.org",
         "@type": "FAQPage",
         "mainEntity": [
-            {"@type": "Question", "name": "How fast do I get the files?", "acceptedAnswer": {"@type": "Answer", "text": "Standard packages are delivered the morning after the shoot, with NTREIS-optimized photos and MLS-ready video exports."}},
-            {"@type": "Question", "name": "Do you serve all of DFW?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. ReadyMadeVideo serves Dallas, Fort Worth, Frisco, Plano, McKinney, Arlington, and the full Dallas-Fort Worth metroplex."}},
-            {"@type": "Question", "name": "Are you licensed for drone work?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. ReadyMadeVideo is FAA Part 107 licensed for commercial drone operations and carries insurance."}},
-            {"@type": "Question", "name": "Can you access a property through Supra eKEY?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. ReadyMadeVideo has Supra eKEY access, so agents do not always need to meet on site if access details are provided."}}
+            {"@type": "Question", "name": "How quickly will I receive the files?", "acceptedAnswer": {"@type": "Answer", "text": "Standard packages are delivered the morning after the shoot. Same-day rush may be available for Luxury Feature bookings."}},
+            {"@type": "Question", "name": "Are the files MLS-ready?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. Photos are delivered in NTREIS-optimized sizes. Video exports include practical versions for MLS use and social posting."}},
+            {"@type": "Question", "name": "Do I need to meet you at the property?", "acceptedAnswer": {"@type": "Answer", "text": "Not always. ReadyMadeVideo is a Supra eKEY holder. If listing access is set up correctly, the shoot can often be completed without the agent waiting on site."}},
+            {"@type": "Question", "name": "What happens if the weather is bad?", "acceptedAnswer": {"@type": "Answer", "text": "Interior work can often continue, but drone and exterior work may need to move. Weather-sensitive work is rescheduled to the next practical clear window."}},
+            {"@type": "Question", "name": "Who is this best for?", "acceptedAnswer": {"@type": "Answer", "text": "ReadyMadeVideo is best for solo listing agents and small teams marketing $300k to $2M homes across DFW who want professional media without waiting a week."}}
         ]
     }
     </script>
@@ -723,6 +743,53 @@
             padding: 10px 14px;
             font-weight: 800;
             font-size: 0.88rem;
+        }
+
+        .addon-pricing {
+            margin-top: 18px;
+            display: grid;
+            grid-template-columns: repeat(5, minmax(0, 1fr));
+            gap: 12px;
+        }
+
+        .addon-price-card {
+            background: rgba(255,255,255,0.82);
+            border: 1px solid rgba(125, 79, 37, 0.18);
+            border-radius: 22px;
+            padding: 18px;
+            box-shadow: 0 12px 34px rgba(38, 29, 20, 0.06);
+        }
+
+        .addon-price-card strong,
+        .addon-price-card b,
+        .addon-price-card span {
+            display: block;
+        }
+
+        .addon-price-card strong {
+            font-size: 0.92rem;
+            letter-spacing: -0.02em;
+        }
+
+        .addon-price-card b {
+            margin-top: 8px;
+            font-size: 1.45rem;
+            letter-spacing: -0.05em;
+            color: var(--ink);
+        }
+
+        .addon-price-card span {
+            margin-top: 8px;
+            color: var(--muted);
+            font-size: 0.86rem;
+            line-height: 1.5;
+        }
+
+        .addon-note {
+            max-width: 760px;
+            margin-top: 16px;
+            color: var(--muted);
+            font-size: 0.95rem;
         }
 
         .work-grid {
@@ -1508,6 +1575,10 @@
                 grid-template-columns: 1fr;
             }
 
+            .addon-pricing {
+                grid-template-columns: repeat(2, minmax(0, 1fr));
+            }
+
             .package-card.featured {
                 transform: none;
             }
@@ -1526,7 +1597,7 @@
                 gap: 34px;
             }
 
-            .proof-row, .stat-list, .trust-grid, .why-grid, .work-grid, .city-grid, .footer-grid, .standards-grid, .handoff-list, .lab-grid {
+            .proof-row, .stat-list, .trust-grid, .why-grid, .work-grid, .city-grid, .footer-grid, .standards-grid, .handoff-list, .lab-grid, .addon-pricing {
                 grid-template-columns: 1fr;
             }
 
@@ -1735,6 +1806,14 @@
                 <div class="add-ons animate-on-scroll" aria-label="Add-ons">
                     <span>Drone</span><span>Virtual staging</span><span>Twilight conversion</span><span>AI listing description</span><span>Closing-gift video</span>
                 </div>
+                <div class="addon-pricing animate-on-scroll" aria-label="Add-on pricing">
+                    <article class="addon-price-card"><strong>Drone exterior</strong><b>+$150</b><span>Included in Pro when conditions allow. Adds aerial and exterior context.</span></article>
+                    <article class="addon-price-card"><strong>Virtual staging</strong><b>+$35/room</b><span>Included for three rooms in Luxury Feature. Best for vacant spaces.</span></article>
+                    <article class="addon-price-card"><strong>Twilight conversion</strong><b>+$50</b><span>Included in Pro and Luxury. Gives the listing a stronger hero look.</span></article>
+                    <article class="addon-price-card"><strong>AI listing description</strong><b>+$25</b><span>Included in Pro. Delivered as a clean first draft for agent review.</span></article>
+                    <article class="addon-price-card"><strong>Closing-gift video</strong><b>+$125</b><span>A short keepsake video for the buyer, seller, or agent follow-up.</span></article>
+                </div>
+                <p class="addon-note animate-on-scroll">Add-on prices are shown before confirmation. If weather, access, travel, or property size changes the scope, you hear that before paying.</p>
                 <div class="comparison-wrap animate-on-scroll" aria-label="Package comparison">
                     <table class="comparison-table">
                         <thead><tr><th>Need</th><th>Starter</th><th>Pro</th><th>Luxury Feature</th></tr></thead>
@@ -1837,7 +1916,7 @@
                         <p>Listings outside the core metroplex can still be requested. If a travel fee applies, we tell you before confirming.</p>
                     </div>
                     <div class="city-grid" aria-label="DFW cities served">
-                        <span>Frisco</span><span>Plano</span><span>McKinney</span><span>Dallas</span><span>Fort Worth</span><span>Arlington</span><span>Allen</span><span>Prosper</span><span>Southlake</span><span>Irving</span><span>Richardson</span><span>Denton</span>
+                        <span>Frisco</span><span>Plano</span><span>McKinney</span><span>Dallas</span><span>Fort Worth</span><span>Arlington</span><span>Allen</span><span>Prosper</span><span>Southlake</span><span>Irving</span><span>Richardson</span><span>Denton</span><span>Grapevine</span><span>Coppell</span><span>Lewisville</span><span>Flower Mound</span><span>Carrollton</span><span>The Colony</span><span>Little Elm</span><span>Rockwall</span>
                     </div>
                 </div>
             </div>
