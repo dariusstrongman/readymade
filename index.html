@@ -433,6 +433,7 @@
 
         .hero-media {
             position: relative;
+            padding-bottom: 58px;
         }
 
         .media-shell {
@@ -497,14 +498,15 @@
 
         .floating-note {
             position: absolute;
-            left: -34px;
-            bottom: 42px;
-            width: min(284px, 60%);
+            right: 28px;
+            bottom: 0;
+            width: min(260px, calc(100% - 56px));
             background: var(--white);
             border: 1px solid var(--stone);
             border-radius: 24px;
-            padding: 18px;
+            padding: 16px 18px;
             box-shadow: var(--soft-shadow);
+            z-index: 2;
         }
 
         .floating-note small {
@@ -1612,6 +1614,10 @@
             .media-shell, .media-shell img {
                 min-height: 460px;
                 height: 460px;
+            }
+
+            .hero-media {
+                padding-bottom: 0;
             }
 
             .floating-note {
