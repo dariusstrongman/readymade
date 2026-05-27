@@ -1511,9 +1511,9 @@
 
         .pricing-summary {
             display: grid;
-            grid-template-columns: repeat(4, 1fr);
+            grid-template-columns: repeat(3, 1fr);
             gap: 1.5rem;
-            max-width: 1100px;
+            max-width: 1000px;
             margin: 4rem auto 3rem;
         }
 
@@ -1620,6 +1620,40 @@
             color: var(--secondary);
         }
 
+        .tier-cta {
+            display: inline-block;
+            margin-top: 1.2rem;
+            padding: 0.7rem 1.2rem;
+            background: transparent;
+            border: 1px solid rgba(255,60,60,0.4);
+            color: var(--text-light);
+            text-decoration: none;
+            font-size: 0.85rem;
+            font-weight: 600;
+            border-radius: 100px;
+            transition: all 0.3s ease;
+            letter-spacing: 0.02em;
+            align-self: center;
+            white-space: nowrap;
+        }
+
+        .tier-cta:hover {
+            background: var(--gradient-primary);
+            border-color: transparent;
+            color: var(--dark-bg);
+            transform: translateY(-2px);
+        }
+
+        .pricing-tier.featured .tier-cta {
+            background: var(--gradient-primary);
+            border-color: transparent;
+            color: var(--dark-bg);
+        }
+
+        .pricing-tier.featured .tier-cta:hover {
+            filter: brightness(1.1);
+        }
+
         .pricing-cta {
             text-align: center;
             max-width: 500px;
@@ -1632,17 +1666,10 @@
             font-size: 1.1rem;
         }
 
-        @media (max-width: 1024px) {
-            .pricing-summary {
-                grid-template-columns: repeat(2, 1fr);
-                max-width: 600px;
-            }
-        }
-
-        @media (max-width: 768px) {
+        @media (max-width: 900px) {
             .pricing-summary {
                 grid-template-columns: 1fr;
-                max-width: 350px;
+                max-width: 400px;
             }
 
             .pricing-tier.featured {
@@ -2654,16 +2681,17 @@
                     <span class="amount">$300</span>
                 </div>
                 <p>25 HDR photos, 60-second walkthrough, 1 vertical Reel. Next-day delivery. Perfect for the standard $300k-$700k listing.</p>
-                <a href="#contact" class="btn-secondary" style="margin-top: 1rem; display: inline-block;">Book This Package</a>
+                <a href="#contact" class="tier-cta">Book This Package</a>
             </div>
-            <div class="pricing-tier" style="border: 1px solid rgba(255,140,0,0.4);">
+            <div class="pricing-tier featured">
+                <div class="tier-badge">Most Chosen</div>
                 <h3>The Marketing Pro</h3>
                 <div class="tier-price">
                     <span class="prefix">Per listing</span>
                     <span class="amount">$750</span>
                 </div>
                 <p>40 photos + drone + cinematic walkthrough with AI voiceover + 3 social cuts + twilight exterior. The package most realtors choose.</p>
-                <a href="#contact" class="btn-primary" style="margin-top: 1rem; display: inline-block;">Book This Package</a>
+                <a href="#contact" class="tier-cta">Book This Package</a>
             </div>
             <div class="pricing-tier">
                 <h3>The Luxury Feature</h3>
@@ -2672,7 +2700,7 @@
                     <span class="amount">$1,500</span>
                 </div>
                 <p>60 photos, full drone, twilight, 2-3 minute film, branded social kit, virtual staging on 3 rooms, AI listing description. Same-day rush available.</p>
-                <a href="#contact" class="btn-secondary" style="margin-top: 1rem; display: inline-block;">Book This Package</a>
+                <a href="#contact" class="tier-cta">Book This Package</a>
             </div>
         </div>
 
@@ -2702,7 +2730,7 @@
     <section id="why-us" style="padding: 5rem 2rem; max-width: 1200px; margin: 0 auto;">
         <div class="section-header animate-on-scroll">
             <div class="section-tag">Why Realtors Pick Us</div>
-            <h2 class="section-title">Faster. AI-Edited. Built for Frisco.</h2>
+            <h2 class="section-title">Faster. AI-Edited. Built for DFW.</h2>
             <p class="section-subtitle">Three things separate us from the other DFW photographers.</p>
         </div>
         <div class="animate-on-scroll" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.8rem; margin-top: 2.5rem;">
