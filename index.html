@@ -1208,6 +1208,264 @@
             transform: none;
         }
 
+
+
+        .standards-panel {
+            background: linear-gradient(135deg, #fffaf2 0%, #f0e2d0 100%);
+            border-bottom: 1px solid rgba(125, 79, 37, 0.16);
+        }
+
+        .standards-grid {
+            display: grid;
+            grid-template-columns: repeat(5, minmax(0, 1fr));
+            gap: 1px;
+            background: rgba(125, 79, 37, 0.14);
+            border: 1px solid rgba(125, 79, 37, 0.14);
+            border-radius: 28px;
+            overflow: hidden;
+            box-shadow: var(--soft-shadow);
+        }
+
+        .standard-item {
+            background: rgba(255,250,242,0.92);
+            padding: 22px 18px;
+            min-height: 134px;
+        }
+
+        .standard-item small {
+            display: block;
+            color: var(--bronze-dark);
+            font-weight: 900;
+            letter-spacing: 0.12em;
+            text-transform: uppercase;
+            margin-bottom: 10px;
+            font-size: 0.72rem;
+        }
+
+        .standard-item strong {
+            display: block;
+            color: var(--ink);
+            font-size: 1.05rem;
+            line-height: 1.2;
+            margin-bottom: 8px;
+        }
+
+        .standard-item span {
+            display: block;
+            color: var(--muted);
+            font-size: 0.9rem;
+            line-height: 1.45;
+        }
+
+        .handoff-section {
+            background: #fbf3e8;
+        }
+
+        .handoff-grid {
+            display: grid;
+            grid-template-columns: minmax(0, 0.9fr) minmax(420px, 1.1fr);
+            gap: 28px;
+            align-items: stretch;
+        }
+
+        .handoff-card {
+            background: var(--ink);
+            color: var(--cream);
+            border-radius: 34px;
+            padding: 34px;
+            min-height: 100%;
+            box-shadow: var(--shadow);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .handoff-card::after {
+            content: "";
+            position: absolute;
+            width: 260px;
+            height: 260px;
+            border-radius: 50%;
+            right: -90px;
+            bottom: -120px;
+            background: rgba(217,170,115,0.18);
+        }
+
+        .handoff-card h2 {
+            font-family: "Playfair Display", Georgia, serif;
+            font-size: clamp(2.2rem, 4vw, 4.2rem);
+            line-height: 0.98;
+            letter-spacing: -0.04em;
+            margin: 16px 0 20px;
+        }
+
+        .handoff-card p {
+            color: rgba(255,255,255,0.72);
+            max-width: 560px;
+            font-size: 1.05rem;
+        }
+
+        .handoff-list {
+            display: grid;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            gap: 14px;
+        }
+
+        .handoff-item {
+            background: var(--white);
+            border: 1px solid var(--stone);
+            border-radius: 24px;
+            padding: 24px;
+            box-shadow: 0 10px 30px rgba(38, 29, 20, 0.05);
+        }
+
+        .handoff-item b {
+            display: block;
+            font-size: 1.02rem;
+            margin-bottom: 8px;
+            color: var(--ink);
+        }
+
+        .handoff-item span {
+            display: block;
+            color: var(--muted);
+            font-size: 0.94rem;
+        }
+
+        .comparison-wrap {
+            margin-top: 30px;
+            background: rgba(255,255,255,0.82);
+            border: 1px solid var(--stone);
+            border-radius: 28px;
+            overflow: hidden;
+            box-shadow: 0 12px 34px rgba(38, 29, 20, 0.06);
+        }
+
+        .comparison-table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 0.95rem;
+        }
+
+        .comparison-table th,
+        .comparison-table td {
+            text-align: left;
+            padding: 18px 20px;
+            border-bottom: 1px solid rgba(125,79,37,0.14);
+            vertical-align: top;
+        }
+
+        .comparison-table th {
+            color: var(--bronze-dark);
+            font-weight: 900;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            font-size: 0.74rem;
+            background: #fbf3e8;
+        }
+
+        .comparison-table tr:last-child td {
+            border-bottom: none;
+        }
+
+        .comparison-table td:first-child {
+            font-weight: 800;
+            color: var(--ink);
+            width: 22%;
+        }
+
+        .proof-lab {
+            background: linear-gradient(135deg, #1f211f 0%, #2d2b27 100%);
+            color: var(--cream);
+        }
+
+        .proof-lab .section-heading h2,
+        .proof-lab .eyebrow {
+            color: var(--cream);
+        }
+
+        .proof-lab .section-heading p {
+            color: rgba(255,255,255,0.7);
+        }
+
+        .lab-grid {
+            display: grid;
+            grid-template-columns: repeat(3, minmax(0, 1fr));
+            gap: 18px;
+        }
+
+        .lab-card {
+            border: 1px solid rgba(255,255,255,0.12);
+            background: rgba(255,255,255,0.06);
+            border-radius: 28px;
+            padding: 26px;
+        }
+
+        .lab-card small {
+            display: inline-flex;
+            color: #d9aa73;
+            font-weight: 900;
+            letter-spacing: 0.13em;
+            text-transform: uppercase;
+            font-size: 0.72rem;
+            margin-bottom: 14px;
+        }
+
+        .lab-card h3 {
+            font-size: 1.25rem;
+            margin-bottom: 10px;
+        }
+
+        .lab-card p {
+            color: rgba(255,255,255,0.68);
+            font-size: 0.95rem;
+        }
+
+        .area-copy {
+            margin-top: 20px;
+            color: var(--muted);
+            font-size: 0.98rem;
+        }
+
+        .booking-timeline {
+            display: grid;
+            gap: 12px;
+            margin-bottom: 22px;
+        }
+
+        .timeline-step {
+            display: grid;
+            grid-template-columns: 38px 1fr;
+            gap: 14px;
+            align-items: start;
+            border: 1px solid rgba(255,255,255,0.13);
+            background: rgba(255,255,255,0.06);
+            border-radius: 22px;
+            padding: 16px;
+        }
+
+        .timeline-step span {
+            width: 38px;
+            height: 38px;
+            border-radius: 50%;
+            display: grid;
+            place-items: center;
+            background: #d9aa73;
+            color: #1d1208;
+            font-weight: 900;
+        }
+
+        .timeline-step strong {
+            display: block;
+            margin-bottom: 3px;
+            color: var(--white);
+        }
+
+        .timeline-step p {
+            color: rgba(255,255,255,0.68);
+            font-size: 0.9rem;
+        }
+
+
         @media (max-width: 1040px) {
             .nav-links, .nav-actions {
                 display: none;
@@ -1230,7 +1488,7 @@
                 box-shadow: var(--soft-shadow);
             }
 
-            .hero-grid, .intro-grid, .area-panel, .faq-grid, .contact-grid {
+            .hero-grid, .intro-grid, .area-panel, .faq-grid, .contact-grid, .handoff-grid {
                 grid-template-columns: 1fr;
             }
 
@@ -1242,7 +1500,7 @@
                 max-width: 720px;
             }
 
-            .trust-grid, .why-grid {
+            .trust-grid, .why-grid, .standards-grid, .lab-grid {
                 grid-template-columns: repeat(2, minmax(0, 1fr));
             }
 
@@ -1268,8 +1526,16 @@
                 gap: 34px;
             }
 
-            .proof-row, .stat-list, .trust-grid, .why-grid, .work-grid, .city-grid, .footer-grid {
+            .proof-row, .stat-list, .trust-grid, .why-grid, .work-grid, .city-grid, .footer-grid, .standards-grid, .handoff-list, .lab-grid {
                 grid-template-columns: 1fr;
+            }
+
+            .comparison-wrap {
+                overflow-x: auto;
+            }
+
+            .comparison-table {
+                min-width: 720px;
             }
 
             .media-shell, .media-shell img {
@@ -1312,6 +1578,7 @@
             <ul class="nav-links" id="navLinks">
                 <li><a href="#packages">Packages</a></li>
                 <li><a href="#work">Work</a></li>
+                <li><a href="#handoff">Delivery</a></li>
                 <li><a href="#process">Process</a></li>
                 <li><a href="#service-area">DFW Areas</a></li>
                 <li><a href="#faq">FAQ</a></li>
@@ -1329,8 +1596,8 @@
             <div class="container hero-grid">
                 <div class="hero-copy animate-on-scroll">
                     <span class="eyebrow">Dallas-Fort Worth Listing Media</span>
-                    <h1 id="hero-title">24-hour listing video for DFW Realtors.</h1>
-                    <p class="lead">Most local photographers take <strong>5 to 10 days</strong>. We shoot your listing, edit with a smart AI-assisted workflow, and deliver <strong>MLS-ready files the morning after the shoot</strong>.</p>
+                    <h1 id="hero-title">Listing media that is ready before your listing is.</h1>
+                    <p class="lead">Most local photographers take <strong>5 to 10 days</strong>. We shoot the property, edit through a fast AI-assisted workflow, and deliver <strong>MLS-ready files the morning after the shoot</strong>.</p>
                     <div class="hero-ctas">
                         <a class="btn btn-primary" href="#contact">Request a Shoot</a>
                         <a class="btn btn-outline" href="#packages">See Pricing</a>
@@ -1366,6 +1633,16 @@
             </div>
         </div>
 
+        <section class="standards-panel" aria-label="ReadyMadeVideo operating standards">
+            <div class="container standards-grid animate-on-scroll">
+                <div class="standard-item"><small>Turnaround</small><strong>Morning-after delivery</strong><span>Standard packages are built around a 24-hour handoff, not a week of waiting.</span></div>
+                <div class="standard-item"><small>MLS</small><strong>NTREIS-ready exports</strong><span>Files are prepared for North Texas listing use with practical photo and video versions.</span></div>
+                <div class="standard-item"><small>Access</small><strong>Supra eKEY holder</strong><span>When the listing allows it, you do not need to stand around during the shoot.</span></div>
+                <div class="standard-item"><small>Drone</small><strong>FAA Part 107 licensed</strong><span>Commercial aerial work is handled with airspace, weather, and property context in mind.</span></div>
+                <div class="standard-item"><small>Risk</small><strong>No charge on the form</strong><span>Availability is confirmed first. The deposit link comes after the shoot slot is approved.</span></div>
+            </div>
+        </section>
+
         <section id="about">
             <div class="container intro-grid">
                 <aside class="statement-card animate-on-scroll">
@@ -1382,6 +1659,25 @@
             </div>
         </section>
 
+
+        <section class="handoff-section" id="handoff">
+            <div class="container handoff-grid">
+                <div class="handoff-card animate-on-scroll">
+                    <span class="eyebrow">The handoff</span>
+                    <h2>What you get tomorrow morning.</h2>
+                    <p>The point is not just speed. The point is usable files that let you go live, send the seller an update, post to social, and move on with the listing.</p>
+                </div>
+                <div class="handoff-list animate-on-scroll">
+                    <div class="handoff-item"><b>Edited listing photos</b><span>Clean HDR images with consistent color, straight lines, and NTREIS-ready versions.</span></div>
+                    <div class="handoff-item"><b>MLS-ready video export</b><span>A practical listing video sized for real marketing use, not a giant file you have to rework.</span></div>
+                    <div class="handoff-item"><b>Social cuts</b><span>Vertical clips for Instagram, Facebook, YouTube Shorts, or quick seller updates.</span></div>
+                    <div class="handoff-item"><b>Organized download link</b><span>Clear folders, simple file names, and add-ons grouped so your team can find what it needs.</span></div>
+                    <div class="handoff-item"><b>Add-on assets</b><span>Drone, twilight conversion, virtual staging, AI listing description, and closing-gift video when selected.</span></div>
+                    <div class="handoff-item"><b>Direct communication</b><span>If something affects the shoot, weather, access, HOA rules, or timing, you hear about it before it becomes a problem.</span></div>
+                </div>
+            </div>
+        </section>
+
         <section class="packages" id="packages">
             <div class="container">
                 <div class="section-heading animate-on-scroll">
@@ -1394,7 +1690,7 @@
                         <span class="package-label">Starter</span>
                         <h3>Starter</h3>
                         <div class="price">$300</div>
-                        <p>For clean listings that need professional basics and fast delivery.</p>
+                        <p><strong>Best for:</strong> clean starter listings, condos, leases, and homes that need the essentials done right.</p>
                         <ul>
                             <li>HDR listing photos</li>
                             <li>Short walkthrough video</li>
@@ -1409,7 +1705,7 @@
                         <span class="package-label">Pro</span>
                         <h3>Pro</h3>
                         <div class="price">$750</div>
-                        <p>The best fit for most agents who want photos, video, and stronger listing reach.</p>
+                        <p><strong>Best for:</strong> most $300k to $900k DFW listings where photos, video, drone, and social clips need to work together.</p>
                         <ul>
                             <li>Expanded HDR photo set</li>
                             <li>90-second listing video</li>
@@ -1424,7 +1720,7 @@
                         <span class="package-label">Luxury Feature</span>
                         <h3>Luxury Feature</h3>
                         <div class="price">$1,500</div>
-                        <p>For premium listings that need a stronger cinematic presentation.</p>
+                        <p><strong>Best for:</strong> luxury, acreage, custom homes, and listings where the seller expects a higher-end presentation.</p>
                         <ul>
                             <li>Full HDR photo set</li>
                             <li>Two to three minute feature video</li>
@@ -1439,6 +1735,19 @@
                 <div class="add-ons animate-on-scroll" aria-label="Add-ons">
                     <span>Drone</span><span>Virtual staging</span><span>Twilight conversion</span><span>AI listing description</span><span>Closing-gift video</span>
                 </div>
+                <div class="comparison-wrap animate-on-scroll" aria-label="Package comparison">
+                    <table class="comparison-table">
+                        <thead><tr><th>Need</th><th>Starter</th><th>Pro</th><th>Luxury Feature</th></tr></thead>
+                        <tbody>
+                            <tr><td>Best fit</td><td>Essentials for straightforward listings.</td><td>Most listings that need photos, video, social, and stronger reach.</td><td>Premium homes that need a cinematic sales asset.</td></tr>
+                            <tr><td>Video</td><td>Short walkthrough.</td><td>90-second listing video.</td><td>Two to three minute feature video.</td></tr>
+                            <tr><td>Social</td><td>One vertical cut.</td><td>Three social-ready cuts.</td><td>Branded social kit.</td></tr>
+                            <tr><td>Add-ons</td><td>Available on request.</td><td>Drone when conditions allow, twilight conversion, and AI listing description included.</td><td>Drone aerials, twilight package, and virtual staging on three rooms included.</td></tr>
+                            <tr><td>Delivery</td><td>Next morning.</td><td>Next morning.</td><td>Next morning, with same-day rush when available.</td></tr>
+                        </tbody>
+                    </table>
+                </div>
+
             </div>
         </section>
 
@@ -1499,11 +1808,27 @@
             </div>
         </section>
 
+
+        <section class="proof-lab" id="standards">
+            <div class="container">
+                <div class="section-heading animate-on-scroll">
+                    <span class="eyebrow">Proof before polish</span>
+                    <h2>A better-looking site is not enough.</h2>
+                    <p>Realtors trust media teams that remove friction on listing week. ReadyMadeVideo is built around the details that keep the shoot, edit, and upload moving.</p>
+                </div>
+                <div class="lab-grid">
+                    <article class="lab-card animate-on-scroll"><small>Access</small><h3>We plan around property entry.</h3><p>Supra eKEY access, lockbox notes, gate codes, seller instructions, and arrival windows are confirmed before the shoot.</p></article>
+                    <article class="lab-card animate-on-scroll"><small>Airspace</small><h3>Drone work is not guessed.</h3><p>FAA Part 107 licensing matters because aerial work has weather, airspace, and safety limits. If conditions are not right, we tell you.</p></article>
+                    <article class="lab-card animate-on-scroll"><small>Files</small><h3>Delivery is organized for agents.</h3><p>You get practical versions for MLS, social, and client review so the media does not create another task for your team.</p></article>
+                </div>
+            </div>
+        </section>
+
         <section class="service-area" id="service-area">
             <div class="container area-panel animate-on-scroll">
                 <div class="map-card">
                     <h3>Built for the Dallas-Fort Worth market.</h3>
-                    <p>ReadyMadeVideo serves solo listing agents and small teams across DFW, with a strong focus on Frisco, Plano, McKinney, Arlington, Dallas, and Fort Worth.</p>
+                    <p>ReadyMadeVideo serves solo listing agents and small teams across DFW, with a strong focus on Frisco, Plano, McKinney, Arlington, Dallas, and Fort Worth.</p><p class="area-copy">North Texas listings move fast. A Frisco listing, a Plano family home, a McKinney new-build, an Arlington flip, a Dallas condo, and a Fort Worth luxury property all need different framing, but the handoff has to be the same: clear, fast, and ready to publish.</p>
                 </div>
                 <div>
                     <div class="section-heading" style="margin-bottom: 28px;">
@@ -1542,6 +1867,12 @@
                         <span class="eyebrow">Booking</span>
                         <h2>Request your listing shoot.</h2>
                         <p>Send the basics. We confirm availability, then send the $150 deposit link to hold the slot. No charge is collected on this form.</p>
+                    </div>
+                    <div class="booking-timeline" aria-label="Booking timeline">
+                        <div class="timeline-step"><span>1</span><div><strong>Send the request</strong><p>Property address, package, preferred date, access, and add-ons.</p></div></div>
+                        <div class="timeline-step"><span>2</span><div><strong>We confirm the slot</strong><p>No charge on this form. We check availability before sending the deposit link.</p></div></div>
+                        <div class="timeline-step"><span>3</span><div><strong>We shoot the property</strong><p>Supra access, drone conditions, and seller notes are handled before arrival.</p></div></div>
+                        <div class="timeline-step"><span>4</span><div><strong>You get files next morning</strong><p>Download link, MLS-ready exports, and selected add-ons organized for use.</p></div></div>
                     </div>
                     <div class="booking-notes">
                         <div class="booking-note"><strong>Best for urgent listings</strong><span>If the home is going live soon, mention the target go-live date in the notes.</span></div>
@@ -1582,7 +1913,8 @@
                 <img src="logo-compact.svg" alt="ReadyMadeVideo">
                 <p>24-hour real estate video and photography for Realtors across the Dallas-Fort Worth metroplex.</p>
             </div>
-            <div><h4>Company</h4><ul><li><a href="#packages">Packages</a></li><li><a href="#work">Work</a></li><li><a href="#process">Process</a></li><li><a href="#faq">FAQ</a></li></ul></div>
+            <div><h4>Company</h4><ul><li><a href="#packages">Packages</a></li><li><a href="#work">Work</a></li>
+                <li><a href="#handoff">Delivery</a></li><li><a href="#process">Process</a></li><li><a href="#faq">FAQ</a></li></ul></div>
             <div><h4>Service areas</h4><ul><li>Frisco</li><li>Plano</li><li>McKinney</li><li>Dallas</li><li>Fort Worth</li></ul></div>
             <div><h4>Contact</h4><ul><li><a href="mailto:contact@readymadevideo.com">contact@readymadevideo.com</a></li><li><a href="https://www.instagram.com/readymadevideo" target="_blank" rel="noopener">Instagram</a></li><li><a href="https://www.youtube.com/@readymadevideo" target="_blank" rel="noopener">YouTube</a></li><li><a href="https://www.facebook.com/readymadevideo" target="_blank" rel="noopener">Facebook</a></li></ul></div>
         </div>
