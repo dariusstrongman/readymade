@@ -24,3 +24,9 @@ Sounds/
 public/*.mp3
 public/video/
 landing-video.mp4
+
+# Secrets, never commit
+.mcp.json
+n8n_api_key.txt
+*.api_key
+*.secret
