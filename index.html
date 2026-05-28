@@ -870,6 +870,101 @@
             gap: 20px;
         }
 
+        .examples-section {
+            background:
+                radial-gradient(circle at 12% 8%, rgba(217,170,115,0.12), transparent 28%),
+                linear-gradient(135deg, #211d19 0%, #14100c 100%);
+            color: var(--cream);
+        }
+
+        .examples-section .section-heading h2 {
+            color: var(--cream);
+        }
+
+        .examples-section .section-heading p {
+            color: rgba(255,255,255,0.68);
+        }
+
+        .examples-grid {
+            display: grid;
+            grid-template-columns: 1.12fr 0.88fr;
+            gap: 20px;
+            align-items: start;
+        }
+
+        .example-card {
+            overflow: hidden;
+            border-radius: 30px;
+            background: #0d0b09;
+            border: 1px solid rgba(255,255,255,0.10);
+            box-shadow: 0 28px 80px rgba(0,0,0,0.24);
+        }
+
+        .example-card.portrait {
+            max-width: 420px;
+            justify-self: end;
+            width: 100%;
+        }
+
+        .example-card video {
+            width: 100%;
+            aspect-ratio: 16 / 9;
+            object-fit: cover;
+            background: #0d0b09;
+        }
+
+        .example-card.portrait video {
+            aspect-ratio: 9 / 16;
+        }
+
+        .example-caption {
+            display: block;
+            color: white;
+            padding: 20px 24px 24px;
+            background: linear-gradient(180deg, rgba(255,255,255,0.05), rgba(255,255,255,0.02));
+        }
+
+        .example-caption strong,
+        .example-caption span,
+        .example-caption small {
+            display: block;
+        }
+
+        .example-caption small {
+            color: #d9aa73;
+            font-size: 0.72rem;
+            font-weight: 900;
+            letter-spacing: 0.12em;
+            text-transform: uppercase;
+            margin-bottom: 8px;
+        }
+
+        .example-caption strong {
+            font-size: 1.35rem;
+            letter-spacing: -0.04em;
+        }
+
+        .example-caption span {
+            max-width: 340px;
+            color: rgba(255,255,255,0.72);
+            font-size: 0.9rem;
+            margin-top: 6px;
+        }
+
+        .example-card-row {
+            display: grid;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            gap: 20px;
+            margin-top: 20px;
+        }
+
+        .examples-note {
+            margin-top: 24px;
+            color: rgba(255,255,255,0.66);
+            max-width: 780px;
+            font-size: 0.95rem;
+        }
+
         .process {
             background: var(--charcoal);
             color: var(--cream);
@@ -1574,8 +1669,13 @@
                 grid-template-columns: repeat(2, minmax(0, 1fr));
             }
 
-            .package-grid, .process-grid {
+            .package-grid, .process-grid, .examples-grid, .example-card-row {
                 grid-template-columns: 1fr;
+            }
+
+            .example-card.portrait {
+                justify-self: start;
+                max-width: 380px;
             }
 
             .addon-pricing {
@@ -1600,7 +1700,7 @@
                 gap: 34px;
             }
 
-            .proof-row, .stat-list, .trust-grid, .why-grid, .work-grid, .city-grid, .footer-grid, .standards-grid, .handoff-list, .lab-grid, .addon-pricing {
+            .proof-row, .stat-list, .trust-grid, .why-grid, .work-grid, .city-grid, .footer-grid, .standards-grid, .handoff-list, .lab-grid, .addon-pricing, .examples-grid, .example-card-row {
                 grid-template-columns: 1fr;
             }
 
@@ -1643,6 +1743,14 @@
 
             .video-card.tall {
                 min-height: 460px;
+            }
+
+            .example-card.portrait {
+                max-width: 100%;
+            }
+
+            .example-caption {
+                padding: 18px;
             }
         }
     </style>
@@ -1860,6 +1968,49 @@
                         </figure>
                     </div>
                 </div>
+            </div>
+        </section>
+
+        <section class="examples-section" id="examples">
+            <div class="container">
+                <div class="section-heading animate-on-scroll">
+                    <span class="eyebrow">Example videos</span>
+                    <h2>Real formats agents can use right away.</h2>
+                    <p>Four simple examples show how the same listing can be shaped for MLS, social, and a fuller property tour. No stock footage. No off-site embeds. These files live with the site.</p>
+                </div>
+                <div class="examples-grid animate-on-scroll" aria-label="ReadyMadeVideo example videos">
+                    <article class="example-card featured">
+                        <video controls playsinline preload="none" poster="video/examples/style-luxury.jpg" aria-label="Luxury listing video example">
+                            <source src="video/examples/style-luxury.mp4" type="video/mp4">
+                            Your browser does not support HTML5 video.
+                        </video>
+                        <div class="example-caption"><div><small>Style 01</small><strong>Luxury Listing</strong><span>Polished exterior framing, listing details, and a premium first impression for higher-value homes.</span></div></div>
+                    </article>
+                    <article class="example-card portrait">
+                        <video controls playsinline preload="none" poster="video/examples/style-reel.jpg" aria-label="Social reel video example">
+                            <source src="video/examples/style-reel.mp4" type="video/mp4">
+                            Your browser does not support HTML5 video.
+                        </video>
+                        <div class="example-caption"><div><small>Style 02</small><strong>Social Reel</strong><span>A vertical cut built for quick posting, price awareness, and mobile-first listing reach.</span></div></div>
+                    </article>
+                </div>
+                <div class="example-card-row animate-on-scroll" aria-label="Additional example videos">
+                    <article class="example-card">
+                        <video controls playsinline preload="none" poster="video/examples/style-minimal.jpg" aria-label="Minimal style listing video example">
+                            <source src="video/examples/style-minimal.mp4" type="video/mp4">
+                            Your browser does not support HTML5 video.
+                        </video>
+                        <div class="example-caption"><div><small>Style 03</small><strong>Minimal Style</strong><span>Clean pacing with less on-screen copy when the property image should do most of the work.</span></div></div>
+                    </article>
+                    <article class="example-card">
+                        <video controls playsinline preload="none" poster="video/examples/full-tour.jpg" aria-label="Full property tour video example">
+                            <source src="video/examples/full-tour.mp4" type="video/mp4">
+                            Your browser does not support HTML5 video.
+                        </video>
+                        <div class="example-caption"><div><small>Style 04</small><strong>Full Property Tour</strong><span>A longer walkthrough option for listings that need more context before a buyer books a showing.</span></div></div>
+                    </article>
+                </div>
+                <p class="examples-note animate-on-scroll">Videos are set to load only when a visitor chooses to play them, which keeps the homepage fast while still giving agents proof of the final product.</p>
             </div>
         </section>
 
