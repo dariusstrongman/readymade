@@ -2218,44 +2218,27 @@
                 <div class="animate-on-scroll">
                     <div class="section-heading">
                         <span class="eyebrow">Booking</span>
-                        <h2>Request your listing shoot.</h2>
-                        <p>Send the basics. We confirm availability, then send the $150 deposit link to hold the slot. No charge is collected on this form.</p>
+                        <h2>Ready to request your listing shoot?</h2>
+                        <p>Use the dedicated request page for property details, preferred shoot date, package selection, access notes, and add-ons. We confirm availability before sending any deposit link.</p>
                     </div>
                     <div class="booking-timeline" aria-label="Booking timeline">
-                        <div class="timeline-step"><span>1</span><div><strong>Send the request</strong><p>Property address, package, preferred date, access, and add-ons.</p></div></div>
-                        <div class="timeline-step"><span>2</span><div><strong>We confirm the slot</strong><p>No charge on this form. We check availability before sending the deposit link.</p></div></div>
+                        <div class="timeline-step"><span>1</span><div><strong>Open the request page</strong><p>Enter the address, package, preferred date, access, and special notes in one focused flow.</p></div></div>
+                        <div class="timeline-step"><span>2</span><div><strong>We confirm the slot</strong><p>No charge is collected on the form. We check availability before sending the deposit link.</p></div></div>
                         <div class="timeline-step"><span>3</span><div><strong>We shoot the property</strong><p>Supra access, drone conditions, and seller notes are handled before arrival.</p></div></div>
-                        <div class="timeline-step"><span>4</span><div><strong>You get files next morning</strong><p>Download link, MLS-ready exports, and selected add-ons organized for use.</p></div></div>
-                    </div>
-                    <div class="booking-notes">
-                        <div class="booking-note"><strong>Best for urgent listings</strong><span>If the home is going live soon, mention the target go-live date in the notes.</span></div>
-                        <div class="booking-note"><strong>Need add-ons?</strong><span>Drone, twilight conversion, virtual staging, AI listing description, and closing-gift video can be added to the request.</span></div>
-                        <div class="booking-note"><strong>Email direct</strong><span><a href="mailto:contact@readymadevideo.com">contact@readymadevideo.com</a></span></div>
+                        <div class="timeline-step"><span>4</span><div><strong>You get files next morning</strong><p>Download link, MLS-ready exports, and selected add-ons are organized for use.</p></div></div>
                     </div>
                 </div>
-                <form class="contact-form animate-on-scroll" id="contactForm">
-                    <div class="form-row">
-                        <div class="form-group"><label for="name">Your name *</label><input id="name" name="name" type="text" autocomplete="name" required></div>
-                        <div class="form-group"><label for="business">Brokerage *</label><input id="business" name="business" type="text" autocomplete="organization" required></div>
+                <div class="contact-form animate-on-scroll" aria-label="Request page call to action">
+                    <span class="eyebrow">Single booking flow</span>
+                    <h3 style="font-family: 'Playfair Display', Georgia, serif; font-size: clamp(2.2rem, 4vw, 3.65rem); line-height: 0.95; letter-spacing: -0.055em; margin: 14px 0 18px;">One request page, no duplicate forms.</h3>
+                    <p style="color: var(--muted); font-size: 1.02rem; margin-bottom: 24px;">This keeps every booking request in the same place and makes the next step obvious from any page on the site.</p>
+                    <a class="btn btn-primary" href="quote.html" style="width: 100%; justify-content: center;">Request a Shoot</a>
+                    <p class="form-small">No charge today. Availability is confirmed first.</p>
+                    <div class="booking-notes" style="margin-top: 24px;">
+                        <div class="booking-note"><strong>Urgent listing?</strong><span>Add the target go-live date on the request page.</span></div>
+                        <div class="booking-note"><strong>Questions first?</strong><span><a href="mailto:contact@readymadevideo.com">contact@readymadevideo.com</a></span></div>
                     </div>
-                    <div class="form-row">
-                        <div class="form-group"><label for="email">Email *</label><input id="email" name="email" type="email" autocomplete="email" required></div>
-                        <div class="form-group"><label for="phone">Phone *</label><input id="phone" name="phone" type="tel" autocomplete="tel" required></div>
-                    </div>
-                    <div class="form-group"><label for="property">Property address *</label><input id="property" name="property" type="text" placeholder="123 Main St, Frisco TX" required></div>
-                    <div class="form-row">
-                        <div class="form-group"><label for="package">Package *</label><select id="package" name="package" required><option value="">Select one</option><option value="starter">Starter, $300</option><option value="pro">Pro, $750</option><option value="luxury">Luxury Feature, $1,500</option><option value="not-sure">Not sure, recommend one</option></select></div>
-                        <div class="form-group"><label for="preferred-date">Preferred shoot date *</label><input id="preferred-date" name="preferred_date" type="date" required></div>
-                    </div>
-                    <div class="form-row">
-                        <div class="form-group"><label for="sqft">Approx. square footage</label><select id="sqft" name="sqft"><option value="not-sure">Not sure</option><option value="under-2000">Under 2,000 sqft</option><option value="2000-3000">2,000 to 3,000 sqft</option><option value="3000-5000">3,000 to 5,000 sqft</option><option value="5000-plus">5,000+ sqft</option></select></div>
-                        <div class="form-group"><label for="access">Access</label><select id="access" name="access"><option value="supra">Supra eKEY</option><option value="agent-meeting">Agent will meet on site</option><option value="code">Door code or other access</option><option value="not-sure">Not sure yet</option></select></div>
-                    </div>
-                    <div class="form-group"><label for="message">Add-ons or notes</label><textarea id="message" name="message" placeholder="Drone, twilight, virtual staging, go-live date, specific shots, seller notes..."></textarea></div>
-                    <p class="form-status" role="status" aria-live="polite"></p>
-                    <button type="submit" class="btn btn-primary" style="width: 100%;">Request Booking</button>
-                    <p class="form-small">No charge today. We confirm availability first, then send the deposit link.</p>
-                </form>
+                </div>
             </div>
         </section>
     </main>
@@ -2334,51 +2317,6 @@
         const yearEl = document.getElementById('currentYear');
         if (yearEl) yearEl.textContent = new Date().getFullYear();
 
-        const preferredDate = document.getElementById('preferred-date');
-        if (preferredDate) {
-            const tomorrow = new Date();
-            tomorrow.setDate(tomorrow.getDate() + 1);
-            preferredDate.min = tomorrow.toISOString().split('T')[0];
-        }
-
-        const contactForm = document.getElementById('contactForm');
-        if (contactForm) {
-            contactForm.addEventListener('submit', async event => {
-                event.preventDefault();
-                const statusEl = contactForm.querySelector('.form-status');
-                const submitBtn = contactForm.querySelector('button[type="submit"]');
-                const formData = Object.fromEntries(new FormData(contactForm).entries());
-                formData.source = 'readymadevideo.com';
-                formData.submitted_at = new Date().toISOString();
-
-                statusEl.textContent = 'Sending your request...';
-                statusEl.classList.remove('is-success', 'is-error');
-                submitBtn.disabled = true;
-                submitBtn.textContent = 'Sending...';
-
-                try {
-                    const response = await fetch('https://n8n.myaibuffet.com/webhook/lead-intake', {
-                        method: 'POST',
-                        headers: { 'Content-Type': 'application/json' },
-                        body: JSON.stringify(formData)
-                    });
-
-                    if (!response.ok) throw new Error('Request failed');
-
-                    statusEl.textContent = 'Request received. We will confirm availability soon.';
-                    statusEl.classList.add('is-success');
-                    contactForm.reset();
-                } catch (error) {
-                    const subject = encodeURIComponent('ReadyMadeVideo booking request');
-                    const body = encodeURIComponent(`Name: ${formData.name || ''}\nBrokerage: ${formData.business || ''}\nEmail: ${formData.email || ''}\nPhone: ${formData.phone || ''}\nProperty: ${formData.property || ''}\nPackage: ${formData.package || ''}\nPreferred date: ${formData.preferred_date || ''}\nSquare footage: ${formData.sqft || ''}\nAccess: ${formData.access || ''}\nNotes: ${formData.message || ''}`);
-                    statusEl.innerHTML = `The form could not send. Please <a href="mailto:contact@readymadevideo.com?subject=${subject}&body=${body}">email the request directly</a>.`;
-                    statusEl.classList.add('is-error');
-                } finally {
-                    submitBtn.disabled = false;
-                    submitBtn.textContent = 'Request Booking';
-                }
-            });
-        }
     </script>
 </body>
 </html>
