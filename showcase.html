@@ -112,6 +112,18 @@
         .mobile-toggle.active span { transform: rotate(45deg); }
         .mobile-toggle.active span::before { opacity: 0; }
         .mobile-toggle.active span::after { transform: translateY(-2px) rotate(90deg); }
+        header:not(.scrolled) .nav-links { color: rgba(255, 250, 242, 0.82); }
+        header:not(.scrolled) .nav-links a:hover { color: var(--cream); }
+        header:not(.scrolled) .btn-outline { color: var(--cream); border-color: rgba(255, 250, 242, 0.28); background: rgba(255, 250, 242, 0.08); }
+        header:not(.scrolled) .btn-outline:hover { border-color: rgba(255, 250, 242, 0.52); background: rgba(255, 250, 242, 0.14); }
+        header:not(.scrolled) .btn-primary { background: var(--cream); color: var(--ink); box-shadow: 0 14px 34px rgba(0,0,0,0.25); }
+        header:not(.scrolled) .btn-primary:hover { background: var(--white); box-shadow: 0 18px 45px rgba(0,0,0,0.3); }
+        header:not(.scrolled) .mobile-toggle { border-color: rgba(255, 250, 242, 0.28); background: rgba(255, 250, 242, 0.08); }
+        header:not(.scrolled) .mobile-toggle span,
+        header:not(.scrolled) .mobile-toggle span::before,
+        header:not(.scrolled) .mobile-toggle span::after { background: var(--cream); }
+        header:not(.scrolled) .nav-links.active { color: rgba(20, 16, 12, 0.78); }
+        header:not(.scrolled) .nav-links.active a:hover { color: var(--ink); }
 
         .eyebrow {
             display: inline-flex;
@@ -309,7 +321,7 @@
 <body>
     <header>
         <nav aria-label="Primary navigation">
-            <a class="brand" href="index.html" aria-label="ReadyMadeVideo home"><img src="logo-compact-dark.svg" alt="ReadyMadeVideo"></a>
+            <a class="brand" href="index.html" aria-label="ReadyMadeVideo home"><img src="logo-compact.svg" data-light-src="logo-compact.svg" data-dark-src="logo-compact-dark.svg" alt="ReadyMadeVideo"></a>
             <ul class="nav-links" id="navLinks">
                 <li><a href="index.html#packages">Packages</a></li>
                 <li><a href="showcase.html" aria-current="page">Showcase</a></li>
@@ -415,11 +427,16 @@
 
     <script>
         const header = document.querySelector('header');
+        const logo = document.querySelector('.brand img');
         const mobileToggle = document.getElementById('mobileToggle');
         const navLinks = document.getElementById('navLinks');
 
         function updateHeader() {
-            header?.classList.toggle('scrolled', window.scrollY > 20);
+            const isScrolled = window.scrollY > 20;
+            header?.classList.toggle('scrolled', isScrolled);
+            if (logo) {
+                logo.src = isScrolled ? logo.dataset.darkSrc : logo.dataset.lightSrc;
+            }
         }
 
         updateHeader();
