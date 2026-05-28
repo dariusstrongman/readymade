@@ -870,6 +870,34 @@
             gap: 20px;
         }
 
+        .showcase-teaser {
+            margin-top: 22px;
+            display: grid;
+            grid-template-columns: minmax(0, 1fr) auto;
+            gap: 24px;
+            align-items: center;
+            padding: 28px;
+            border-radius: 30px;
+            border: 1px solid var(--stone);
+            background: linear-gradient(135deg, rgba(255,250,242,0.94), rgba(245,239,230,0.76));
+            box-shadow: var(--soft-shadow);
+        }
+
+        .showcase-teaser h3 {
+            font-family: "Playfair Display", Georgia, serif;
+            font-size: clamp(1.75rem, 3vw, 2.7rem);
+            line-height: 1;
+            letter-spacing: -0.05em;
+            margin-top: 10px;
+            max-width: 700px;
+        }
+
+        .showcase-teaser p {
+            color: var(--muted);
+            max-width: 700px;
+            margin-top: 10px;
+        }
+
         .examples-section {
             position: relative;
             overflow: hidden;
@@ -1808,7 +1836,7 @@
                 gap: 34px;
             }
 
-            .proof-row, .stat-list, .trust-grid, .why-grid, .work-grid, .city-grid, .footer-grid, .standards-grid, .handoff-list, .lab-grid, .addon-pricing, .examples-showcase, .example-card-row {
+            .proof-row, .stat-list, .trust-grid, .why-grid, .work-grid, .city-grid, .footer-grid, .standards-grid, .handoff-list, .lab-grid, .addon-pricing, .examples-showcase, .example-card-row, .showcase-teaser {
                 grid-template-columns: 1fr;
             }
 
@@ -1853,6 +1881,14 @@
                 min-height: 460px;
             }
 
+            .showcase-teaser {
+                padding: 22px;
+            }
+
+            .showcase-teaser .btn {
+                width: fit-content;
+            }
+
             .example-card.portrait {
                 width: min(100%, 360px);
             }
@@ -1878,7 +1914,7 @@
             </a>
             <ul class="nav-links" id="navLinks">
                 <li><a href="#packages">Packages</a></li>
-                <li><a href="#work">Work</a></li>
+                <li><a href="showcase.html">Showcase</a></li>
                 <li><a href="#handoff">Delivery</a></li>
                 <li><a href="#process">Process</a></li>
                 <li><a href="#service-area">DFW Areas</a></li>
@@ -1901,7 +1937,7 @@
                     <p class="lead">Most local photographers take <strong>5 to 10 days</strong>. We shoot the property, edit through a fast AI-assisted workflow, and deliver <strong>MLS-ready files the morning after the shoot</strong>.</p>
                     <div class="hero-ctas">
                         <a class="btn btn-primary" href="#contact">Request a Shoot</a>
-                        <a class="btn btn-outline" href="#packages">See Pricing</a>
+                        <a class="btn btn-outline" href="showcase.html">View Showcase</a>
                     </div>
                     <div class="proof-row" aria-label="Key proof points">
                         <div class="proof-card"><strong>From $300</strong><span>Transparent packages, no mystery quote.</span></div>
@@ -2083,55 +2119,17 @@
                         </figure>
                     </div>
                 </div>
+                <div class="showcase-teaser animate-on-scroll">
+                    <div>
+                        <span class="eyebrow">Full gallery</span>
+                        <h3>Want to see the video formats without crowding the homepage?</h3>
+                        <p>The examples now live on a dedicated showcase page, where landscape listing videos and vertical social reels each get the right layout.</p>
+                    </div>
+                    <a class="btn btn-primary" href="showcase.html">Open Showcase</a>
+                </div>
             </div>
         </section>
 
-        <section class="examples-section" id="examples">
-            <div class="container">
-                <div class="section-heading animate-on-scroll">
-                    <span class="eyebrow">Example videos</span>
-                    <h2>Real formats agents can use right away.</h2>
-                    <p>Four simple examples show how the same listing can be shaped for MLS, social, and a fuller property tour. No stock footage. No off-site embeds. These files live with the site.</p>
-                </div>
-                <div class="examples-showcase animate-on-scroll" aria-label="ReadyMadeVideo example videos">
-                    <div class="examples-main-stage">
-                        <article class="example-card featured">
-                            <video controls playsinline preload="none" poster="video/examples/style-luxury.jpg" aria-label="Luxury listing video example">
-                                <source src="video/examples/style-luxury.mp4" type="video/mp4">
-                                Your browser does not support HTML5 video.
-                            </video>
-                            <div class="example-caption"><div><small>Hero format</small><strong>Luxury Listing</strong><span>Wide-screen pacing for the main listing video, built to feel polished on MLS, YouTube, and seller updates.</span></div><span class="example-chip">16:9 feature</span></div>
-                        </article>
-                        <div class="example-card-row" aria-label="Additional landscape example videos">
-                            <article class="example-card">
-                                <video controls playsinline preload="none" poster="video/examples/style-minimal.jpg" aria-label="Minimal style listing video example">
-                                    <source src="video/examples/style-minimal.mp4" type="video/mp4">
-                                    Your browser does not support HTML5 video.
-                                </video>
-                                <div class="example-caption"><div><small>Clean cut</small><strong>Minimal Style</strong><span>Quiet copy, simple pacing, and more room for the property image to lead.</span></div></div>
-                            </article>
-                            <article class="example-card">
-                                <video controls playsinline preload="none" poster="video/examples/full-tour.jpg" aria-label="Full property tour video example">
-                                    <source src="video/examples/full-tour.mp4" type="video/mp4">
-                                    Your browser does not support HTML5 video.
-                                </video>
-                                <div class="example-caption"><div><small>Longer walkthrough</small><strong>Full Property Tour</strong><span>More context for buyers before they book a showing or send the home to a client.</span></div></div>
-                            </article>
-                        </div>
-                        <p class="examples-note">Videos are set to load only when a visitor chooses to play them, which keeps the homepage fast while still giving agents proof of the final product.</p>
-                    </div>
-                    <aside class="examples-phone-stage" aria-label="Vertical social example">
-                        <article class="example-card portrait">
-                            <video controls playsinline preload="none" poster="video/examples/style-reel.jpg" aria-label="Social reel video example">
-                                <source src="video/examples/style-reel.mp4" type="video/mp4">
-                                Your browser does not support HTML5 video.
-                            </video>
-                            <div class="example-caption"><div><small>Mobile format</small><strong>Social Reel</strong><span>A vertical cut sized for mobile-first listing reach, quick seller shares, and feed placement.</span></div></div>
-                        </article>
-                    </aside>
-                </div>
-            </div>
-        </section>
 
         <section class="process" id="process">
             <div class="container">

@@ -1,0 +1,403 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Real Estate Video Showcase | ReadyMadeVideo</title>
+    <meta name="description" content="View ReadyMadeVideo example listing videos for DFW real estate agents, including MLS-style listing edits, vertical social reels, clean cuts, and property tours.">
+    <meta name="author" content="ReadyMadeVideo">
+    <link rel="canonical" href="https://readymadevideo.com/showcase.html">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://readymadevideo.com/showcase.html">
+    <meta property="og:title" content="ReadyMadeVideo Real Estate Video Showcase">
+    <meta property="og:description" content="A dedicated gallery of real listing-video formats for DFW agents: hero listing videos, vertical reels, clean cuts, and property tours.">
+    <meta property="og:image" content="https://readymadevideo.com/video/examples/style-luxury.jpg">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="ReadyMadeVideo Real Estate Video Showcase">
+    <meta name="twitter:description" content="See example real estate videos built for MLS, social, and listing marketing use.">
+    <meta name="twitter:image" content="https://readymadevideo.com/video/examples/style-luxury.jpg">
+    <link rel="icon" type="image/svg+xml" href="favicon.svg">
+    <link rel="apple-touch-icon" href="favicon.svg">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --ink: #14100c;
+            --muted: #756b62;
+            --paper: #fffaf2;
+            --sand: #f5efe6;
+            --stone: #e5d8c8;
+            --bronze: #a36d3a;
+            --bronze-dark: #7d4f25;
+            --charcoal: #171411;
+            --cream: #fff7ec;
+            --white: #ffffff;
+            --max: 1180px;
+            --shadow: 0 28px 80px rgba(20, 16, 12, 0.22);
+        }
+
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        html { scroll-behavior: smooth; }
+        body {
+            font-family: "Inter", system-ui, sans-serif;
+            background: var(--charcoal);
+            color: var(--cream);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+        img, video { max-width: 100%; display: block; }
+        a { color: inherit; text-decoration: none; }
+        .container { width: min(var(--max), calc(100% - 40px)); margin: 0 auto; }
+
+        header {
+            position: sticky;
+            top: 0;
+            z-index: 20;
+            background: rgba(255,250,242,0.94);
+            border-bottom: 1px solid rgba(125, 79, 37, 0.16);
+            backdrop-filter: blur(16px);
+        }
+        nav {
+            width: min(1260px, calc(100% - 40px));
+            margin: 0 auto;
+            min-height: 78px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 24px;
+        }
+        .brand img { width: 138px; }
+        .nav-links { display: flex; list-style: none; gap: 24px; align-items: center; color: var(--ink); font-size: 0.92rem; font-weight: 800; }
+        .nav-links a:hover { color: var(--bronze-dark); }
+        .nav-actions { display: flex; gap: 12px; align-items: center; }
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            min-height: 46px;
+            padding: 12px 18px;
+            border-radius: 999px;
+            font-weight: 900;
+            border: 1px solid transparent;
+            transition: transform 180ms ease, box-shadow 180ms ease, background 180ms ease;
+        }
+        .btn:hover { transform: translateY(-1px); }
+        .btn-primary { background: var(--ink); color: var(--cream); box-shadow: 0 14px 34px rgba(20,16,12,0.18); }
+        .btn-outline { color: var(--ink); border-color: var(--stone); background: rgba(255,255,255,0.62); }
+        .btn-light { background: var(--cream); color: var(--ink); }
+        .mobile-toggle { display: none; border: 0; background: transparent; width: 44px; height: 44px; }
+        .mobile-toggle span, .mobile-toggle span::before, .mobile-toggle span::after { display: block; height: 2px; width: 24px; background: var(--ink); content: ""; margin: 0 auto; }
+        .mobile-toggle span::before { transform: translateY(-8px); }
+        .mobile-toggle span::after { transform: translateY(6px); }
+
+        .eyebrow {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            color: #d9aa73;
+            font-size: 0.78rem;
+            font-weight: 900;
+            letter-spacing: 0.15em;
+            text-transform: uppercase;
+        }
+        .eyebrow::before { content: ""; width: 34px; height: 1px; background: currentColor; opacity: 0.65; }
+        h1, h2, h3 { font-family: "Playfair Display", Georgia, serif; line-height: 0.96; letter-spacing: -0.055em; }
+
+        .showcase-hero {
+            position: relative;
+            overflow: hidden;
+            padding: 112px 0 72px;
+            background:
+                radial-gradient(circle at 18% 12%, rgba(217,170,115,0.17), transparent 27%),
+                radial-gradient(circle at 88% 18%, rgba(255,250,242,0.07), transparent 24%),
+                linear-gradient(135deg, #241f19 0%, #11100d 100%);
+        }
+        .showcase-hero::before {
+            content: "";
+            position: absolute;
+            inset: 0;
+            background-image:
+                linear-gradient(rgba(255,255,255,0.035) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(255,255,255,0.035) 1px, transparent 1px);
+            background-size: 74px 74px;
+            mask-image: linear-gradient(180deg, rgba(0,0,0,0.72), transparent 84%);
+            pointer-events: none;
+        }
+        .showcase-hero .container { position: relative; z-index: 1; }
+        .hero-grid {
+            display: grid;
+            grid-template-columns: minmax(0, 0.85fr) minmax(380px, 0.62fr);
+            gap: 54px;
+            align-items: end;
+        }
+        h1 { font-size: clamp(3.4rem, 8vw, 7.7rem); max-width: 860px; margin-top: 18px; }
+        .hero-copy p { max-width: 660px; margin-top: 22px; color: rgba(255,247,236,0.72); font-size: 1.12rem; }
+        .hero-meta {
+            display: grid;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            gap: 12px;
+        }
+        .meta-card {
+            padding: 18px;
+            border: 1px solid rgba(255,255,255,0.13);
+            border-radius: 24px;
+            background: rgba(255,255,255,0.055);
+        }
+        .meta-card strong { display: block; font-size: 1.75rem; line-height: 1; color: var(--cream); }
+        .meta-card span { display: block; color: rgba(255,247,236,0.62); margin-top: 8px; font-size: 0.9rem; }
+
+        .gallery {
+            padding: 76px 0 96px;
+            background: #100e0c;
+        }
+        .gallery-intro {
+            display: grid;
+            grid-template-columns: minmax(0, 0.8fr) minmax(320px, 0.52fr);
+            gap: 34px;
+            align-items: end;
+            margin-bottom: 32px;
+        }
+        .gallery-intro h2 { font-size: clamp(2.4rem, 5vw, 4.8rem); margin-top: 14px; }
+        .gallery-intro p { color: rgba(255,247,236,0.66); max-width: 480px; margin-left: auto; }
+
+        .showcase-grid {
+            display: grid;
+            grid-template-columns: repeat(12, minmax(0, 1fr));
+            gap: 22px;
+            align-items: start;
+        }
+        .showcase-card {
+            position: relative;
+            overflow: hidden;
+            border-radius: 34px;
+            border: 1px solid rgba(255,255,255,0.12);
+            background: linear-gradient(180deg, rgba(255,255,255,0.065), rgba(255,255,255,0.025));
+            box-shadow: var(--shadow);
+        }
+        .showcase-card.featured { grid-column: span 8; }
+        .showcase-card.vertical { grid-column: span 4; border-radius: 42px; padding: 10px; background: linear-gradient(180deg, #201912, #080706); }
+        .showcase-card.half { grid-column: span 6; }
+        .showcase-card video { width: 100%; background: #080706; aspect-ratio: 16 / 9; object-fit: cover; border-bottom: 1px solid rgba(255,255,255,0.08); }
+        .showcase-card.vertical video { aspect-ratio: 9 / 16; border-radius: 31px; border: 1px solid rgba(255,255,255,0.10); }
+        .card-copy { padding: 22px 26px 26px; }
+        .featured .card-copy {
+            display: grid;
+            grid-template-columns: minmax(0, 1fr) auto;
+            gap: 20px;
+            align-items: end;
+            padding: 26px 30px 30px;
+        }
+        .card-copy small {
+            display: block;
+            color: #d9aa73;
+            font-size: 0.72rem;
+            font-weight: 900;
+            letter-spacing: 0.13em;
+            text-transform: uppercase;
+            margin-bottom: 9px;
+        }
+        .card-copy strong { display: block; font-size: 1.36rem; letter-spacing: -0.04em; }
+        .featured .card-copy strong { font-size: clamp(1.8rem, 2.8vw, 3rem); font-family: "Playfair Display", Georgia, serif; line-height: 0.98; }
+        .card-copy span { display: block; color: rgba(255,247,236,0.68); margin-top: 7px; max-width: 470px; font-size: 0.94rem; }
+        .format-pill {
+            justify-self: end;
+            white-space: nowrap;
+            border-radius: 999px;
+            border: 1px solid rgba(217,170,115,0.35);
+            background: rgba(217,170,115,0.10);
+            color: #f2d2a1;
+            padding: 10px 14px;
+            font-size: 0.78rem;
+            font-weight: 900;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+        }
+
+        .gallery-footer {
+            margin-top: 32px;
+            display: flex;
+            justify-content: space-between;
+            gap: 24px;
+            align-items: center;
+            padding: 24px;
+            border-radius: 30px;
+            background: rgba(255,255,255,0.055);
+            border: 1px solid rgba(255,255,255,0.12);
+        }
+        .gallery-footer p { color: rgba(255,247,236,0.68); max-width: 660px; }
+
+        .cta-strip {
+            padding: 68px 0;
+            background: var(--paper);
+            color: var(--ink);
+        }
+        .cta-panel {
+            display: grid;
+            grid-template-columns: minmax(0, 1fr) auto;
+            gap: 30px;
+            align-items: center;
+            padding: 34px;
+            border-radius: 34px;
+            background: linear-gradient(135deg, #fffaf2, #f1e1cb);
+            border: 1px solid var(--stone);
+            box-shadow: 0 18px 55px rgba(38,29,20,0.11);
+        }
+        .cta-panel h2 { font-size: clamp(2rem, 4vw, 4rem); }
+        .cta-panel p { color: var(--muted); max-width: 620px; margin-top: 12px; }
+
+        footer { background: #0b0908; color: rgba(255,255,255,0.68); padding: 34px 0; }
+        .footer-row { display: flex; justify-content: space-between; gap: 20px; flex-wrap: wrap; align-items: center; font-size: 0.92rem; }
+        .footer-row a:hover { color: white; }
+
+        @media (max-width: 980px) {
+            .nav-links, .nav-actions { display: none; }
+            .mobile-toggle { display: block; }
+            .nav-links.active {
+                display: grid;
+                position: absolute;
+                top: 78px;
+                left: 20px;
+                right: 20px;
+                background: rgba(255,250,242,0.98);
+                border: 1px solid var(--stone);
+                border-radius: 22px;
+                padding: 20px;
+                box-shadow: 0 14px 40px rgba(38,29,20,0.10);
+            }
+            .hero-grid, .gallery-intro, .cta-panel { grid-template-columns: 1fr; }
+            .gallery-intro p { margin-left: 0; }
+            .showcase-card.featured, .showcase-card.vertical, .showcase-card.half { grid-column: span 12; }
+            .showcase-card.vertical { width: min(100%, 390px); justify-self: center; }
+            .gallery-footer { align-items: flex-start; flex-direction: column; }
+        }
+
+        @media (max-width: 720px) {
+            .container { width: min(100% - 28px, var(--max)); }
+            nav { width: min(100% - 28px, 1260px); }
+            .showcase-hero { padding: 92px 0 54px; }
+            .hero-meta { grid-template-columns: 1fr; }
+            h1 { font-size: clamp(3rem, 15vw, 4.8rem); }
+            .featured .card-copy, .card-copy { display: block; padding: 20px; }
+            .format-pill { display: inline-block; margin-top: 14px; }
+            .gallery, .cta-strip { padding: 62px 0; }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav aria-label="Primary navigation">
+            <a class="brand" href="index.html" aria-label="ReadyMadeVideo home"><img src="logo-compact-dark.svg" alt="ReadyMadeVideo"></a>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="index.html#packages">Packages</a></li>
+                <li><a href="showcase.html" aria-current="page">Showcase</a></li>
+                <li><a href="index.html#handoff">Delivery</a></li>
+                <li><a href="index.html#process">Process</a></li>
+                <li><a href="index.html#faq">FAQ</a></li>
+            </ul>
+            <div class="nav-actions">
+                <a class="btn btn-outline" href="mailto:contact@readymadevideo.com">Email Us</a>
+                <a class="btn btn-primary" href="index.html#contact">Book a Shoot</a>
+            </div>
+            <button class="mobile-toggle" id="mobileToggle" aria-label="Open menu" aria-controls="navLinks" aria-expanded="false"><span></span></button>
+        </nav>
+    </header>
+
+    <main>
+        <section class="showcase-hero" aria-labelledby="showcase-title">
+            <div class="container hero-grid">
+                <div class="hero-copy">
+                    <span class="eyebrow">Video showcase</span>
+                    <h1 id="showcase-title">Real listing formats, shown properly.</h1>
+                    <p>A dedicated gallery for the work samples. Wide listing videos get room to breathe, vertical reels stay vertical, and each example is easy to watch without crowding the homepage.</p>
+                </div>
+                <div class="hero-meta" aria-label="Showcase summary">
+                    <div class="meta-card"><strong>4</strong><span>Example video formats currently live on the site.</span></div>
+                    <div class="meta-card"><strong>Local</strong><span>No third-party embeds or off-site sample players.</span></div>
+                    <div class="meta-card"><strong>MLS</strong><span>Landscape formats for listing and buyer use.</span></div>
+                    <div class="meta-card"><strong>Social</strong><span>Vertical reel format for mobile-first posting.</span></div>
+                </div>
+            </div>
+        </section>
+
+        <section class="gallery" id="gallery">
+            <div class="container">
+                <div class="gallery-intro">
+                    <div>
+                        <span class="eyebrow">Gallery</span>
+                        <h2>Choose the format that fits the listing.</h2>
+                    </div>
+                    <p>Each sample keeps native controls and loads only when someone chooses to play it, so the showcase stays simple, fast, and easy to browse.</p>
+                </div>
+
+                <div class="showcase-grid" aria-label="ReadyMadeVideo showcase gallery">
+                    <article class="showcase-card featured">
+                        <video controls playsinline preload="none" poster="video/examples/style-luxury.jpg" aria-label="Luxury listing video example">
+                            <source src="video/examples/style-luxury.mp4" type="video/mp4">
+                            Your browser does not support HTML5 video.
+                        </video>
+                        <div class="card-copy"><div><small>Hero listing video</small><strong>Luxury Listing</strong><span>A polished wide-screen edit for the main listing asset, seller updates, and listing presentation use.</span></div><span class="format-pill">16:9 feature</span></div>
+                    </article>
+
+                    <article class="showcase-card vertical">
+                        <video controls playsinline preload="none" poster="video/examples/style-reel.jpg" aria-label="Social reel video example">
+                            <source src="video/examples/style-reel.mp4" type="video/mp4">
+                            Your browser does not support HTML5 video.
+                        </video>
+                        <div class="card-copy"><div><small>Vertical social cut</small><strong>Social Reel</strong><span>A mobile-first version for quick posting, feed placement, and seller-friendly sharing.</span></div></div>
+                    </article>
+
+                    <article class="showcase-card half">
+                        <video controls playsinline preload="none" poster="video/examples/style-minimal.jpg" aria-label="Minimal style listing video example">
+                            <source src="video/examples/style-minimal.mp4" type="video/mp4">
+                            Your browser does not support HTML5 video.
+                        </video>
+                        <div class="card-copy"><div><small>Clean cut</small><strong>Minimal Style</strong><span>Simple pacing, lighter text, and a quieter presentation when the home should do most of the work.</span></div></div>
+                    </article>
+
+                    <article class="showcase-card half">
+                        <video controls playsinline preload="none" poster="video/examples/full-tour.jpg" aria-label="Full property tour video example">
+                            <source src="video/examples/full-tour.mp4" type="video/mp4">
+                            Your browser does not support HTML5 video.
+                        </video>
+                        <div class="card-copy"><div><small>Property walkthrough</small><strong>Full Property Tour</strong><span>A longer format when the listing needs more context before buyers schedule a showing.</span></div></div>
+                    </article>
+                </div>
+
+                <div class="gallery-footer">
+                    <p>This page can grow into a fuller portfolio over time: featured listings, before-and-after edits, vertical social examples, drone examples, and package-specific samples can all live here without crowding the homepage.</p>
+                    <a class="btn btn-light" href="index.html#contact">Book a Shoot</a>
+                </div>
+            </div>
+        </section>
+
+        <section class="cta-strip">
+            <div class="container cta-panel">
+                <div>
+                    <span class="eyebrow">Ready when you are</span>
+                    <h2>Need media for a listing?</h2>
+                    <p>Send the property address, preferred shoot date, package, and access notes. We will confirm the slot before any payment is needed.</p>
+                </div>
+                <a class="btn btn-primary" href="index.html#contact">Request a Shoot</a>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container footer-row">
+            <span>© 2026 ReadyMadeVideo. Listing media for DFW agents.</span>
+            <span><a href="index.html">Home</a> · <a href="index.html#packages">Packages</a> · <a href="mailto:contact@readymadevideo.com">contact@readymadevideo.com</a></span>
+        </div>
+    </footer>
+
+    <script>
+        const mobileToggle = document.getElementById('mobileToggle');
+        const navLinks = document.getElementById('navLinks');
+        mobileToggle?.addEventListener('click', () => {
+            const isOpen = navLinks.classList.toggle('active');
+            mobileToggle.setAttribute('aria-expanded', String(isOpen));
+        });
+    </script>
+</body>
+</html>
