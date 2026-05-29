@@ -2170,7 +2170,7 @@
                         </div>
                         <div class="form-group"><label for="property">Property address *</label><input id="property" name="property" type="text" placeholder="123 Main St, Frisco TX" autocomplete="street-address" required></div>
                         <div class="form-row">
-                            <div class="form-group"><label for="package">Package *</label><select id="package" name="package" required><option value="">Select one</option><option value="starter">Starter, $300</option><option value="pro">Pro, $750</option><option value="luxury">Luxury Feature, $1,500</option><option value="not-sure">Not sure, recommend one</option></select></div>
+                            <div class="form-group"><label for="package">Package *</label><select id="package" name="package" required><option value="">Select one</option><option value="starter">Starter, $300</option><option value="pro">Pro, $750</option><option value="luxury">Luxury Feature, $1,500</option><option value="drone-only">Drone Only, $250</option><option value="photos-only">Photos Only, $250</option><option value="not-sure">Not sure, recommend one</option></select></div>
                             <div class="form-group"><label for="preferred-date">Preferred shoot date *</label><input id="preferred-date" name="preferred_date" type="date" required></div>
                         </div>
                         <div class="form-row">
@@ -2194,7 +2194,7 @@
                     <p>If you have seller restrictions, HOA rules, gate codes, drone concerns, lockbox details, or a firm go-live date, include them in the notes field.</p>
                 </div>
                 <div class="quote-reference-grid animate-on-scroll">
-                    <article class="quote-reference-card"><small>Package</small><strong>From $300</strong><p>Choose Starter, Pro, Luxury Feature, or ask us to recommend the right fit for the listing.</p></article>
+                    <article class="quote-reference-card"><small>Package</small><strong>From $300</strong><p>Choose Starter, Pro, Luxury Feature, Drone Only, Photos Only, or ask us to recommend the right fit for the listing.</p></article>
                     <article class="quote-reference-card"><small>Access</small><strong>Supra ready</strong><p>When the listing allows it, Supra eKEY access can reduce the need for an on-site agent meet.</p></article>
                     <article class="quote-reference-card"><small>Handoff</small><strong>Next morning</strong><p>Standard packages are built around organized photo, video, and social-ready delivery the morning after the shoot.</p></article>
                 </div>
@@ -2282,8 +2282,14 @@
             preferredDate.min = tomorrow.toISOString().split('T')[0];
         }
 
-        const launchNote = new URLSearchParams(window.location.search).get('note');
+        const requestParams = new URLSearchParams(window.location.search);
+        const launchNote = requestParams.get('note');
+        const packageParam = requestParams.get('package');
+        const packageField = document.getElementById('package');
         const messageField = document.getElementById('message');
+        if (packageParam && packageField && [...packageField.options].some(option => option.value === packageParam)) {
+            packageField.value = packageParam;
+        }
         if (launchNote && messageField && !messageField.value.trim()) {
             messageField.value = launchNote;
         }
