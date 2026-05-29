@@ -2282,6 +2282,12 @@
             preferredDate.min = tomorrow.toISOString().split('T')[0];
         }
 
+        const launchNote = new URLSearchParams(window.location.search).get('note');
+        const messageField = document.getElementById('message');
+        if (launchNote && messageField && !messageField.value.trim()) {
+            messageField.value = launchNote;
+        }
+
         const contactForm = document.getElementById('contactForm');
         if (contactForm) {
             contactForm.addEventListener('submit', async event => {

@@ -625,6 +625,45 @@
             margin-top: 12px;
         }
 
+        .launch-strip {
+            padding: 0;
+            background: linear-gradient(135deg, #7d4f25, #a36d3a);
+            color: #fffaf2;
+        }
+
+        .launch-strip[hidden] {
+            display: none;
+        }
+
+        .launch-strip-inner {
+            display: grid;
+            grid-template-columns: 1fr auto auto;
+            gap: 18px;
+            align-items: center;
+            padding: 20px 0;
+        }
+
+        .launch-strip p {
+            color: rgba(255,250,242,0.88);
+            font-size: 0.98rem;
+        }
+
+        .launch-strip strong {
+            color: #fffaf2;
+        }
+
+        .launch-dismiss {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            border: 1px solid rgba(255,250,242,0.34);
+            background: rgba(255,250,242,0.08);
+            color: #fffaf2;
+            cursor: pointer;
+            font-size: 1.4rem;
+            line-height: 1;
+        }
+
         .packages {
             background: #f2e7d9;
         }
@@ -739,6 +778,27 @@
             margin-top: auto;
         }
 
+        .single-service-grid {
+            display: grid;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            gap: 20px;
+            margin-top: 20px;
+            max-width: 920px;
+        }
+
+        .package-card.single-service {
+            border-style: dashed;
+            padding: 24px;
+        }
+
+        .single-service .package-label {
+            color: var(--bronze-dark);
+        }
+
+        .single-service .price {
+            font-size: 2.35rem;
+        }
+
         .add-ons {
             margin-top: 34px;
             display: flex;
@@ -801,6 +861,52 @@
             margin-top: 16px;
             color: var(--muted);
             font-size: 0.95rem;
+        }
+
+        .founder-section {
+            background: var(--cream);
+        }
+
+        .founder-card,
+        .reviews-card {
+            border: 1px solid rgba(125, 79, 37, 0.16);
+            background: rgba(255,255,255,0.72);
+            border-radius: 30px;
+            box-shadow: var(--soft-shadow);
+            padding: clamp(28px, 4vw, 46px);
+        }
+
+        .founder-card {
+            display: grid;
+            grid-template-columns: 0.8fr 1.2fr;
+            gap: 26px;
+            align-items: center;
+        }
+
+        .founder-placeholder {
+            min-height: 260px;
+            border-radius: 26px;
+            border: 1px dashed rgba(125, 79, 37, 0.28);
+            background: linear-gradient(135deg, rgba(242,231,217,0.92), rgba(255,250,242,0.86));
+            display: grid;
+            place-items: center;
+            color: var(--bronze-dark);
+            font-weight: 900;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            text-align: center;
+            padding: 24px;
+        }
+
+        .founder-copy p,
+        .reviews-card p {
+            color: var(--muted);
+            margin-top: 14px;
+        }
+
+        .reviews-section {
+            background: #fffaf2;
+            padding-top: 0;
         }
 
         .work-grid {
@@ -1808,6 +1914,10 @@
                 grid-template-columns: 1fr;
             }
 
+            .single-service-grid, .founder-card, .launch-strip-inner {
+                grid-template-columns: 1fr;
+            }
+
             .examples-section .section-heading {
                 grid-template-columns: 1fr;
                 gap: 16px;
@@ -1844,7 +1954,7 @@
                 gap: 34px;
             }
 
-            .proof-row, .stat-list, .trust-grid, .why-grid, .work-grid, .city-grid, .footer-grid, .standards-grid, .handoff-list, .lab-grid, .addon-pricing, .examples-showcase, .example-card-row, .showcase-teaser {
+            .proof-row, .stat-list, .trust-grid, .why-grid, .work-grid, .city-grid, .footer-grid, .standards-grid, .handoff-list, .lab-grid, .addon-pricing, .examples-showcase, .example-card-row, .showcase-teaser, .single-service-grid {
                 grid-template-columns: 1fr;
             }
 
@@ -1999,7 +2109,7 @@
                 <div class="stat-list animate-on-scroll">
                     <div class="stat-card"><strong>5 to 10</strong><span>Typical days agents wait for local listing media.</span></div>
                     <div class="stat-card"><strong>24</strong><span>Hours for standard ReadyMadeVideo delivery.</span></div>
-                    <div class="stat-card"><strong>6</strong><span>Core DFW markets covered daily: Frisco, Plano, McKinney, Arlington, Dallas, and Fort Worth.</span></div>
+                    <div class="stat-card"><strong>21</strong><span>DFW cities served. Frisco through Fort Worth, daily availability.</span></div>
                     <div class="stat-card"><strong>3</strong><span>Clear packages, from Starter to Luxury Feature.</span></div>
                 </div>
             </div>
@@ -2021,6 +2131,14 @@
                     <div class="handoff-item"><b>Add-on assets</b><span>Drone, twilight conversion, virtual staging, AI listing description, and closing-gift video when selected.</span></div>
                     <div class="handoff-item"><b>Direct communication</b><span>If something affects the shoot, weather, access, HOA rules, or timing, you hear about it before it becomes a problem.</span></div>
                 </div>
+            </div>
+        </section>
+
+        <section class="launch-strip" id="launch-offer" aria-label="DFW launch offer">
+            <div class="container launch-strip-inner">
+                <p><strong>Launching in DFW:</strong> first 5 listings booked at $300 flat (any package, including Pro and Luxury Feature) in exchange for portfolio use. Pro work at Starter pricing. Limited to the next 30 days.</p>
+                <a class="btn btn-light" href="quote.html?note=Launch%20slot%20request">Lock in a launch slot</a>
+                <button class="launch-dismiss" type="button" aria-label="Dismiss launch offer">×</button>
             </div>
         </section>
 
@@ -2078,6 +2196,35 @@
                         <a class="btn btn-outline" href="quote.html">Choose Luxury</a>
                     </article>
                 </div>
+                <div class="single-service-grid" aria-label="Single-service package options">
+                    <article class="package-card single-service animate-on-scroll">
+                        <span class="package-label">Single-service option</span>
+                        <h3>Drone Only</h3>
+                        <div class="price">$250</div>
+                        <p><strong>Best for:</strong> existing listings that need aerials added, lot listings, and agents testing the service before booking a full package.</p>
+                        <ul>
+                            <li>8 to 12 aerial photos</li>
+                            <li>One short aerial video clip (15 to 30 seconds)</li>
+                            <li>FAA Part 107 commercial drone work</li>
+                            <li>Next-morning delivery</li>
+                            <li>LAANC airspace authorization handled</li>
+                        </ul>
+                        <a class="btn btn-outline" href="quote.html">Choose Drone Only</a>
+                    </article>
+                    <article class="package-card single-service animate-on-scroll">
+                        <span class="package-label">Single-service option</span>
+                        <h3>Photos Only</h3>
+                        <div class="price">$250</div>
+                        <p><strong>Best for:</strong> agents who only need still photography, condo listings, lower-priced rentals, and agents testing the service.</p>
+                        <ul>
+                            <li>15 HDR listing photos</li>
+                            <li>NTREIS-ready and full-resolution exports</li>
+                            <li>Color-corrected and straight-lined</li>
+                            <li>Next-morning delivery</li>
+                        </ul>
+                        <a class="btn btn-outline" href="quote.html">Choose Photos Only</a>
+                    </article>
+                </div>
                 <div class="add-ons animate-on-scroll" aria-label="Add-ons">
                     <span>Drone</span><span>Virtual staging</span><span>Twilight conversion</span><span>AI listing description</span><span>Closing-gift video</span>
                 </div>
@@ -2087,6 +2234,13 @@
                     <article class="addon-price-card"><strong>Twilight conversion</strong><b>+$50</b><span>Included in Pro and Luxury. Gives the listing a stronger hero look.</span></article>
                     <article class="addon-price-card"><strong>AI listing description</strong><b>+$25</b><span>Included in Pro. Delivered as a clean first draft for agent review.</span></article>
                     <article class="addon-price-card"><strong>Closing-gift video</strong><b>+$125</b><span>A short keepsake video for the buyer, seller, or agent follow-up.</span></article>
+                    <article class="addon-price-card"><strong>Same-day rush</strong><b>+$200</b><span>Same-day delivery for Starter or Pro when the slot is confirmed by 10am.</span></article>
+                    <article class="addon-price-card"><strong>Additional 5 photos</strong><b>+$50</b><span>For larger homes or extra room coverage.</span></article>
+                    <article class="addon-price-card"><strong>Additional vertical social cut</strong><b>+$50 each</b><span>Beyond the package count, for agents posting on multiple platforms.</span></article>
+                    <article class="addon-price-card"><strong>Open house teaser</strong><b>+$100</b><span>A short video sized for open house day promotion.</span></article>
+                    <article class="addon-price-card"><strong>3D Matterport tour</strong><b>+$200</b><span>Through a vetted DFW Matterport partner. Bundled into the delivery folder.</span></article>
+                    <article class="addon-price-card"><strong>Floor plan</strong><b>+$50</b><span>Through CubiCasa, delivered with the listing media.</span></article>
+                    <article class="addon-price-card"><strong>Voiceover narration</strong><b>+$100</b><span>Premium polish, often included for Luxury Feature on request.</span></article>
                 </div>
                 <p class="addon-note animate-on-scroll">Add-on prices are shown before confirmation. If weather, access, travel, or property size changes the scope, you hear that before paying.</p>
                 <div class="comparison-wrap animate-on-scroll" aria-label="Package comparison">
@@ -2187,6 +2341,21 @@
             </div>
         </section>
 
+        <section class="founder-section" id="founder">
+            <div class="container">
+                <div class="founder-card animate-on-scroll">
+                    <div class="founder-placeholder">Founder photo placeholder</div>
+                    <div class="founder-copy">
+                        <span class="eyebrow">Who's behind it</span>
+                        <h2>Built by one local operator.</h2>
+                        <p>ReadyMadeVideo is a one-person operation based in DFW, founded by Darius Stroman in 2026 to give agents the same listing media quality they would get from a larger studio, without waiting a week.</p>
+                        <p>Equipment is current and professional: Blackmagic Pocket Cinema Camera 6K Pro for video, DJI Mini 5 Pro for aerials, DJI gimbal for stabilization, and DaVinci Resolve Studio for editing. FAA Part 107 licensed for commercial drone work.</p>
+                        <p>If something affects your listing day, you hear it from one person who is also doing the shoot and the edit. No handoffs between teams, no surprise vendor changes.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
         <section class="service-area" id="service-area">
             <div class="container area-panel animate-on-scroll">
                 <div class="map-card">
@@ -2202,6 +2371,16 @@
                     <div class="city-grid" aria-label="DFW cities served">
                         <span>Frisco</span><span>Plano</span><span>McKinney</span><span>Dallas</span><span>Fort Worth</span><span>Arlington</span><span>Allen</span><span>Prosper</span><span>Southlake</span><span>Keller</span><span>Irving</span><span>Richardson</span><span>Denton</span><span>Grapevine</span><span>Coppell</span><span>Lewisville</span><span>Flower Mound</span><span>Carrollton</span><span>The Colony</span><span>Little Elm</span><span>Rockwall</span>
                     </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="reviews-section" id="reviews">
+            <div class="container">
+                <div class="reviews-card animate-on-scroll">
+                    <span class="eyebrow">Reviews</span>
+                    <h2>Launch reviews will be added after delivery.</h2>
+                    <p>The first 5 DFW listings booked at the launch rate include a testimonial in exchange. Reviews from these will be added here as deliveries complete. If you would prefer to keep your testimonial private, that is fine. The launch discount stands regardless.</p>
                 </div>
             </div>
         </section>
@@ -2307,6 +2486,18 @@
 
         const yearEl = document.getElementById('currentYear');
         if (yearEl) yearEl.textContent = new Date().getFullYear();
+
+        const launchStrip = document.getElementById('launch-offer');
+        const launchDismiss = document.querySelector('.launch-dismiss');
+        if (launchStrip && localStorage.getItem('readymadeLaunchOfferDismissed') === 'true') {
+            launchStrip.hidden = true;
+        }
+        if (launchDismiss && launchStrip) {
+            launchDismiss.addEventListener('click', () => {
+                launchStrip.hidden = true;
+                localStorage.setItem('readymadeLaunchOfferDismissed', 'true');
+            });
+        }
 
     </script>
 </body>
