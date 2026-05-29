@@ -569,62 +569,6 @@
             padding: 110px 0;
         }
 
-        .intro-grid {
-            display: grid;
-            grid-template-columns: minmax(0, 0.8fr) minmax(360px, 1.2fr);
-            gap: 52px;
-            align-items: start;
-        }
-
-        .statement-card {
-            background: var(--ink);
-            color: var(--cream);
-            border-radius: var(--radius-xl);
-            padding: 34px;
-            position: sticky;
-            top: 112px;
-            box-shadow: var(--shadow);
-        }
-
-        .statement-card h3 {
-            font-family: "Playfair Display", Georgia, serif;
-            font-size: 2.3rem;
-            line-height: 1.02;
-            letter-spacing: -0.04em;
-        }
-
-        .statement-card p {
-            color: rgba(255,255,255,0.72);
-            margin-top: 18px;
-        }
-
-        .stat-list {
-            display: grid;
-            grid-template-columns: repeat(2, minmax(0, 1fr));
-            gap: 16px;
-        }
-
-        .stat-card {
-            background: var(--white);
-            border: 1px solid var(--stone);
-            border-radius: 24px;
-            padding: 28px;
-            box-shadow: 0 10px 30px rgba(38, 29, 20, 0.05);
-        }
-
-        .stat-card strong {
-            display: block;
-            font-size: clamp(2rem, 5vw, 3.5rem);
-            line-height: 1;
-            letter-spacing: -0.06em;
-        }
-
-        .stat-card span {
-            display: block;
-            color: var(--muted);
-            margin-top: 12px;
-        }
-
         .packages {
             background:
                 radial-gradient(circle at 12% 8%, rgba(217,170,115,0.20), transparent 28%),
@@ -758,8 +702,27 @@
             box-shadow: 0 0 0 5px rgba(163,109,58,0.10);
         }
 
-        .package-card .btn {
+        .package-actions {
             margin-top: auto;
+            display: grid;
+            gap: 10px;
+        }
+
+        .package-actions .btn {
+            width: 100%;
+            min-height: 48px;
+            padding: 0 16px;
+        }
+
+        .featured .package-actions .btn-outline {
+            color: var(--cream);
+            border-color: rgba(255,255,255,0.24);
+            background: rgba(255,255,255,0.08);
+        }
+
+        .featured .package-actions .btn-outline:hover {
+            border-color: rgba(255,255,255,0.5);
+            background: rgba(255,255,255,0.14);
         }
 
         .package-card.single-service {
@@ -868,61 +831,6 @@
             margin-top: 16px;
             color: var(--muted);
             font-size: 0.95rem;
-        }
-
-        .founder-section {
-            background: var(--cream);
-            padding-bottom: 70px;
-        }
-
-        .operator-proof-grid {
-            display: grid;
-            grid-template-columns: minmax(0, 1.25fr) minmax(280px, 0.75fr);
-            gap: 20px;
-            align-items: stretch;
-        }
-
-        .founder-card,
-        .reviews-card {
-            border: 1px solid rgba(125, 79, 37, 0.16);
-            background: rgba(255,255,255,0.72);
-            border-radius: 30px;
-            box-shadow: var(--soft-shadow);
-            padding: clamp(24px, 3vw, 36px);
-        }
-
-        .founder-card {
-            display: grid;
-            grid-template-columns: 0.72fr 1.28fr;
-            gap: 24px;
-            align-items: center;
-        }
-
-        .founder-placeholder {
-            min-height: 260px;
-            border-radius: 26px;
-            border: 1px dashed rgba(125, 79, 37, 0.28);
-            background: linear-gradient(135deg, rgba(242,231,217,0.92), rgba(255,250,242,0.86));
-            display: grid;
-            place-items: center;
-            color: var(--bronze-dark);
-            font-weight: 900;
-            letter-spacing: 0.08em;
-            text-transform: uppercase;
-            text-align: center;
-            padding: 24px;
-        }
-
-        .founder-copy p,
-        .reviews-card p {
-            color: var(--muted);
-            margin-top: 14px;
-        }
-
-        .reviews-card {
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
         }
 
         .work-grid {
@@ -1910,13 +1818,10 @@
                 box-shadow: var(--soft-shadow);
             }
 
-            .hero-grid, .intro-grid, .area-panel, .faq-grid, .contact-grid, .handoff-grid {
+            .hero-grid, .area-panel, .faq-grid, .contact-grid, .handoff-grid {
                 grid-template-columns: 1fr;
             }
 
-            .statement-card {
-                position: static;
-            }
 
             .hero-media {
                 max-width: 720px;
@@ -1930,7 +1835,7 @@
                 grid-template-columns: 1fr;
             }
 
-            .single-service-grid, .founder-card, .launch-strip-inner {
+            .single-service-grid, .launch-strip-inner {
                 grid-template-columns: 1fr;
             }
 
@@ -1974,7 +1879,7 @@
                 gap: 34px;
             }
 
-            .proof-row, .stat-list, .trust-grid, .why-grid, .work-grid, .city-grid, .footer-grid, .standards-grid, .handoff-list, .lab-grid, .addon-pricing, .examples-showcase, .example-card-row, .showcase-teaser, .operator-proof-grid, .founder-card, .package-intro-panel, .addon-panel-heading {
+            .proof-row, .trust-grid, .why-grid, .work-grid, .city-grid, .footer-grid, .standards-grid, .handoff-list, .lab-grid, .addon-pricing, .examples-showcase, .example-card-row, .showcase-teaser, .package-intro-panel, .addon-panel-heading {
                 grid-template-columns: 1fr;
             }
 
@@ -2119,23 +2024,6 @@
             </div>
         </section>
 
-        <section id="about">
-            <div class="container intro-grid">
-                <aside class="statement-card animate-on-scroll">
-                    <span class="eyebrow">The promise</span>
-                    <h3>Professional listing media, without the slow handoff.</h3>
-                    <p>ReadyMadeVideo is built for agents who need good media fast. Not flashy. Not vague. Just clean visuals, fast delivery, and files that are ready to use.</p>
-                </aside>
-                <div class="stat-list animate-on-scroll">
-                    <div class="stat-card"><strong>5 to 10</strong><span>Typical days agents wait for local listing media.</span></div>
-                    <div class="stat-card"><strong>24</strong><span>Hours for standard ReadyMadeVideo delivery.</span></div>
-                    <div class="stat-card"><strong>21</strong><span>DFW cities served. Frisco through Fort Worth, daily availability.</span></div>
-                    <div class="stat-card"><strong>5</strong><span>Clear options, from full packages to photo-only or drone-only support.</span></div>
-                </div>
-            </div>
-        </section>
-
-
         <section class="handoff-section" id="handoff">
             <div class="container handoff-grid">
                 <div class="handoff-card animate-on-scroll">
@@ -2178,7 +2066,7 @@
                             <li>NTREIS-ready photo files</li>
                             <li>Next-morning delivery</li>
                         </ul>
-                        <a class="btn btn-outline" href="quote.html?package=starter">Choose Starter</a>
+                        <div class="package-actions"><a class="btn btn-outline" href="quote.html?package=starter">Choose Starter</a><a class="btn btn-outline" href="starter-details.html">More Details</a></div>
                     </article>
                     <article class="package-card featured animate-on-scroll">
                         <span class="popular-badge">Most chosen</span>
@@ -2193,7 +2081,7 @@
                             <li>Three social-ready cuts</li>
                             <li>Twilight + AI description</li>
                         </ul>
-                        <a class="btn btn-light" href="quote.html?package=pro">Choose Pro</a>
+                        <div class="package-actions"><a class="btn btn-light" href="quote.html?package=pro">Choose Pro</a><a class="btn btn-outline" href="pro-details.html">More Details</a></div>
                     </article>
                     <article class="package-card animate-on-scroll">
                         <span class="package-label">Luxury Feature</span>
@@ -2207,7 +2095,7 @@
                             <li>Branded social kit</li>
                             <li>Virtual staging on three rooms</li>
                         </ul>
-                        <a class="btn btn-outline" href="quote.html?package=luxury">Choose Luxury</a>
+                        <div class="package-actions"><a class="btn btn-outline" href="quote.html?package=luxury">Choose Luxury</a><a class="btn btn-outline" href="luxury-feature-details.html">More Details</a></div>
                     </article>
                     <article class="package-card single-service animate-on-scroll">
                         <span class="package-label">Single service</span>
@@ -2221,7 +2109,7 @@
                             <li>LAANC handled when needed</li>
                             <li>Next-morning delivery</li>
                         </ul>
-                        <a class="btn btn-outline" href="quote.html?package=drone-only">Choose Drone</a>
+                        <div class="package-actions"><a class="btn btn-outline" href="quote.html?package=drone-only">Choose Drone</a><a class="btn btn-outline" href="drone-only-details.html">More Details</a></div>
                     </article>
                     <article class="package-card single-service animate-on-scroll">
                         <span class="package-label">Single service</span>
@@ -2235,7 +2123,7 @@
                             <li>Color corrected and straight-lined</li>
                             <li>Next-morning delivery</li>
                         </ul>
-                        <a class="btn btn-outline" href="quote.html?package=photos-only">Choose Photos</a>
+                        <div class="package-actions"><a class="btn btn-outline" href="quote.html?package=photos-only">Choose Photos</a><a class="btn btn-outline" href="photos-only-details.html">More Details</a></div>
                     </article>
                 </div>
                 <div class="addon-panel animate-on-scroll" aria-label="Add-ons and pricing">
@@ -2361,25 +2249,6 @@
                     <article class="lab-card animate-on-scroll"><small>Airspace</small><h3>Drone work is not guessed.</h3><p>FAA Part 107 licensing matters because aerial work has weather, airspace, and safety limits. If conditions are not right, we tell you.</p></article>
                     <article class="lab-card animate-on-scroll"><small>Files</small><h3>Delivery is organized for agents.</h3><p>You get practical versions for MLS, social, and client review so the media does not create another task for your team.</p></article>
                 </div>
-            </div>
-        </section>
-
-        <section class="founder-section" id="founder">
-            <div class="container operator-proof-grid">
-                <div class="founder-card animate-on-scroll">
-                    <div class="founder-placeholder">Founder photo placeholder</div>
-                    <div class="founder-copy">
-                        <span class="eyebrow">Who's behind it</span>
-                        <h2>Built by one local operator.</h2>
-                        <p>ReadyMadeVideo is a one-person DFW operation founded by Darius Stroman in 2026, so the person confirming the scope is also accountable for the shoot and edit.</p>
-                        <p>Current professional kit includes Blackmagic Pocket Cinema Camera 6K Pro, DJI Mini 5 Pro, DJI gimbal, DaVinci Resolve Studio, and FAA Part 107 licensing for commercial drone work.</p>
-                    </div>
-                </div>
-                <aside class="reviews-card animate-on-scroll" id="reviews">
-                    <span class="eyebrow">Reviews</span>
-                    <h2>Launch reviews will be added after delivery.</h2>
-                    <p>The first 5 DFW launch listings include a testimonial request after delivery. Reviews will be added here as those projects are completed.</p>
-                </aside>
             </div>
         </section>
 
