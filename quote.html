@@ -1383,8 +1383,8 @@
 
         .footer-grid {
             display: grid;
-            grid-template-columns: 1.1fr repeat(3, minmax(0, 0.6fr));
-            gap: 30px;
+            grid-template-columns: minmax(190px, 1.2fr) repeat(4, minmax(120px, 0.8fr));
+            gap: 28px;
             align-items: start;
         }
 
@@ -1421,8 +1421,11 @@
             margin-top: 34px;
             padding-top: 22px;
             display: flex;
-            justify-content: space-between;
-            gap: 20px;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            gap: 8px;
             flex-wrap: wrap;
             font-size: 0.9rem;
         }
@@ -2093,7 +2096,8 @@
             }
         }
 
-    </style>
+    .footer-bottom{display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;gap:10px}.footer-bottom span{display:block}
+</style>
 </head>
 <body class="quote-page">
     <header>
@@ -2209,12 +2213,12 @@
                 <p>Real estate video and photography for Realtors across the Dallas-Fort Worth metroplex, with booking availability coming soon.</p>
             </div>
             <div><h4>Company</h4><ul><li><a href="index.html#packages">Packages</a></li><li><a href="index.html#work">Work</a></li><li><a href="showcase.html">Showcase</a></li><li><a href="quote.html">Coming Soon</a></li><li><a href="index.html#faq">FAQ</a></li></ul></div>
-            <div><h4>Legal</h4><ul><li><a href="terms.html">Terms</a></li><li><a href="privacy.html">Privacy</a></li><li><a href="refund-policy.html">Refund Policy</a></li></ul><p>ReadyMadeVideo is a DBA/trade name of Stromation LLC.</p></div>
+            <div><h4>Legal</h4><ul><li><a href="terms.html">Terms</a></li><li><a href="privacy.html">Privacy</a></li><li><a href="refund-policy.html">Refund Policy</a></li></ul></div>
             <div><h4>Service areas</h4><ul><li>Frisco</li><li>Plano</li><li>McKinney</li><li>Dallas</li><li>Fort Worth</li></ul></div>
             <div><h4>Contact</h4><ul><li><a href="mailto:contact@readymadevideo.com">contact@readymadevideo.com</a></li><li><a href="https://www.instagram.com/readymadevideo" target="_blank" rel="noopener">Instagram</a></li><li><a href="https://www.tiktok.com/@readymadevideo" target="_blank" rel="noopener">TikTok</a></li><li><a href="https://www.youtube.com/@readymadevideo" target="_blank" rel="noopener">YouTube</a></li></ul></div>
         </div>
         <div class="container copyright">
-            <span>&copy; <span id="currentYear"></span> ReadyMadeVideo, a DBA/trade name of Stromation LLC. All rights reserved.</span>
+            <span>&copy; <span id="currentYear"></span> ReadyMadeVideo. A Stromation LLC trade name.</span>
             <span>FAA Part 107 licensed. Supra eKEY holder. Fully insured.</span>
         </div>
     </footer>
