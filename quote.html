@@ -1381,53 +1381,8 @@
             padding: 46px 0;
         }
 
-        .footer-grid {
-            display: grid;
-            grid-template-columns: minmax(190px, 1.2fr) repeat(4, minmax(120px, 0.8fr));
-            gap: 28px;
-            align-items: start;
-        }
-
-        footer img {
-            width: 132px;
-            filter: brightness(1.4);
-        }
-
-        footer p {
-            margin-top: 14px;
-            max-width: 430px;
-        }
-
-        footer h4 {
-            color: white;
-            margin-bottom: 12px;
-            font-size: 0.9rem;
-            letter-spacing: 0.08em;
-            text-transform: uppercase;
-        }
-
-        footer ul {
-            list-style: none;
-            display: grid;
-            gap: 8px;
-        }
-
         footer a:hover {
             color: white;
-        }
-
-        .copyright {
-            border-top: 1px solid rgba(255,255,255,0.10);
-            margin-top: 34px;
-            padding-top: 22px;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            text-align: center;
-            gap: 8px;
-            flex-wrap: wrap;
-            font-size: 0.9rem;
         }
 
         .animate-on-scroll {
@@ -1777,7 +1732,7 @@
                 gap: 34px;
             }
 
-            .proof-row, .stat-list, .trust-grid, .why-grid, .work-grid, .city-grid, .footer-grid, .standards-grid, .handoff-list, .lab-grid, .addon-pricing, .examples-showcase, .example-card-row, .showcase-teaser {
+            .proof-row, .stat-list, .trust-grid, .why-grid, .work-grid, .city-grid, .standards-grid, .handoff-list, .lab-grid, .addon-pricing, .examples-showcase, .example-card-row, .showcase-teaser {
                 grid-template-columns: 1fr;
             }
 
@@ -2096,8 +2051,35 @@
             }
         }
 
-    .footer-bottom{display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;gap:10px}.footer-bottom span{display:block}
-</style>
+        footer .footer-row {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            gap: 12px;
+        }
+
+        footer .footer-brand-line,
+        footer .footer-links {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 8px 14px;
+            width: auto;
+            max-width: none;
+            min-height: auto;
+            margin: 0;
+            padding: 0;
+        }
+
+        footer .footer-entity {
+            color: inherit;
+            font-weight: 800;
+        }
+
+    </style>
 </head>
 <body class="quote-page">
     <header>
@@ -2206,20 +2188,28 @@
         </section>
     </main>
 
-    <footer>
-        <div class="container footer-grid">
-            <div>
-                <img src="logo-compact.svg" alt="ReadyMadeVideo">
-                <p>Real estate video and photography for Realtors across the Dallas-Fort Worth metroplex, with booking availability coming soon.</p>
+    <footer id="contact">
+        <div class="container footer-row">
+            <div class="footer-brand-line">
+                <span>&copy; 2026 ReadyMadeVideo.</span>
+                <span class="footer-entity">A Stromation LLC trade name.</span>
+                <span>FAA Part 107 licensed. Supra eKEY holder. Fully insured.</span>
             </div>
-            <div><h4>Company</h4><ul><li><a href="index.html#packages">Packages</a></li><li><a href="index.html#work">Work</a></li><li><a href="showcase.html">Showcase</a></li><li><a href="quote.html">Coming Soon</a></li><li><a href="index.html#faq">FAQ</a></li></ul></div>
-            <div><h4>Legal</h4><ul><li><a href="terms.html">Terms</a></li><li><a href="privacy.html">Privacy</a></li><li><a href="refund-policy.html">Refund Policy</a></li></ul></div>
-            <div><h4>Service areas</h4><ul><li>Frisco</li><li>Plano</li><li>McKinney</li><li>Dallas</li><li>Fort Worth</li></ul></div>
-            <div><h4>Contact</h4><ul><li><a href="mailto:contact@readymadevideo.com">contact@readymadevideo.com</a></li><li><a href="https://www.instagram.com/readymadevideo" target="_blank" rel="noopener">Instagram</a></li><li><a href="https://www.tiktok.com/@readymadevideo" target="_blank" rel="noopener">TikTok</a></li><li><a href="https://www.youtube.com/@readymadevideo" target="_blank" rel="noopener">YouTube</a></li></ul></div>
-        </div>
-        <div class="container copyright">
-            <span>&copy; <span id="currentYear"></span> ReadyMadeVideo. A Stromation LLC trade name.</span>
-            <span>FAA Part 107 licensed. Supra eKEY holder. Fully insured.</span>
+            <nav class="footer-links" aria-label="Footer navigation">
+                <a href="index.html#packages">Packages</a>
+                <span aria-hidden="true">/</span>
+                <a href="showcase.html">Showcase</a>
+                <span aria-hidden="true">/</span>
+                <a href="quote.html">Coming Soon</a>
+                <span aria-hidden="true">/</span>
+                <a href="terms.html">Terms</a>
+                <span aria-hidden="true">/</span>
+                <a href="privacy.html">Privacy</a>
+                <span aria-hidden="true">/</span>
+                <a href="refund-policy.html">Refund Policy</a>
+                <span aria-hidden="true">/</span>
+                <a href="mailto:contact@readymadevideo.com">contact@readymadevideo.com</a>
+            </nav>
         </div>
     </footer>
 
