@@ -1944,9 +1944,18 @@
 
         .quote-panel {
             display: grid;
-            grid-template-columns: minmax(0, 0.78fr) minmax(440px, 1.22fr);
-            gap: 40px;
+            grid-template-columns: minmax(0, 1fr) minmax(440px, 1.1fr);
+            gap: 32px 44px;
             align-items: start;
+        }
+
+        .quote-panel > .quote-intro,
+        .quote-panel > .quote-form-card {
+            min-width: 0;
+        }
+
+        .quote-panel .booking-timeline {
+            margin-bottom: 0;
         }
 
         .quote-panel .section-heading h2,
@@ -1967,6 +1976,22 @@
             border-radius: 22px;
             padding: 18px 20px;
             font-weight: 800;
+        }
+
+        .quote-support-strip {
+            grid-column: 1 / -1;
+            display: grid;
+            gap: 16px;
+        }
+
+        .quote-support-strip .booking-notes {
+            grid-template-columns: repeat(3, minmax(0, 1fr));
+            gap: 16px;
+        }
+
+        .quote-support-strip .quote-assurance {
+            margin-top: 0;
+            max-width: none;
         }
 
         .quote-form-card {
@@ -2036,7 +2061,8 @@
         @media (max-width: 1040px) {
             .quote-hero-grid,
             .quote-panel,
-            .quote-reference-grid {
+            .quote-reference-grid,
+            .quote-support-strip .booking-notes {
                 grid-template-columns: 1fr;
             }
         }
@@ -2124,7 +2150,7 @@
 
         <section class="quote-main" id="quote-form" aria-labelledby="quote-form-title">
             <div class="container quote-panel">
-                <div class="animate-on-scroll">
+                <div class="quote-intro animate-on-scroll">
                     <div class="section-heading">
                         <span class="eyebrow">Quote form</span>
                         <h2 id="quote-form-title">Tell us what you need.</h2>
@@ -2136,12 +2162,6 @@
                         <div class="timeline-step"><span>3</span><div><strong>Confirm details in writing</strong><p>Address, access, preferred date, add-ons, and deliverables are confirmed before any shoot is accepted.</p></div></div>
                         <div class="timeline-step"><span>4</span><div><strong>Deposit comes later</strong><p>If a project is accepted, deposit and balance terms follow the listed package and legal policy.</p></div></div>
                     </div>
-                    <div class="booking-notes">
-                        <div class="booking-note"><strong>Quote first</strong><span>The quote path is email-based for now. No scheduling calendar or public phone number is active.</span></div>
-                        <div class="booking-note"><strong>Review add-ons</strong><span>Drone, twilight conversion, virtual staging, AI listing description, and closing-gift video details remain listed on the package pages.</span></div>
-                        <div class="booking-note"><strong>Email direct</strong><span><a href="mailto:contact@readymadevideo.com">contact@readymadevideo.com</a></span></div>
-                    </div>
-                    <p class="quote-assurance">Submitting this form opens a prepared email in your email app. A service appointment, delivery deadline, or project scope is not confirmed until ReadyMadeVideo accepts the request in writing.</p>
                 </div>
 
                 <div class="quote-form-card animate-on-scroll">
@@ -2168,6 +2188,15 @@
                         <button type="submit" class="btn btn-primary" style="width: 100%;">Send Quote Request</button>
                         <p class="form-small">This opens your email app with the quote details prefilled. No public phone number or scheduling calendar is active yet.</p>
                     </form>
+                </div>
+
+                <div class="quote-support-strip animate-on-scroll">
+                    <div class="booking-notes">
+                        <div class="booking-note"><strong>Quote first</strong><span>The quote path is email-based for now. No scheduling calendar or public phone number is active.</span></div>
+                        <div class="booking-note"><strong>Review add-ons</strong><span>Drone, twilight conversion, virtual staging, AI listing description, and closing-gift video details remain listed on the package pages.</span></div>
+                        <div class="booking-note"><strong>Email direct</strong><span><a href="mailto:contact@readymadevideo.com">contact@readymadevideo.com</a></span></div>
+                    </div>
+                    <p class="quote-assurance">Submitting this form opens a prepared email in your email app. A service appointment, delivery deadline, or project scope is not confirmed until ReadyMadeVideo accepts the request in writing.</p>
                 </div>
             </div>
         </section>
