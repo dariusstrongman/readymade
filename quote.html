@@ -1353,29 +1353,149 @@
             box-shadow: 0 0 0 4px rgba(163,109,58,0.12);
         }
 
-        .form-status {
-            margin-top: 16px;
-            padding: 12px 16px;
-            border-radius: 10px;
-            font-size: 0.95rem;
-            display: none;
-            font-weight: 700;
+        .submission-overlay {
+            position: absolute;
+            inset: 0;
+            z-index: 5;
+            display: grid;
+            place-items: center;
+            padding: 24px;
+            border-radius: 34px;
+            background:
+                radial-gradient(circle at 50% 34%, rgba(217,170,115,0.28), transparent 32%),
+                rgba(20,16,12,0.70);
+            backdrop-filter: blur(10px);
+            opacity: 0;
+            visibility: hidden;
+            pointer-events: none;
+            transform: translateY(8px);
+            transition: opacity 220ms ease, visibility 220ms ease, transform 220ms ease;
         }
 
-        .form-status.success,
-        .form-status.is-success {
-            display: block;
-            background: rgba(217,170,115,0.18);
-            color: #2a1f15;
-            border: 1px solid rgba(217,170,115,0.4);
+        .submission-overlay.is-active {
+            opacity: 1;
+            visibility: visible;
+            pointer-events: auto;
+            transform: translateY(0);
         }
 
-        .form-status.error,
-        .form-status.is-error {
+        .submission-card {
+            width: min(100%, 360px);
+            min-height: 318px;
+            display: grid;
+            justify-items: center;
+            align-content: center;
+            gap: 12px;
+            text-align: center;
+            padding: 34px 28px;
+            border: 1px solid rgba(217,170,115,0.38);
+            border-radius: 30px;
+            background:
+                linear-gradient(145deg, rgba(255,250,242,0.98), rgba(239,222,198,0.96));
+            color: var(--ink);
+            box-shadow: 0 28px 74px rgba(0,0,0,0.36);
+        }
+
+        .submission-logo {
+            position: relative;
+            width: 112px;
+            height: 112px;
+            display: grid;
+            place-items: center;
+            margin-bottom: 8px;
+        }
+
+        .submission-logo::before,
+        .submission-logo::after {
+            content: "";
+            position: absolute;
+            inset: 0;
+            border-radius: 50%;
+        }
+
+        .submission-logo::before {
+            border: 2px solid rgba(163,109,58,0.22);
+        }
+
+        .submission-logo::after {
+            border: 3px solid transparent;
+            border-top-color: #d9aa73;
+            border-right-color: rgba(163,109,58,0.72);
+            filter: drop-shadow(0 0 14px rgba(217,170,115,0.45));
+        }
+
+        .submission-overlay.is-loading .submission-logo::after {
+            animation: submissionSpin 900ms linear infinite;
+        }
+
+        .submission-logo img {
+            width: 58px;
+            height: auto;
+            position: relative;
+            z-index: 1;
+            filter: drop-shadow(0 8px 18px rgba(38,29,20,0.16));
+        }
+
+        .submission-symbol {
+            position: absolute;
+            right: -2px;
+            bottom: 4px;
+            z-index: 2;
+            width: 34px;
+            height: 34px;
+            display: grid;
+            place-items: center;
+            border-radius: 50%;
+            background: #d9aa73;
+            color: #1d1208;
+            font-weight: 950;
+            box-shadow: 0 10px 22px rgba(38,29,20,0.22);
+            transform: scale(0.7);
+            opacity: 0;
+            transition: opacity 180ms ease, transform 180ms ease;
+        }
+
+        .submission-overlay.is-success .submission-symbol,
+        .submission-overlay.is-error .submission-symbol {
+            opacity: 1;
+            transform: scale(1);
+        }
+
+        .submission-overlay.is-error .submission-symbol {
+            background: #8f2d2d;
+            color: #fffaf2;
+        }
+
+        .submission-card small {
+            color: var(--bronze-dark);
+            font-size: 0.72rem;
+            font-weight: 950;
+            letter-spacing: 0.14em;
+            text-transform: uppercase;
+        }
+
+        .submission-card strong {
             display: block;
-            background: rgba(180,40,40,0.10);
-            color: #6b1f1f;
-            border: 1px solid rgba(180,40,40,0.25);
+            font-family: "Playfair Display", Georgia, serif;
+            font-size: clamp(2rem, 4vw, 2.7rem);
+            line-height: 0.95;
+            letter-spacing: -0.055em;
+        }
+
+        .submission-card p {
+            max-width: 280px;
+            color: rgba(64,52,40,0.76);
+            font-size: 0.98rem;
+        }
+
+        .contact-form.is-submitting {
+            filter: saturate(0.65) blur(1px);
+            transform: scale(0.99);
+            transition: filter 180ms ease, transform 180ms ease;
+        }
+
+        @keyframes submissionSpin {
+            to { transform: rotate(360deg); }
         }
 
         .form-hint {
@@ -2200,7 +2320,17 @@
                         <div class="form-group"><label for="message">Add-ons or notes</label><textarea id="message" name="message" placeholder="Drone, twilight, virtual staging, access notes, deadline, or anything else we should know."></textarea></div>
                         <button type="submit" class="btn btn-primary" style="width: 100%;">Send Quote Request</button>
                     </form>
-                    <div id="formStatus" class="form-status" role="status" aria-live="polite"></div>
+                    <div id="formStatus" class="submission-overlay" role="status" aria-live="polite" aria-hidden="true">
+                        <div class="submission-card">
+                            <div class="submission-logo" aria-hidden="true">
+                                <img src="logo-compact.svg" alt="">
+                                <span id="submissionSymbol" class="submission-symbol">✓</span>
+                            </div>
+                            <small>Quote request</small>
+                            <strong id="submissionTitle">Sending request</strong>
+                            <p id="submissionMessage">Securing your details and sending them directly to ReadyMadeVideo.</p>
+                        </div>
+                    </div>
                 </div>
 
                 <div class="quote-support-strip animate-on-scroll">
@@ -2326,17 +2456,54 @@
 
         const contactForm = document.getElementById('contactForm');
         const statusEl = document.getElementById('formStatus');
+        const submissionTitle = document.getElementById('submissionTitle');
+        const submissionMessage = document.getElementById('submissionMessage');
+        const submissionSymbol = document.getElementById('submissionSymbol');
+
+        function setSubmissionState(state, title, message) {
+            if (!statusEl || !submissionTitle || !submissionMessage || !submissionSymbol) return;
+            statusEl.className = 'submission-overlay is-active is-' + state;
+            statusEl.setAttribute('aria-hidden', 'false');
+            submissionTitle.textContent = title;
+            submissionMessage.textContent = message;
+            submissionSymbol.textContent = state === 'error' ? '!' : '✓';
+        }
+
+        function restoreQuoteForm(options = {}) {
+            if (!contactForm || !statusEl) return;
+            const submitBtn = contactForm.querySelector('button[type="submit"]');
+            contactForm.classList.remove('is-submitting');
+            contactForm.removeAttribute('aria-busy');
+            statusEl.className = 'submission-overlay';
+            statusEl.setAttribute('aria-hidden', 'true');
+            if (submitBtn) {
+                submitBtn.disabled = false;
+                submitBtn.textContent = submitBtn.dataset.originalLabel || 'Send Quote Request';
+            }
+            if (options.reset) {
+                contactForm.reset();
+                if (packageParam && packageField && [...packageField.options].some(option => option.value === packageParam)) {
+                    packageField.value = packageParam;
+                }
+                if (launchNote && messageField) {
+                    messageField.value = launchNote;
+                }
+            }
+        }
 
         if (contactForm && statusEl) {
             contactForm.addEventListener('submit', async (event) => {
                 event.preventDefault();
 
                 const submitBtn = contactForm.querySelector('button[type="submit"]');
-                submitBtn.disabled = true;
-                const originalLabel = submitBtn.textContent;
-                submitBtn.textContent = 'Sending...';
-                statusEl.className = 'form-status';
-                statusEl.textContent = '';
+                if (submitBtn) {
+                    submitBtn.dataset.originalLabel = submitBtn.dataset.originalLabel || submitBtn.textContent;
+                    submitBtn.disabled = true;
+                    submitBtn.textContent = 'Sending request...';
+                }
+                contactForm.classList.add('is-submitting');
+                contactForm.setAttribute('aria-busy', 'true');
+                setSubmissionState('loading', 'Sending request', 'Securing your details and sending them directly to ReadyMadeVideo.');
 
                 const data = new FormData(contactForm);
                 const sqftMap = {
@@ -2375,24 +2542,20 @@
                     const result = await res.json().catch(() => ({ ok: res.ok }));
 
                     if (result.ok) {
-                        contactForm.style.display = 'none';
-                        statusEl.className = 'form-status success';
-                        statusEl.innerHTML = '<strong>Quote request received.</strong><br>We will reply by email within 24 hours with availability and the deposit link.';
+                        setSubmissionState('success', 'Request sent successfully', 'We will reply by email within 24 hours with availability and the deposit link.');
+                        window.setTimeout(() => restoreQuoteForm({ reset: true }), 3200);
                     } else {
-                        statusEl.className = 'form-status error';
-                        statusEl.textContent = result.error === 'missing_fields'
-                            ? 'Please fill in: ' + (result.missing || []).join(', ')
+                        const failureMessage = result.error === 'missing_fields'
+                            ? 'Please check the required fields and try again.'
                             : (result.error === 'invalid_email'
-                                ? 'Please enter a valid email address.'
-                                : 'Something went wrong. Please email signup@readymadevideo.com directly.');
-                        submitBtn.disabled = false;
-                        submitBtn.textContent = originalLabel;
+                                ? 'Please enter a valid email address and try again.'
+                                : 'Something went wrong. Please try again or email contact@readymadevideo.com directly.');
+                        setSubmissionState('error', 'Request failed', failureMessage);
+                        window.setTimeout(() => restoreQuoteForm(), 3800);
                     }
                 } catch (err) {
-                    statusEl.className = 'form-status error';
-                    statusEl.innerHTML = 'Connection issue. Please email <a href="mailto:signup@readymadevideo.com">signup@readymadevideo.com</a> directly.';
-                    submitBtn.disabled = false;
-                    submitBtn.textContent = originalLabel;
+                    setSubmissionState('error', 'Request failed', 'Connection issue. Please try again or email contact@readymadevideo.com directly.');
+                    window.setTimeout(() => restoreQuoteForm(), 3800);
                 }
             });
         }
