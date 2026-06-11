@@ -606,6 +606,45 @@
             align-items: stretch;
         }
 
+        .founding-cta-section {
+            padding: 74px 0;
+            background: linear-gradient(135deg, #1f211f 0%, #2d2b27 100%);
+            color: var(--cream);
+        }
+
+        .founding-cta-strip {
+            display: grid;
+            grid-template-columns: minmax(0, 1fr) auto;
+            gap: 26px;
+            align-items: center;
+            padding: clamp(26px, 4vw, 42px);
+            border-radius: 34px;
+            border: 1px solid rgba(255,255,255,0.13);
+            background: linear-gradient(135deg, rgba(255,255,255,0.08), rgba(255,255,255,0.035));
+            box-shadow: 0 24px 70px rgba(0,0,0,0.24);
+        }
+
+        .founding-cta-strip .eyebrow,
+        .founding-cta-strip h2 {
+            color: var(--cream);
+        }
+
+        .founding-cta-strip h2 {
+            margin-top: 12px;
+            font-family: "Playfair Display", Georgia, serif;
+            font-size: clamp(2.05rem, 4vw, 4.2rem);
+            line-height: 0.96;
+            letter-spacing: -0.055em;
+            max-width: 760px;
+        }
+
+        .founding-cta-strip p {
+            margin-top: 12px;
+            max-width: 650px;
+            color: rgba(255,255,255,0.74);
+            font-size: 1.04rem;
+        }
+
         .package-card {
             background: rgba(255,255,255,0.82);
             border: 1px solid rgba(125, 79, 37, 0.16);
@@ -1186,6 +1225,10 @@
             gap: 16px;
         }
 
+        .trust-tight-grid {
+            grid-template-columns: repeat(3, minmax(0, 1fr));
+        }
+
         .why-card {
             background: var(--white);
             border: 1px solid var(--stone);
@@ -1227,6 +1270,11 @@
             border-radius: 36px;
             padding: 34px;
             box-shadow: var(--soft-shadow);
+        }
+
+        .service-area-compact {
+            display: block;
+            max-width: 1040px;
         }
 
         .city-grid {
@@ -1939,7 +1987,7 @@ footer .footer-row{display:flex;flex-direction:column;align-items:center;justify
                 <div class="hero-copy animate-on-scroll">
                     <span class="eyebrow">Dallas-Fort Worth Listing Media</span>
                     <h1 id="hero-title">Listing media that is ready before your listing is.</h1>
-                    <p class="lead">Most local photographers take <strong>5 to 10 days</strong>. We shoot the property, edit through a fast AI-assisted workflow, and target <strong>MLS-ready files the morning after the shoot</strong> when access, scope, and conditions allow.</p>
+                    <p class="lead">Most local photographers take <strong>5 to 10 days</strong>. Built for solo agents and small teams across DFW, we shoot the property, edit through a fast AI-assisted workflow, and target <strong>MLS-ready files the morning after the shoot</strong> when access, scope, and conditions allow.</p>
                     <div class="hero-ctas">
                         <a class="btn btn-primary" href="quote.html">Get a Quote</a>
                         <a class="btn btn-outline" href="showcase.html">View Showcase</a>
@@ -2092,36 +2140,15 @@ footer .footer-row{display:flex;flex-direction:column;align-items:center;justify
             </div>
         </section>
 
-        <section id="work">
+        <section class="founding-cta-section" id="work" aria-labelledby="founding-cta-title">
             <div class="container">
-                <div class="section-heading animate-on-scroll">
-                    <span class="eyebrow">Visual standard</span>
-                    <h2>The site should feel like the media you sell.</h2>
-                    <p>Clean, calm, polished, and real estate first. Buyers should feel the home. Sellers should feel confident that their agent hired the right media team.</p>
-                </div>
-                <div class="work-grid animate-on-scroll">
-                    <figure class="video-card tall">
-                        <img src="video/property-portrait-poster.jpg" alt="Modern DFW home exterior prepared for listing media">
-                        <figcaption><div><strong>Hero exterior</strong><span>Clean twilight presentation that gives the listing a strong first impression.</span></div></figcaption>
-                    </figure>
-                    <div class="work-stack">
-                        <figure class="video-card wide-right">
-                            <img src="video/property-clean-poster.jpg" alt="Luxury home exterior and landscaping detail">
-                            <figcaption><div><strong>Exterior context</strong><span>Drone and exterior coverage when the listing needs it.</span></div></figcaption>
-                        </figure>
-                        <figure class="video-card wide-left">
-                            <img src="video/property-clean-poster.jpg" alt="DFW property exterior twilight listing image">
-                            <figcaption><div><strong>Listing polish</strong><span>Consistent color, clean framing, and a premium feel across the media package.</span></div></figcaption>
-                        </figure>
-                    </div>
-                </div>
-                <div class="showcase-teaser animate-on-scroll">
+                <div class="founding-cta-strip animate-on-scroll">
                     <div>
-                        <span class="eyebrow">Full gallery</span>
-                        <h3>Want to see the video formats without crowding the homepage?</h3>
-                        <p>The examples now live on a dedicated showcase page, where landscape listing videos and vertical social reels each get the right layout.</p>
+                        <span class="eyebrow">Launch reel</span>
+                        <h2 id="founding-cta-title">First DFW listings being shot now.</h2>
+                        <p>Book the Founding Agent Rate and be in the launch reel.</p>
                     </div>
-                    <a class="btn btn-primary" href="showcase.html">Open Showcase</a>
+                    <a class="btn btn-primary" href="quote.html?package=pro">Book Founding Agent Rate</a>
                 </div>
             </div>
         </section>
@@ -2145,46 +2172,25 @@ footer .footer-row{display:flex;flex-direction:column;align-items:center;justify
         <section id="why-us">
             <div class="container">
                 <div class="section-heading animate-on-scroll">
-                    <span class="eyebrow">Why agents trust it</span>
-                    <h2>Professional where it matters.</h2>
-                    <p>The strongest trust signals are not slogans. They are operational details that make your listing day easier.</p>
+                    <span class="eyebrow">Trust</span>
+                    <h2>What you can count on.</h2>
+                    <p>ReadyMadeVideo is built around the operational details that keep listing week moving: speed, access, and files your team can actually use.</p>
                 </div>
-                <div class="why-grid">
-                    <article class="why-card animate-on-scroll"><small>Speed</small><h3>Morning-after target</h3><p>Your listing should not wait a week for media. Our workflow is built around a next-morning handoff target when access, scope, and conditions allow.</p></article>
-                    <article class="why-card animate-on-scroll"><small>MLS</small><h3>NTREIS-ready files</h3><p>You get files prepared for the way North Texas agents actually market properties.</p></article>
-                    <article class="why-card animate-on-scroll"><small>Drone</small><h3>FAA Part 107 licensed</h3><p>Commercial drone work is handled the right way, with weather and airspace checked before flight.</p></article>
-                    <article class="why-card animate-on-scroll"><small>Access</small><h3>Supra eKEY holder</h3><p>When the listing allows it, we can access the property without making the agent meet us on site.</p></article>
-                </div>
-            </div>
-        </section>
-
-
-        <section class="proof-lab" id="standards">
-            <div class="container">
-                <div class="section-heading animate-on-scroll">
-                    <span class="eyebrow">Proof before polish</span>
-                    <h2>A better-looking site is not enough.</h2>
-                    <p>Realtors trust media teams that remove friction on listing week. ReadyMadeVideo is built around the details that keep the shoot, edit, and upload moving.</p>
-                </div>
-                <div class="lab-grid">
-                    <article class="lab-card animate-on-scroll"><small>Access</small><h3>We plan around property entry.</h3><p>Supra eKEY access, lockbox notes, gate codes, seller instructions, and arrival windows are confirmed before the shoot.</p></article>
-                    <article class="lab-card animate-on-scroll"><small>Airspace</small><h3>Drone work is not guessed.</h3><p>FAA Part 107 licensing matters because aerial work has weather, airspace, and safety limits. If conditions are not right, we tell you.</p></article>
-                    <article class="lab-card animate-on-scroll"><small>Files</small><h3>Delivery is organized for agents.</h3><p>You get practical versions for MLS, social, and client review so the media does not create another task for your team.</p></article>
+                <div class="why-grid trust-tight-grid">
+                    <article class="why-card animate-on-scroll"><small>Speed</small><h3>Morning-after target</h3><p>Your listing should not wait a week for media. The workflow is built around a next-morning handoff target when access, scope, and conditions allow.</p></article>
+                    <article class="why-card animate-on-scroll"><small>Access</small><h3>Entry planned before arrival</h3><p>Supra eKEY access, lockbox notes, gate codes, seller instructions, and arrival windows are confirmed before the shoot.</p></article>
+                    <article class="why-card animate-on-scroll"><small>Files</small><h3>Organized for listing work</h3><p>You get practical versions for MLS, social, and client review so the media does not create another task for your team.</p></article>
                 </div>
             </div>
         </section>
 
         <section class="service-area" id="service-area">
-            <div class="container area-panel animate-on-scroll">
-                <div class="map-card">
-                    <h3>Built for the Dallas-Fort Worth market.</h3>
-                    <p>ReadyMadeVideo serves solo listing agents and small teams across DFW, with a strong focus on Frisco, Plano, McKinney, Arlington, Dallas, and Fort Worth.</p><p class="area-copy">North Texas listings move fast. A Frisco listing, a Plano family home, a McKinney new-build, an Arlington flip, a Dallas condo, and a Fort Worth luxury property all need different framing, but the handoff has to be the same: clear, fast, and ready to publish.</p>
-                </div>
+            <div class="container area-panel service-area-compact animate-on-scroll">
                 <div>
                     <div class="section-heading" style="margin-bottom: 28px;">
                         <span class="eyebrow">Service area</span>
                         <h2 style="font-size: clamp(2.1rem, 4vw, 3.8rem);">Local coverage, clear scheduling.</h2>
-                        <p>Listings outside the core metroplex can still be requested. If a travel fee applies, we tell you before confirming.</p>
+                        <p>DFW listings move fast. Listings outside the core metroplex can still be requested, and if a travel fee applies, we tell you before confirming.</p>
                     </div>
                     <div class="city-grid" aria-label="DFW cities served">
                         <span>Frisco</span><span>Plano</span><span>McKinney</span><span>Dallas</span><span>Fort Worth</span><span>Arlington</span><span>Allen</span><span>Prosper</span><span>Southlake</span><span>Keller</span><span>Irving</span><span>Richardson</span><span>Denton</span><span>Grapevine</span><span>Coppell</span><span>Lewisville</span><span>Flower Mound</span><span>Carrollton</span><span>The Colony</span><span>Little Elm</span><span>Rockwall</span>
