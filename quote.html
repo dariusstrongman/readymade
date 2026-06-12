@@ -2235,7 +2235,14 @@
             font-weight: 800;
         }
 
+        .cf-turnstile-wrap {
+            display: flex;
+            justify-content: center;
+            margin: 20px 0 8px;
+        }
+
     </style>
+    <script src="https://challenges.cloudflare.com/turnstile/v0/api.js" async defer></script>
 </head>
 <body class="quote-page">
     <header>
@@ -2318,6 +2325,9 @@
                             <div class="form-group"><label for="access">Access</label><select id="access" name="access"><option value="supra">Supra eKEY</option><option value="agent-meeting">Agent will meet on site</option><option value="code">Door code or other access</option><option value="not-sure">Not sure yet</option></select></div>
                         </div>
                         <div class="form-group"><label for="message">Add-ons or notes</label><textarea id="message" name="message" placeholder="Drone, twilight, virtual staging, access notes, deadline, or anything else we should know."></textarea></div>
+                        <div class="form-group cf-turnstile-wrap">
+                            <div class="cf-turnstile" data-sitekey="0x4AAAAAADjjrKZ1-NJ7UOzr" data-theme="light"></div>
+                        </div>
                         <button type="submit" class="btn btn-primary" style="width: 100%;">Send Quote Request</button>
                     </form>
                     <div id="formStatus" class="submission-overlay" role="status" aria-live="polite" aria-hidden="true">
@@ -2469,6 +2479,10 @@
             submissionSymbol.textContent = state === 'error' ? '!' : '✓';
         }
 
+        function resetTurnstile() {
+            if (typeof turnstile !== 'undefined' && turnstile.reset) turnstile.reset();
+        }
+
         function restoreQuoteForm(options = {}) {
             if (!contactForm || !statusEl) return;
             const submitBtn = contactForm.querySelector('button[type="submit"]');
@@ -2496,14 +2510,28 @@
                 event.preventDefault();
 
                 const submitBtn = contactForm.querySelector('button[type="submit"]');
+                const originalLabel = submitBtn?.dataset.originalLabel || submitBtn?.textContent || 'Send Quote Request';
                 if (submitBtn) {
-                    submitBtn.dataset.originalLabel = submitBtn.dataset.originalLabel || submitBtn.textContent;
+                    submitBtn.dataset.originalLabel = originalLabel;
                     submitBtn.disabled = true;
                     submitBtn.textContent = 'Sending request...';
                 }
                 contactForm.classList.add('is-submitting');
                 contactForm.setAttribute('aria-busy', 'true');
                 setSubmissionState('loading', 'Sending request', 'Securing your details and sending them directly to ReadyMadeVideo.');
+
+                const turnstileToken = (typeof turnstile !== 'undefined' && turnstile.getResponse) ? turnstile.getResponse() : '';
+                if (!turnstileToken) {
+                    setSubmissionState('error', 'Verification required', 'Please complete the verification check above the submit button, then try again.');
+                    contactForm.classList.remove('is-submitting');
+                    contactForm.removeAttribute('aria-busy');
+                    if (submitBtn) {
+                        submitBtn.disabled = false;
+                        submitBtn.textContent = originalLabel;
+                    }
+                    resetTurnstile();
+                    return;
+                }
 
                 const data = new FormData(contactForm);
                 const sqftMap = {
@@ -2530,6 +2558,7 @@
                     preferred_shoot_date: data.get('preferred_date') || null,
                     founding_rate: false,
                     source: 'website_form',
+                    turnstile_token: turnstileToken,
                     honeypot: data.get('honeypot') || ''
                 };
 
@@ -2551,11 +2580,17 @@
                                 ? 'Please enter a valid email address and try again.'
                                 : 'Something went wrong. Please try again or email contact@readymadevideo.com directly.');
                         setSubmissionState('error', 'Request failed', failureMessage);
-                        window.setTimeout(() => restoreQuoteForm(), 3800);
+                        window.setTimeout(() => {
+                            restoreQuoteForm();
+                            resetTurnstile();
+                        }, 3800);
                     }
                 } catch (err) {
                     setSubmissionState('error', 'Request failed', 'Connection issue. Please try again or email contact@readymadevideo.com directly.');
-                    window.setTimeout(() => restoreQuoteForm(), 3800);
+                    window.setTimeout(() => {
+                        restoreQuoteForm();
+                        resetTurnstile();
+                    }, 3800);
                 }
             });
         }
