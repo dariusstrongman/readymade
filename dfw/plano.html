@@ -147,8 +147,22 @@
     </footer>
 
     <script>
+        const header = document.querySelector('header');
+        const logo = document.querySelector('.brand img');
         const mobileToggle = document.getElementById('mobileToggle');
         const navLinks = document.getElementById('navLinks');
+
+        function updateHeader() {
+            const isScrolled = window.scrollY > 20;
+            header?.classList.toggle('scrolled', isScrolled);
+            if (logo) {
+                logo.src = isScrolled ? logo.dataset.darkSrc : logo.dataset.lightSrc;
+            }
+        }
+
+        updateHeader();
+        window.addEventListener('scroll', updateHeader, { passive: true });
+
         if (mobileToggle && navLinks) {
             mobileToggle.addEventListener('click', () => {
                 const isOpen = navLinks.classList.toggle('active');
@@ -156,9 +170,6 @@
                 mobileToggle.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
             });
         }
-        window.addEventListener('scroll', () => {
-            document.querySelector('header')?.classList.toggle('scrolled', window.scrollY > 16);
-        }, { passive: true });
     </script>
 
 </body>
